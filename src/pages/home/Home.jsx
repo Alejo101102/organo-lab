@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className='home'>
       <h1>Inicio</h1>
-      <button onClick={handleClick}>Ver más enfermedades</button>
+      <button onClick={handleClick}>Descubre más sobre los ojos</button>
     </div>
   )
 }

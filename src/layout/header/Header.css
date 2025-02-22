@@ -8,6 +8,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    position: relative;
 }
 
 .logo {
@@ -15,10 +16,51 @@ nav {
     height: auto;
 }
 
-.brand {
-    font-size: 1.5rem;
+nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    margin-right: auto; 
+    padding: 8px 12px;
+    position: relative;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px; /* Aumenta la separación del subrayado */
+    text-decoration-thickness: 2px; /* Hace el subrayado un poco más grueso */
+}
+
+.menu-item {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 150%;  /* Separación más grande */
+    left: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.submenu a {
+    display: block;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+
+.menu-item:hover .submenu {
+    display: block;
 }

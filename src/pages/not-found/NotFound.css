@@ -1,0 +1,12 @@
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.not-found-image {
+    max-width: 100vh; 
+    max-height: 100vh; 
+    object-fit: contain; 
+}
