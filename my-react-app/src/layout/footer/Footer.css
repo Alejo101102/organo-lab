@@ -1,4 +1,8 @@
 footer{
-    background-color: #00586F;
+    background-color: #cc0000;
     padding: 1rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
 }

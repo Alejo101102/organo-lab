@@ -9,7 +9,6 @@ const Header = () => {
       <nav>
         <img src={logo} alt="Logo" className="logo" />
         <NavLink to="/" className="brand">
-          OrganoLab
         </NavLink>
         <NavLink to="/" end>
           Inicio

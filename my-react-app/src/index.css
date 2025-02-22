@@ -13,7 +13,7 @@ body,
 
 h1 {
   font-size: xx-large;
-  color: #00586f;
+  color: #a20000;
 }
 
 span {
@@ -42,7 +42,7 @@ button {
   outline: none;
   align-items: center;
   justify-content: center;
-  background-color: #007491;
+  background-color: #e80000;
   border: none;
   width: 256px;
   height: 54px;
@@ -53,5 +53,5 @@ button {
 }
 
 button:hover {
-  background-color: #00586f;
+  background-color: #a20000;
 }
