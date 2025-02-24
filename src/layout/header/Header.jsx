@@ -16,6 +16,7 @@ const Header = () => {
             <NavLink to="/agujero-macular/que-es">¿Qué es?</NavLink>
             <NavLink to="/agujero-macular/sintomas">Síntomas</NavLink>
             <NavLink to="/agujero-macular/tratamiento">Tratamiento</NavLink>
+            <NavLink to="/agujero-macular/prevencion-autocuidado">Prevención y autocuidado</NavLink>
           </div>
         </div>
 
@@ -25,6 +26,7 @@ const Header = () => {
             <NavLink to="/cataratas/que-es">¿Qué es?</NavLink>
             <NavLink to="/cataratas/sintomas">Síntomas</NavLink>
             <NavLink to="/cataratas/tratamiento">Tratamiento</NavLink>
+            <NavLink to="/cataratas/prevencion-autocuidado">Prevención y autocuidado</NavLink>
           </div>
         </div>
 
@@ -34,6 +36,7 @@ const Header = () => {
             <NavLink to="/conjuntivitis/que-es">¿Qué es?</NavLink>
             <NavLink to="/conjuntivitis/sintomas">Síntomas</NavLink>
             <NavLink to="/conjuntivitis/tratamiento">Tratamiento</NavLink>
+            <NavLink to="/conjuntivitis/prevencion-autocuidado">Prevención y autocuidado</NavLink>
           </div>
         </div>
 
@@ -43,6 +46,7 @@ const Header = () => {
             <NavLink to="/glaucoma/que-es">¿Qué es?</NavLink>
             <NavLink to="/glaucoma/sintomas">Síntomas</NavLink>
             <NavLink to="/glaucoma/tratamiento">Tratamiento</NavLink>
+            <NavLink to="/glaucoma/prevencion-autocuidado">Prevención y autocuidado</NavLink>
           </div>
         </div>
         
