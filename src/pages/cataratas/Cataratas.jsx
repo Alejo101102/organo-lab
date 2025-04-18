@@ -1,9 +1,12 @@
 import React from 'react'
 import './Cataratas.css'
+import QueEsCatarata from './que-es-catarata/QueEsCatarata'
 
 const Cataratas = () => {
   return (
-    <div>Cataratas</div>
+    <div>
+      <QueEsCatarata />
+    </div>
   )
 }
 
