@@ -5,7 +5,7 @@ import './Home.css'
 import MattSmith from './models-3d/MattSmith'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import Eye from './models-3d/eye'
+import Eye from './models-3d/Eye'
 
 
 /*
