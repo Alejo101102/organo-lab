@@ -8,6 +8,7 @@ import AgujeroMacular from './pages/agujero-macular/AgujeroMacular'
 import Cataratas from './pages/cataratas/Cataratas'
 import Conjuntivitis from './pages/conjuntivitis/Conjuntivitis'
 import Glaucoma from './pages/glaucoma/Glaucoma'
+import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Heart from './pages/heart/Heart'
@@ -22,9 +23,21 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route index path="/" element={<Home />} />  
         <Route path="agujero-macular" element={<AgujeroMacular />} /> 
+<<<<<<< Updated upstream
         <Route path="cataratas" element={<Cataratas />} /> 
+=======
+
+        <Route path="cataratas" element={<Cataratas />}>
+          <Route path="que-es" element={<QueEsCatarata />} />
+        </Route>
+
+>>>>>>> Stashed changes
         <Route path="conjuntivitis" element={<Conjuntivitis />} /> 
-        <Route path="glaucoma" element={<Glaucoma />} /> 
+
+        <Route path="glaucoma" element={<Glaucoma />} > 
+        <Route path="que-es" element={<QueEsGlaucoma />} />
+        </Route>
+        
         <Route path="quiz" element={<Quiz />} /> 
         <Route path="inicio-sesion" element={<InicioSesion />} />
         <Route path="*" element={<NotFound />} />  
