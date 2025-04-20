@@ -23,15 +23,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route index path="/" element={<Home />} />  
         <Route path="agujero-macular" element={<AgujeroMacular />} /> 
-<<<<<<< Updated upstream
         <Route path="cataratas" element={<Cataratas />} /> 
-=======
-
-        <Route path="cataratas" element={<Cataratas />}>
-          <Route path="que-es" element={<QueEsCatarata />} />
-        </Route>
-
->>>>>>> Stashed changes
         <Route path="conjuntivitis" element={<Conjuntivitis />} /> 
 
         <Route path="glaucoma" element={<Glaucoma />} > 
