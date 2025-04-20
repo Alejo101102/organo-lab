@@ -1,9 +1,13 @@
+/////
 import React from 'react'
 import './Glaucoma.css'
+import QueEsGlaucoma from './que-es-glaucoma/QueEsGlaucoma'
 
 const Glaucoma = () => {
   return (
-    <div>Glaucoma</div>
+    <div>
+      <QueEsGlaucoma />
+    </div>
   )
 }
 

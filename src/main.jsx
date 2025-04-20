@@ -9,6 +9,7 @@ import Cataratas from './pages/cataratas/Cataratas'
 import QueEsCatarata from './pages/cataratas/que-es-catarata/QueEsCatarata'
 import Conjuntivitis from './pages/conjuntivitis/Conjuntivitis'
 import Glaucoma from './pages/glaucoma/Glaucoma'
+import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
@@ -25,7 +26,11 @@ createRoot(document.getElementById('root')).render(
           <Route path="que-es" element={<QueEsCatarata />} />
         </Route>
         <Route path="conjuntivitis" element={<Conjuntivitis />} /> 
-        <Route path="glaucoma" element={<Glaucoma />} /> 
+
+        <Route path="glaucoma" element={<Glaucoma />} > 
+        <Route path="que-es" element={<QueEsGlaucoma />} />
+        </Route>
+        
         <Route path="quiz" element={<Quiz />} /> 
         <Route path="inicio-sesion" element={<InicioSesion />} />
         <Route path="*" element={<NotFound />} />  
