@@ -12,6 +12,7 @@ import Glaucoma from './pages/glaucoma/Glaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
+import ModeloCatarata3D from './pages/cataratas/que-es-catarata/ModeloCatarata3D'
 
 
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="agujero-macular" element={<AgujeroMacular />} /> 
         <Route path="cataratas" element={<Cataratas />}>
           <Route path="que-es" element={<QueEsCatarata />} />
+          <Route path="que-es/modelo-3d" element={<ModeloCatarata3D />} /> {/* Mantenido aquí */}
         </Route>
         <Route path="conjuntivitis" element={<Conjuntivitis />} /> 
         <Route path="glaucoma" element={<Glaucoma />} /> 

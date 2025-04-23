@@ -1,4 +1,5 @@
 import './QueEsCatarata.css';
+import ModeloCatarata3D from './ModeloCatarata3D';
 import { Link } from 'react-router';
 
 const QueEsCatarata = () => {
@@ -34,7 +35,7 @@ const QueEsCatarata = () => {
           <button className="btn-rojo">TRATAMIENTOS</button>
         </Link>
 
-        <Link to="/cataratas/modelo-3d">
+        <Link to="/cataratas/que-es/modelo-3d">
           <button className="btn-azul">EXPLORA EL MODELO 3D</button>
         </Link>
       </div>
