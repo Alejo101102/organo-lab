@@ -1,13 +1,13 @@
 import React from 'react'
 import './Cataratas.css'
-import QueEsCatarata from './que-es-catarata/QueEsCatarata'
+import { Outlet } from 'react-router-dom';
 
 const Cataratas = () => {
   return (
     <div>
-      <QueEsCatarata />
+      <Outlet /> {/* Renderiza las rutas anidadas */}
     </div>
-  )
-}
+  );
+};
 
-export default Cataratas
+export default Cataratas;
