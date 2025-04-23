@@ -44,12 +44,8 @@
 }
 
 .modelo-3d {
-    height: 100px; /* altura similar a las imágenes */
-    width: 300px;  /* más ancho que alto */
-    /*
-    margin: 0 20px;
-    border-radius: 12px;     /* opcional: bordes suaves */
-    
+    height: 180px; /* altura similar a las imágenes */
+    width: 400px;  /* más ancho que alto */
   }
   
 
@@ -60,6 +56,7 @@
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     line-height: 1.8;
+    font-weight: 500;
     margin-bottom: 5rem; 
 }
 
@@ -110,7 +107,7 @@
 
 .modelo3d-container {
     width: 300px;
-    height: 300px;
+    height: 600px;
     margin: 0 auto;
   }
   
