@@ -1,11 +1,22 @@
 
 import React, { useRef } from 'react'
+import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/models-3d/que_es_conjuntivitis.glb')
+  const groupRef = useRef();
+
+
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.005; 
+    }
+  });
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <mesh geometry={nodes.SickEye101_1.geometry} material={materials.Bones} />
       <mesh geometry={nodes.SickEye101_2.geometry} material={materials.Skin} />
       <mesh geometry={nodes.SickEye101_3.geometry} material={materials.Lens} />
