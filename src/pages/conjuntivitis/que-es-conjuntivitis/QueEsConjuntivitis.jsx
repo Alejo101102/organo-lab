@@ -18,7 +18,9 @@ const QueEsConjuntivitis = () => {
         />
 
         <div className="modelo-3d">
-          <Canvas camera={{ position: [0, 0, 0.3], fov: 50 }}>
+          <Canvas 
+          style={{ width: '300px', height: '200px' }}
+          camera={{ position: [0, 0, 0.3]}}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[1, 2, 3]} intensity={1} />
             <OrbitControls />
@@ -27,7 +29,7 @@ const QueEsConjuntivitis = () => {
         </div>
 
         <img
-          src="/images/conjuntivitis/QueEsConjuntivitisPersona.jpg"
+          src="/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg"
           alt="Conjuntivitis persona 1"
           className="img-cuadrada"
         />
