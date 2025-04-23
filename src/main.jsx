@@ -8,6 +8,7 @@ import AgujeroMacular from './pages/agujero-macular/AgujeroMacular'
 import Cataratas from './pages/cataratas/Cataratas'
 import QueEsCatarata from './pages/cataratas/que-es-catarata/QueEsCatarata'
 import Conjuntivitis from './pages/conjuntivitis/Conjuntivitis'
+import QueEsConjuntivitis from './pages/conjuntivitis/que-es-conjuntivitis/QueEsConjuntivitis'
 import Glaucoma from './pages/glaucoma/Glaucoma'
 import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
@@ -29,6 +30,10 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="glaucoma" element={<Glaucoma />} > 
         <Route path="que-es" element={<QueEsGlaucoma />} />
+        </Route>
+
+        <Route path="conjuntivitis" element={<Conjuntivitis/>}>
+        <Route path="que-es" element={<QueEsConjuntivitis />} />
         </Route>
         
         <Route path="quiz" element={<Quiz />} /> 

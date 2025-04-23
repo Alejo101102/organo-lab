@@ -1,9 +1,12 @@
 import React from 'react'
 import './Conjuntivitis.css'
+import QueEsConjuntivitis from './que-es-conjuntivitis/QueEsConjuntivitis'
 
 const Conjuntivitis = () => {
   return (
-    <div>Conjuntivitis</div>
+    <div>
+      <QueEsConjuntivitis />
+    </div>
   )
 }
 
