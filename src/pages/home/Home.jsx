@@ -26,7 +26,16 @@ const Home = () => {
       <MattSmith />
     </div>
   )
+
+
+  
+  <div className="imagenes">
+          <img src="/images/home/proceso-home.png" alt="Proceso" className="img-rectangular" />
+          </div>
+  
   */
+
+  
 
   const Home = () => {
     const handleClick = () => {
@@ -39,13 +48,16 @@ const Home = () => {
           <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[2, 2, -4]} intensity={1} />
-            <OrbitControls enableZoom={true} />
+            <OrbitControls target={[0, 0, 0]} autoRotate autoRotateSpeed={2} enableZoom={true} makeDefault />
             <Eye position={[0, 3, 0]} />
           </Canvas>
         </div>
         <div className="text-container">
-          <p className="subtitulo">¡La ciencia detrás de la visión!</p>
+          <p className="subtitulo">¡LA CIENCIA DETRÁS DE LA VISIÓN!</p>
           <h1 className="titulo">OJO</h1>
+          
+          
+          
           <p className="descripcion">Explora el ojo humano en 3D</p>
           <div className="botones">
             <button className="btn" onClick={handleClick}>

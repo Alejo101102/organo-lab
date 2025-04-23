@@ -34,7 +34,8 @@
   .descripcion {
     margin-top: 1rem;
     font-size: 1rem;
-    opacity: 0.8;
+    opacity: 0.7;
+    color: #FFFFFF;
   }
   
   .botones {
@@ -60,4 +61,10 @@
     background-color: transparent;
     border: 1px solid #ff715b;
   }
+
+  .img-rectangular {
+    width: 200px;
+    height: 200px;
+    
+}
   
