@@ -1,11 +1,13 @@
 import './QueEsConjuntivitis.css';
-import { Link } from 'react-router-dom'; // Usamos react-router-dom para enlaces
+import { Link, useNavigate } from 'react-router-dom'; // Usamos react-router-dom para enlaces
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Footer from '../../../layout/footer/Footer';
 import { Model } from '../ModelosConjuntivitis/QueEsConjuntivitisModel';
 
 const QueEsConjuntivitis = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="que-es-container">
       <h1 className="titulo">CONJUNTIVITIS</h1>
@@ -24,7 +26,7 @@ const QueEsConjuntivitis = () => {
             <ambientLight intensity={0.5} />
             <directionalLight position={[1, 2, 3]} intensity={1} />
             <OrbitControls />
-            <Model scale={4} onClick={() => window.location.href = '/conjuntivitis/que-es/modelo-3d'} />
+            <Model scale={4} onClick={() => navigate('/conjuntivitis/que-es/modelo-3d')} />
           </Canvas>
         </div>
 
