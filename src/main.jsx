@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 //import App from './App.jsx'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import Home from './pages/home/Home'
 import NotFound from './pages/not-found/NotFound'
 import AgujeroMacular from './pages/agujero-macular/AgujeroMacular'
