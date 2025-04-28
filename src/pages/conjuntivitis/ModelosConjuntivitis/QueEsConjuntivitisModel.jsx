@@ -11,7 +11,7 @@ export function Model(props) {
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.005; 
+      groupRef.current.rotation.y += 0.007; 
     }
   });
 
