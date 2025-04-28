@@ -1,5 +1,5 @@
 import './QueEsConjuntivitis.css';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom'; // Usamos react-router-dom para enlaces
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import Footer from '../../../layout/footer/Footer';
@@ -19,12 +19,12 @@ const QueEsConjuntivitis = () => {
 
         <div className="modelo-3d">
           <Canvas 
-          style={{ width: '300px', height: '200px' }}
-          camera={{ position: [0, 0, 0.3]}}>
+            style={{ width: '300px', height: '200px' }}
+            camera={{ position: [0, 0, 0.3] }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[1, 2, 3]} intensity={1} />
             <OrbitControls />
-            <Model scale={4}/>
+            <Model scale={4} onClick={() => window.location.href = '/conjuntivitis/que-es/modelo-3d'} />
           </Canvas>
         </div>
 
@@ -45,6 +45,10 @@ const QueEsConjuntivitis = () => {
         </p>
       </div>
 
+      <div className="mensaje-informativo">
+        <p>Haz clic sobre el modelo 3D para verlo más de cerca en un entorno mejorado.</p>
+      </div>
+
       <div className="botones">
         <Link to="/conjuntivitis/sintomas">
           <button className="btn-rojo">SÍNTOMAS</button>
@@ -53,13 +57,8 @@ const QueEsConjuntivitis = () => {
         <Link to="/conjuntivitis/tratamientos">
           <button className="btn-rojo">TRATAMIENTOS</button>
         </Link>
-
-        <Link to="/conjuntivitis/modelo-3d">
-          <button className="btn-azul">EXPLORA EL MODELO 3D</button>
-        </Link>
       </div>
 
-      <Footer />
     </div>
   );
 };

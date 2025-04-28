@@ -1,13 +1,13 @@
 import React from 'react'
 import './Conjuntivitis.css'
-import QueEsConjuntivitis from './que-es-conjuntivitis/QueEsConjuntivitis'
+import { Outlet } from 'react-router-dom';
 
 const Conjuntivitis = () => {
   return (
     <div>
-      <QueEsConjuntivitis />
+      <Outlet />
     </div>
-  )
+  );
 }
 
-export default Conjuntivitis
+export default Conjuntivitis;
