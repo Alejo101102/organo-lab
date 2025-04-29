@@ -1,12 +1,31 @@
 import './QueEsConjuntivitis.css';
-import { Link, useNavigate } from 'react-router-dom'; // Usamos react-router-dom para enlaces
+import { Link, useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Model } from '../ModelosConjuntivitis/QueEsConjuntivitisModel';
+import { useState, useRef } from 'react';
 
 const QueEsConjuntivitis = () => {
-
   const navigate = useNavigate();
+
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const modelContainerRef = useRef(null);
+
+  const handleMouseMove = (event) => {
+    setTooltipPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  const handleModelHover = () => {
+    setShowTooltip(true);
+  };
+
+  const handleModelLeave = () => {
+    setShowTooltip(false);
+  };
 
   return (
     <div className="que-es-container">
@@ -19,15 +38,39 @@ const QueEsConjuntivitis = () => {
           className="img-cuadrada"
         />
 
-        <div className="modelo-3d">
-          <Canvas 
-            style={{ width: '300px', height: '200px' }}
-            camera={{ position: [0, 0, 0.3] }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[1, 2, 3]} intensity={1} />
-            <OrbitControls />
-            <Model scale={4} onClick={() => navigate('/conjuntivitis/que-es/modelo-3d')} />
-          </Canvas>
+        <div
+          className="modelo-3d-container"
+          ref={modelContainerRef}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleModelHover}
+          onMouseLeave={handleModelLeave}
+        >
+          {showTooltip && (
+            <div
+              className="modelo-tooltip"
+              style={{
+                left: tooltipPosition.x,
+                top: tooltipPosition.y - 30,
+                position: 'fixed'
+              }}
+            >
+              Ver modelo 3D
+            </div>
+          )}
+
+          <div className="modelo-3d">
+            <Canvas style={{ width: '300px', height: '200px' }} camera={{ position: [0, 0, 0.3] }}>
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[1, 2, 3]} intensity={1} />
+              <OrbitControls />
+              <Model
+                scale={4}
+                onClick={() => navigate('/conjuntivitis/que-es/modelo-3d')}
+                onPointerOver={() => setShowTooltip(true)}
+                onPointerOut={() => setShowTooltip(false)}
+              />
+            </Canvas>
+          </div>
         </div>
 
         <img
@@ -60,7 +103,6 @@ const QueEsConjuntivitis = () => {
           <button className="btn-azul">TRATAMIENTOS</button>
         </Link>
       </div>
-
     </div>
   );
 };
