@@ -1,9 +1,10 @@
 import React from 'react'
 import './AgujeroMacular.css'
+import QueEsAgujeroMacular from './que-es-agujero-macular/QueEsAgujeroMacular'
 
 const AgujeroMacular = () => {
   return (
-    <div>Agujero Macular</div>
+    <div> <QueEsAgujeroMacular/> </div>
   )
 }
 
