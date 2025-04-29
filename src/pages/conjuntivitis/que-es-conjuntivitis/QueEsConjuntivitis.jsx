@@ -57,7 +57,7 @@ const QueEsConjuntivitis = () => {
         </Link>
 
         <Link to="/conjuntivitis/tratamientos">
-          <button className="btn-rojo">TRATAMIENTOS</button>
+          <button className="btn-azul">TRATAMIENTOS</button>
         </Link>
       </div>
 
