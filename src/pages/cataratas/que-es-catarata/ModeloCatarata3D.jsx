@@ -14,13 +14,13 @@ const ModeloCatarata3D = () => {
         <Physics>
 
           <RigidBody type="fixed" colliders="trimesh">
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} receiveShadow={true}>
-              <circleGeometry args={[5, 64]} />
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]} receiveShadow={true}>
+              <circleGeometry args={[12, 64]} />
               <meshStandardMaterial color="darkgray" />
             </mesh>
           </RigidBody>
 
-          <CataractEye scale={7} position={[0, 1.2, 0]} rotation={[0, Math.PI , 0]} castshadow={true} />
+          <CataractEye scale={150} physics={false} position={[-0.7, 3, 1]} rotation={[0, Math.PI*20/180 , 0]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
         </Physics>
       </Canvas>
     </div>
