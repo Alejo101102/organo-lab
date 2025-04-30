@@ -15,6 +15,12 @@ import Heart from './pages/heart/Heart'
 import HighBloodPressure from './pages/heart/high-blood-pressure/HighBloodPressure'
 import LowBloodPressure from './pages/heart/low-blood-pressure/LowBloodPressure'
 import Layout from './layout/Layout'
+<<<<<<< Updated upstream
+=======
+import ModeloCatarata3D from './pages/cataratas/que-es-catarata/ModeloCatarata3D'
+import ModeloGlaucoma3D from './pages/glaucoma/que-es-glaucoma/explorar-modelo/ModeloGlaucoma3D';
+import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
+>>>>>>> Stashed changes
 
 
 createRoot(document.getElementById('root')).render(
@@ -28,6 +34,7 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="glaucoma" element={<Glaucoma />} > 
         <Route path="que-es" element={<QueEsGlaucoma />} />
+        <Route path="que-es/modelo-3d" element={<ModeloGlaucoma3D />} />
         </Route>
         
         <Route path="quiz" element={<Quiz />} /> 
