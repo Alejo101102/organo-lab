@@ -1,9 +1,12 @@
 import React from 'react'
 import './AgujeroMacular.css'
+import { Outlet } from 'react-router-dom'
 
 const AgujeroMacular = () => {
   return (
-    <div>Agujero Macular</div>
+    <div> 
+      <Outlet />
+    </div>
   )
 }
 

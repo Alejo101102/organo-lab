@@ -49,7 +49,11 @@ const Home = () => {
             <ambientLight intensity={0.5} />
             <directionalLight position={[2, 2, -4]} intensity={1} />
             <OrbitControls target={[0, 0, 0]} autoRotate autoRotateSpeed={2} enableZoom={true} makeDefault />
-            <Eye position={[0, 3, 0]} />
+            <Eye 
+            scale={0.01} 
+            position={[0, 0, 0]} 
+            rotation={[0, -Math.PI/2, Math.PI/2]} 
+          />
           </Canvas>
         </div>
         <div className="text-container">
