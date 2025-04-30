@@ -17,6 +17,7 @@ import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
 import ModeloCatarata3D from './pages/cataratas/que-es-catarata/ModeloCatarata3D'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
+import OjoInterno3D from './pages/agujero-macular/que-es-agujero-macular/OjoInterno3D'
 
 
 createRoot(document.getElementById('root')).render(
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')).render(
         
         <Route path="agujero-macular" element={<AgujeroMacular />} > 
           <Route path="que-es" element={<QueEsAgujeroMacular/>}/>
+          <Route path="que-es/modelo-3d" element={<OjoInterno3D />} />
         </Route>
 
         <Route path="cataratas" element={<Cataratas />}>

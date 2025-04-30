@@ -1,10 +1,12 @@
 import React from 'react'
 import './AgujeroMacular.css'
-import QueEsAgujeroMacular from './que-es-agujero-macular/QueEsAgujeroMacular'
+import { Outlet } from 'react-router-dom'
 
 const AgujeroMacular = () => {
   return (
-    <div> <QueEsAgujeroMacular/> </div>
+    <div> 
+      <Outlet />
+    </div>
   )
 }
 

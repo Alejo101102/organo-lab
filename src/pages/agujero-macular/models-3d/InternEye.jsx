@@ -1,10 +1,19 @@
 import { useGLTF } from "@react-three/drei";
+import { useRef } from 'react'
+import { useFrame } from "@react-three/fiber";
 
-
-const InternEye = (props) => {
+const InternEye = ({rotate=true, ...props}) => {
     const {nodes, materials} = useGLTF('/models-3d/agujero-macular/intern-eye.glb');
+    const groupRef = useRef();
+
+    useFrame(() => {
+      if (rotate && groupRef.current) {
+        groupRef.current.rotation.y += 0.01;
+      }
+    });
+
     return (
-      <group {...props} dispose={null}>
+      <group ref={groupRef} {...props} dispose={null}>
         <mesh
           castShadow
           receiveShadow
