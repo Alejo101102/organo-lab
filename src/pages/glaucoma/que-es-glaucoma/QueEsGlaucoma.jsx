@@ -63,13 +63,14 @@ const QueEsGlaucoma = () => {
             <Canvas camera={{ position: [0, 0, 6], fov: 25 }}>
               <ambientLight intensity={0.5} />
               <directionalLight position={[2, 2, 2]} />
-              <OrbitControls enableZoom={true} autoRotate={true} />
+              <OrbitControls enableZoom={true} />
               <group
                 onPointerOver={handleModelHover}
                 onPointerOut={handleModelLeave}
                 onClick={() => navigate('/glaucoma/que-es/modelo-3d')}
+                rotation={[-Math.PI*90/180, Math.PI * 55/180, 0]}
               >
-                <EyeWithGlaucoma />
+                <EyeWithGlaucoma scale={0.007} rotate={false} />
               </group>
             </Canvas>
           </div>
