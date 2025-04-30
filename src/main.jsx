@@ -15,7 +15,10 @@ import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
-import ModeloGlaucoma3D from './pages/glaucoma/que-es-glaucoma/explorar-modelo/ModeloGlaucoma3D';
+import ModeloGlaucoma3D from './pages/glaucoma/que-es-glaucoma/explorar-modelo/ModeloGlaucoma3D'
+import ModeloCatarata3D from './pages/cataratas/que-es-catarata/ModeloCatarata3D'
+import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
+import OjoInterno3D from './pages/agujero-macular/que-es-agujero-macular/OjoInterno3D'
 
 
 createRoot(document.getElementById('root')).render(
