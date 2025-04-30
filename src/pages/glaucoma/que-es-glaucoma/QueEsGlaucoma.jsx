@@ -67,7 +67,7 @@ const QueEsGlaucoma = () => {
               <group
                 onPointerOver={handleModelHover}
                 onPointerOut={handleModelLeave}
-                onClick={() => navigate('/glaucoma/modelo-3d')}
+                onClick={() => navigate('/glaucoma/que-es/modelo-3d')}
               >
                 <EyeWithGlaucoma />
               </group>

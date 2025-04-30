@@ -23,7 +23,7 @@ const ModeloGlaucoma3D = () => {
             </mesh>
           </RigidBody>
 
-          <EyeWithGlaucoma scale={150} physics={false} position={[-0.7, 3, 1]} rotation={[0, Math.PI*20/180 , 0]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+          <EyeWithGlaucoma scale={0.01} physics={false} position={[-0.7, 3, 1]} rotation={[-Math.PI*90/180, Math.PI*20/180 , 0]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
         </Physics>
       </Canvas>
     </div>
