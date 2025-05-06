@@ -33,12 +33,6 @@ const QueEsGlaucoma = () => {
       <h1 className="titulo">GLAUCOMA</h1>
 
       <div className="imagenes">
-        <img
-          src="/images/glaucoma/glaucoma-anatomico.png"
-          alt="Anatomía de Glaucoma"
-          className="img-cuadrada"
-        />
-
         <div
           className="modelo-3d-container"
           ref={modelContainerRef}
@@ -62,25 +56,26 @@ const QueEsGlaucoma = () => {
           <div className="modelo-3d">
             <Canvas camera={{ position: [0, 0, 6], fov: 25 }}>
               <ambientLight intensity={0.5} />
-              <directionalLight position={[2, 2, 2]} />
+              <directionalLight position={[2, 2, 2]} 
+              intensity={1} 
+              castShadow={true}
+              shadow-mapSize-width={1024}  // Mejor resolución de sombras
+              shadow-mapSize-height={1024}
+              shadow-camera-near={0.1}
+              shadow-camera-far={10}
+              />
               <OrbitControls enableZoom={true} />
               <group
                 onPointerOver={handleModelHover}
                 onPointerOut={handleModelLeave}
                 onClick={() => navigate('/glaucoma/que-es/modelo-3d')}
-                rotation={[-Math.PI*90/180, Math.PI * 55/180, 0]}
+                rotation={[-Math.PI * 90 / 180, Math.PI * 55 / 180, 0]}
               >
                 <EyeWithGlaucoma scale={0.007} rotate={false} />
               </group>
             </Canvas>
           </div>
         </div>
-
-        <img
-          src="/images/glaucoma/glaucoma-persona-1.png"
-          alt="Glaucoma persona 1"
-          className="img-cuadrada"
-        />
       </div>
 
       <div className="texto">
