@@ -8,107 +8,52 @@
     min-height: 100vh;
 }
 
-.titulo {
+.catarata-titulo {
     text-align: center;
     font-size: 96px;
     font-weight: 700; /* Bold */
     font-family: 'Inter', sans-serif;
     margin: 2rem 0;
     color: #fff;
+    margin-top: 50px;
     margin-bottom: 5rem;
 }
 
-.img-cuadrada {
-    width: 180px;
-    height: 180px;
-    border-radius: 35px;
-    object-fit: cover;
-}
-
-.img-circular {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.texto {
+.que-es-catarata-texto {
     max-width: 1000px;
     margin: 2rem auto;
     text-align: center;
-    font-size: 20px;
     font-family: 'Inter', sans-serif;
+    font-size: 20px;
     line-height: 1.8;
     margin-bottom: 5rem;
 }
 
-.texto p {
+.que-es-catarata-texto p {
     color: #fff;
 }
 
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 5rem;
-}
-
-.btn-rojo {
-    background-color: #FF715B;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px; /* tamaño de letra */
-    cursor: pointer;
-}
-
-.btn-azul {
-    background-color: #6C7ECB;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px; /* tamaño de letra */
-    cursor: pointer;
-}
-
-.btn-rojo:hover {
-    background-color: #ff5b45; /* un rojo un poco más fuerte */
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-}
-
-.btn-azul:hover {
-    background-color: #5a6abb; /* un azul más oscuro */
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-}
-
-.contenedor-cataratas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem; /* espacio entre elementos */
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Asegúrate de tener estas clases en tu archivo QueEsCatarata.css */
-
-.modelo-3d-container {
-    width: 350px;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.catarata-modelo-3d-container {
     position: relative;
-    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+    width: 50%; /* O un valor fijo como 800px */
+    height: 40%; /* Ajusta según lo que necesites */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.modelo-tooltip {
+.que-es-modelo-3d {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
+    border-radius: 35px;
+    box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
+    overflow: hidden;
+    position: relative;
+}
+
+.catarata-modelo-tooltip {
     position: fixed; /* Muy importante: fija el tooltip a la ventana del navegador */
     background-color: #000000D9;
     color: white;
@@ -124,4 +69,63 @@
     transform: translateX(-50%); /* Centra el tooltip horizontalmente en relación al cursor */
     white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
     box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
+}
+
+.sintomas-container {
+    background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
+    width: 100vw;
+    height: 110vh;
+    margin-top: -50px;
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.catarata-sintomas-titulo {
+    text-align: center;
+    font-size: 96px;
+    font-weight: 700; /* Bold */
+    font-family: 'Inter', sans-serif;
+    margin: 2rem 0;
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 5rem;
+}
+
+.catarata-sintomas-texto {
+    max-width: 1000px;
+    margin: 2rem auto;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 5rem;
+}
+
+.catarata-sintomas-texto p {
+    color: #fff;
+}
+
+
+.catarata-sintomas-texto ul {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.catarata-sintomas-texto ul li { 
+    list-style-type: disc; 
+    list-style-position: inside;
+    color: #fff; 
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+}
+
+.sintomas-modelo-3d {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
+    border-radius: 35px;
+    box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
+    overflow: hidden;
+    position: relative;
 }
