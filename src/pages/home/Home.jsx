@@ -39,7 +39,7 @@ const Home = () => {
 
   const Home = () => {
     const handleClick = () => {
-      window.location.href = "/explorar";
+      
     };
   
     return (
@@ -67,7 +67,7 @@ const Home = () => {
             <button className="btn" onClick={handleClick}>
               Descubre más sobre los ojos
             </button>
-            <button className="btn secundario"> 
+            <button className="btn-secundario"> 
               OrganoLab
             </button>
           </div>
