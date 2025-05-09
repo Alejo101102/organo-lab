@@ -35,8 +35,11 @@ const QueEsCatarata = () => {
 
   return (
     <>
-    <div className="que-es-container">
+    <div className="catarata-container">
       <h1 className="catarata-titulo">CATARATAS</h1>
+    </div>
+    <div className="catarata-que-es-container">
+      <h3 className="catarata-que-es-titulo">¿QUÉ ES?</h3>
       
         <div 
           className="catarata-modelo-3d-container"
@@ -55,7 +58,7 @@ const QueEsCatarata = () => {
             </div>
           )}
           
-          <div className="que-es-modelo-3d" >
+          <div className="catarata-que-es-modelo-3d" >
             <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
               <Lights />  
               <Controls />
@@ -79,7 +82,7 @@ const QueEsCatarata = () => {
           </div>
         </div>
 
-      <div className="que-es-catarata-texto">
+      <div className="catarata-que-es-catarata-texto">
         <p>
           Una catarata es un área nublada en el cristalino, es decir, el "lente" de su ojo
           (la parte clara de su ojo que ayuda a enfocar la luz). Las cataratas son muy comunes a medida que usted envejece. En efecto, más de la mitad de todos los estadounidenses de 80 años o más tiene cataratas o ha tenido cirugía para eliminarlas.
@@ -94,7 +97,7 @@ const QueEsCatarata = () => {
     {/* =============== SINTOMAS ================*/}
 
 
-    <div className="sintomas-container">      
+    <div className="catarata-sintomas-container">      
       <h2 className="catarata-sintomas-titulo">SÍNTOMAS</h2>
         <div 
           className="catarata-modelo-3d-container"
@@ -113,7 +116,7 @@ const QueEsCatarata = () => {
             </div>
           )}
           
-          <div className="sintomas-modelo-3d" >
+          <div className="catarata-sintomas-modelo-3d" >
             <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
               <Lights />  
               <Controls />
