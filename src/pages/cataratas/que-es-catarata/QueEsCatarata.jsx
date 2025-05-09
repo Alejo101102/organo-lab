@@ -155,7 +155,47 @@ const QueEsCatarata = () => {
             <li>Visión doble.</li>
           </ul>
         </div>
+        <div className="catarata-contenedor-tarjetas">
+          <div className="catarata-tarjetas-sintomas">
+            <div className="catarata-imagen-tarjeta-sintomas">
+              <div className="catarata-imagen-con-borde">
+                <img src="/images/catarata/sintomas/vision-borrosa.jpg" alt="Visión borrosa" />
+              </div>
+            </div>
+            <h4 className="catarata-tarjeta-sintomas-titulo">Visión borrosa</h4>
+            <p className="catarata-tarjeta-sintomas-descripcion">Disminución de la claridad o nitidez de la visión.</p>
+          </div>
 
+          <div className="catarata-tarjetas-sintomas">
+            <div className="catarata-imagen-tarjeta-sintomas">
+              <div className="catarata-imagen-con-borde">
+                <img src="/images/catarata/sintomas/vision-opaca.jpg" alt="Visión opaca" />
+              </div>
+            </div>
+            <h4 className="catarata-tarjeta-sintomas-titulo">Visión opaca</h4>
+            <p className="catarata-tarjeta-sintomas-descripcion">La visión opaca produce que se oscurezcan los objetos apareciendo un “blanquecino”.</p>
+          </div>
+
+          <div className="catarata-tarjetas-sintomas">
+            <div className="catarata-imagen-tarjeta-sintomas">
+              <div className="catarata-imagen-con-borde">
+                <img src="/images/catarata/sintomas/aurelola-luces.jpg" alt="Aureola alrededor de luces" />
+              </div>
+            </div>
+            <h4 className="catarata-tarjeta-sintomas-titulo">Aureola alrededor de luces</h4>
+            <p className="catarata-tarjeta-sintomas-descripcion">Ver halos alrededor de las luces.</p>
+          </div>
+
+          <div className="catarata-tarjetas-sintomas">
+            <div className="catarata-imagen-tarjeta-sintomas">
+              <div className="catarata-imagen-con-borde">
+                <img src="/images/catarata/sintomas/vision-doble.jpg" alt="Visión doble" />
+              </div>
+            </div>
+            <h4 className="catarata-tarjeta-sintomas-titulo">Visión doble</h4>
+            <p className="catarata-tarjeta-sintomas-descripcion">Ver doble (este síntoma a veces desaparece a medida que la catarata crece).</p>
+          </div>
+        </div>
     </div>
 
   </>
