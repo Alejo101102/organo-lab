@@ -1,11 +1,10 @@
-.que-es-container {
+.catarata-container {
     background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
     width: 100vw;
-    height: 100vh;
+    height: 10vh;
     margin: 0;
     color: white;
     padding: 2rem;
-    min-height: 100vh;
 }
 
 .catarata-titulo {
@@ -19,17 +18,38 @@
     margin-bottom: 5rem;
 }
 
-.que-es-catarata-texto {
+.catarata-que-es-container {
+    background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.catarata-que-es-titulo {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700; /* Bold */
+    font-family: 'Inter', sans-serif;
+    margin: 2rem 0;
+    color: #fff;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+
+.catarata-que-es-catarata-texto {
     max-width: 1000px;
     margin: 2rem auto;
-    text-align: center;
+    text-align: justify;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     line-height: 1.8;
     margin-bottom: 5rem;
 }
 
-.que-es-catarata-texto p {
+.catarata-que-es-catarata-texto p {
     color: #fff;
 }
 
@@ -44,11 +64,10 @@
     overflow: hidden;
 }
 
-.que-es-modelo-3d {
-    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
-    height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
+.catarata-que-es-modelo-3d {
+    width: 800px; /* Asegúrate de que ocupe todo el ancho del contenedor */
+    height: 330px; /* Asegúrate de que ocupe toda la altura del contenedor */
     border-radius: 35px;
-    box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
     overflow: hidden;
     position: relative;
 }
@@ -71,11 +90,11 @@
     box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
 }
 
-.sintomas-container {
+.catarata-sintomas-container {
     background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
     width: 100vw;
-    height: 110vh;
-    margin-top: -50px;
+    height: 150vh;
+    margin-top: -200px;
     color: white;
     padding: 2rem;
     min-height: 100vh;
@@ -83,23 +102,24 @@
 
 .catarata-sintomas-titulo {
     text-align: center;
-    font-size: 96px;
+    font-size: 50px;
     font-weight: 700; /* Bold */
     font-family: 'Inter', sans-serif;
     margin: 2rem 0;
     color: #fff;
-    margin-top: 50px;
-    margin-bottom: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
 .catarata-sintomas-texto {
     max-width: 1000px;
     margin: 2rem auto;
-    text-align: center;
+    text-align: justify;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     line-height: 1.8;
-    margin-bottom: 5rem;
+    margin-top: -150px;
+    margin-bottom: 2.5rem;
 }
 
 .catarata-sintomas-texto p {
@@ -108,24 +128,80 @@
 
 
 .catarata-sintomas-texto ul {
-    margin-left: 20px;
-    padding-left: 20px;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0 ; /* Centra la lista */
+    max-width: 800px; /* Limita el ancho máximo de la lista */
 }
 
 .catarata-sintomas-texto ul li { 
     list-style-type: disc; 
-    list-style-position: inside;
     color: #fff; 
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     line-height: 1.8;
 }
 
-.sintomas-modelo-3d {
-    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
-    height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
+.catarata-sintomas-modelo-3d {
+    width: 800px; /* Asegúrate de que ocupe todo el ancho del contenedor */
+    height: 330px; /* Asegúrate de que ocupe toda la altura del contenedor */
     border-radius: 35px;
-    box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
     overflow: hidden;
     position: relative;
+    margin-top: -190px;
+}
+
+.catarata-contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.catarata-tarjetas-sintomas {
+    background-color: #ffffff10;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid #0099B8;
+    text-align: center;
+    color: white;
+}
+
+.catarata-imagen-tarjeta-sintomas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.catarata-imagen-con-borde {
+    background-color: #00000020;
+    padding: 8px;
+    border-radius: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catarata-imagen-con-borde img {
+    width: 125px;
+    height: 125px;
+    border-radius: 35px;
+    object-fit: cover;
+}
+
+.catarata-tarjeta-sintomas-titulo {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.catarata-tarjeta-sintomas-descripcion {
+    font-size: 1rem;
+    opacity: 0.85;
+    color: white;
 }
