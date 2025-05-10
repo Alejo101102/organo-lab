@@ -22,8 +22,8 @@ const PostProcessing = () => {
         {/* Viñeta negra básica */}
         <Vignette
           eskil={false}
-          offset={0.6}
-          darkness={1.7}
+          offset={0.8}
+          darkness={1.}
           blendFunction={THREE.AdditiveBlending}
         />
         {/* Aquí podrías agregar efectos personalizados basados en el cursor */}
