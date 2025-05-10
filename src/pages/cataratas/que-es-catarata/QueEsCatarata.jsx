@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
+import Staging from './staging/Staging';
 
 const QueEsCatarata = () => {
   const navigate = useNavigate();
@@ -120,6 +121,7 @@ const QueEsCatarata = () => {
             <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
               <Lights />  
               <Controls />
+              <Staging />
               <group
                 onPointerOver={() => setShowTooltip(true)}
                 onPointerOut={() => setShowTooltip(false)}
@@ -129,7 +131,7 @@ const QueEsCatarata = () => {
                   <RigidBody type="fixed" colliders="trimesh">
                     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow={true}>
                       <circleGeometry args={[12, 64]} />
-                      <meshStandardMaterial color="darkgray" />
+                      <meshStandardMaterial color="darkgray" shadowSide={2} />
                     </mesh>
                   </RigidBody>
 
