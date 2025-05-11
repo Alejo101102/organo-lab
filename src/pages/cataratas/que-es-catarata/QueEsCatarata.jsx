@@ -8,6 +8,7 @@ import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
 import Staging from './staging/Staging';
+import Title from './texts/Title';
 
 const QueEsCatarata = () => {
   const navigate = useNavigate();
@@ -122,6 +123,7 @@ const QueEsCatarata = () => {
               <Lights />  
               <Controls />
               <Staging />
+              <Title title={"Interactúa con el modelo"} />
               <group
                 onPointerOver={() => setShowTooltip(true)}
                 onPointerOut={() => setShowTooltip(false)}
@@ -129,13 +131,13 @@ const QueEsCatarata = () => {
                 <Physics>
 
                   <RigidBody type="fixed" colliders="trimesh">
-                    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow={true}>
+                    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
                       <circleGeometry args={[12, 64]} />
                       <meshStandardMaterial color="darkgray" shadowSide={2} />
                     </mesh>
                   </RigidBody>
 
-                  <BeginCataractEye scale={150} physics={false} position={[-0.7, 4.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                  <BeginCataractEye scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
                 </Physics>
               </group>
             </Canvas>
