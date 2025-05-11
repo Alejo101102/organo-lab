@@ -13,6 +13,8 @@ import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
 import { Environment, Stars, Sky } from '@react-three/drei';
+import { Text } from '@react-three/drei';
+
 
 
 
@@ -160,7 +162,7 @@ const QueEsGlaucoma = () => {
         <div className="tarjeta">
           <div className="modelo-tarjeta">
     
-            <Canvas camera={{ position: [2, 2.5, 8], fov: 50 }}>
+            <Canvas camera={{ position: [1, 1.5, 4], fov: 50 }}>
 
               <group
                 onPointerOver={() => setShowTooltip(true)}
@@ -169,7 +171,7 @@ const QueEsGlaucoma = () => {
 
               <ambientLight intensity={1} />
               <directionalLight
-                position={[5, 1.5, 1]}
+                position={[6, 1.5, 1]}
                 intensity={1}
                 castShadow={true}
                 shadow-mapSize-width={1024}
@@ -177,9 +179,20 @@ const QueEsGlaucoma = () => {
                 shadow-camera-near={1}
                 shadow-camera-far={10}
               />
-              <OrbitControls enableZoom={true} target={[0, 0.7, 0]} />
+              <OrbitControls target={[0.5, 1, 0]} enableZoom={true} />
               
-              <SightSymptomsGlaucoma rotation={[0, Math.PI, 0]} />
+              <SightSymptomsGlaucoma  />
+
+              <Text
+                position={[2, 2.0, 0]}
+                fontSize={0.15}
+                color="lightgray"
+                anchorX="center"
+                anchorY="middle"
+                maxWidth={4}
+              >
+                Pérdida de visión periférica
+              </Text>
               
               <PostProcessing />
               </group>

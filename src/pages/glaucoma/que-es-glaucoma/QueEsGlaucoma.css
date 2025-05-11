@@ -35,11 +35,15 @@
     object-fit: cover;
 }
 
-
-
-
-  
-
+.texto p,
+.descripcion {
+  font-family: 'Inter', sans-serif; /* Usa la fuente del segundo párrafo */
+  max-width: 800px;                  /* Aumenta el ancho de los párrafos */
+  margin: 0 auto 1em auto;           /* Centra los párrafos y agrega espacio inferior */
+  line-height: 1.6;                  /* Espaciado entre líneas cómodo */
+  font-size: 1.1rem;                 /* Tamaño de fuente uniforme */
+  text-align: justify;              /* Justifica el texto para uniformidad en los renglones */
+}
   
 
 .texto {
