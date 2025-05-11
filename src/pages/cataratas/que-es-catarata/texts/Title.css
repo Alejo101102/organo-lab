@@ -1,0 +1,18 @@
+.title h1 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+
+  /* Efecto de relieve 3D con múltiples sombras */
+    text-shadow:
+        1px 1px 0 #e04e2e,
+        2px 2px 0 #c44629,
+        3px 3px 1px #a53d23,
+        4px 4px 2px #84341d,
+        5px 5px 3px #662b18;
+
+  /* Opcional para mejorar el contraste */
+  letter-spacing: 2px;
+}
