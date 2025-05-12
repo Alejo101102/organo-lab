@@ -44,13 +44,14 @@
     margin: 2rem auto;
     text-align: justify;
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: auto;
     line-height: 1.8;
     margin-bottom: 5rem;
 }
 
 .catarata-que-es-catarata-texto p {
     color: #fff;
+    font-size: 20px;
 }
 
 .catarata-modelo-3d-container {
@@ -93,8 +94,8 @@
 .catarata-sintomas-container {
     background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
     width: 100vw;
-    height: 150vh;
-    margin-top: -200px;
+    height: 170vh;
+    margin-top: -100px;
     color: white;
     padding: 2rem;
     min-height: 100vh;
@@ -116,7 +117,7 @@
     margin: 2rem auto;
     text-align: justify;
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: auto;
     line-height: 1.8;
     margin-top: -100px;
     margin-bottom: 2.5rem;
@@ -124,6 +125,7 @@
 
 .catarata-sintomas-texto p {
     color: #fff;
+    font-size: 20px;
 }
 
 
@@ -137,7 +139,7 @@
 .catarata-sintomas-texto ul li { 
     list-style-type: disc; 
     color: #fff; 
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Inter', sans-serif;
     line-height: 1.8;
 }
@@ -205,3 +207,96 @@
     opacity: 0.85;
     color: white;
 }
+
+
+.burbuja-instrucciones {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1002;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icono-instrucciones {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00cc66;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* BURBUJA tipo chat */
+.tooltip-instrucciones {
+  position: relative;
+  margin-bottom: 8px;
+  background-color: white;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Triángulo abajo */
+.tooltip-instrucciones::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* debajo de la burbuja */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+
+/* Modal estilos (como antes) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-contenido {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: justify;
+  max-width: 500px;
+  width: 90%;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 0 30px rgba(255, 87, 51, 0.5);
+}
+
+.modal-contenido h2 {
+    text-align: center;
+}
+
+.cerrar-modal {
+  background: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin: 20px auto 0 auto; /* margen superior + centrado horizontal */
+  cursor: pointer;
+  display: block; /* necesario para que `margin: auto` funcione */
+}
+

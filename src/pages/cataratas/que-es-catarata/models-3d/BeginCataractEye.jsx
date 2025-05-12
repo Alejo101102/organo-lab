@@ -1,23 +1,29 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier';
 import { useFrame } from '@react-three/fiber';
 
-export function BeginCataractEye({ physics = true, rotate = true, ...props }) {
+export function BeginCataractEye({ physics = true, rotate = false, ...props }) {
     const { nodes, materials } = useGLTF('/models-3d/cataratas/begin-cataract-eye.glb')
-
-    console.log(nodes);
-    console.log(materials);
 
     const groupRef = useRef();
     const rigidBodyRef = useRef()
 
+    // Estado para controlar si el modelo está rotando
+    const [isRotating, setIsRotating] = useState(rotate);
+
+    // Usar useFrame para aplicar la rotación en cada frame si isRotating es true
     useFrame(() => {
-        if (rotate && groupRef.current) {
-            groupRef.current.rotation.y += 0.003; 
+        if (isRotating && groupRef.current) {
+        groupRef.current.rotation.y += 0.01; 
         }
     });
-  
+    
+    // Función para manejar el clic y alternar la rotación
+    const handleClick = () => {
+        setIsRotating(!isRotating);
+    };
+
     useEffect(() => {
         if (physics && rigidBodyRef.current) {
             rigidBodyRef.current.applyImpulse({ x: 0, y: 5, z: 0 }, true)
@@ -26,7 +32,7 @@ export function BeginCataractEye({ physics = true, rotate = true, ...props }) {
 
 
     const content = (
-        <group ref={groupRef} {...props} dispose={null}>
+        <group ref={groupRef} {...props} onClick={handleClick} dispose={null}>
             <mesh
                 castShadow
                 receiveShadow
