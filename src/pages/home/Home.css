@@ -7,6 +7,11 @@
   background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
   padding: 0 4rem;
   color: white;
+  transition: height 0.5s ease-in-out;
+}
+
+.home-container.expanded {
+  height: 105vh;
 }
 
 .model-container {
@@ -40,14 +45,13 @@
 
 .text-container .descripcion {
   max-width: 500px;
-  margin: 2rem 0 -2rem 0;
+  margin: 2rem 0 1.5rem 0;
   font-size: 1.1rem;
   line-height: 1.6;
   color: white;
   text-align: justify;          /* ← asegura alineación a la izquierda */
   align-self: flex-start;     /* ← posiciona el texto al inicio del contenedor */
 }
-
 
 .descripcion {
   font-size: 1rem;
@@ -56,11 +60,44 @@
   align-self: flex-start; 
   text-align: justify;
   width: 100%;
-  margin-top: 24px; /* Eliminamos el margen superior ya que añadimos espacio al título */
+  margin-top: 24px; 
+  margin-bottom: -100px;;
+}
+
+/* Estilos para la información adicional */
+.info-adicional {
+  background-color: rgba(15, 15, 62, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: -1rem;
+  max-width: 500px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-left: 3px solid #ff715b;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: justify;
+}
+
+.info-adicional h3 {
+  color: #ff715b;
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.info-adicional p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .botones {
-  margin-top: -5rem;
+  margin-top: -10rem;
   display: flex;
   gap: 0.8rem;
 }
@@ -73,29 +110,11 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 20px;
+  transition: all 0.3s ease;
+  margin-top: -50px;
 }
 
 .btn:hover {
   background-color: rgba(255, 113, 91, 0.321);
   text-decoration: none !important;
-}
-
-.btn-secundario {
-  padding: 0.8rem 1.5rem;
-  background-color: transparent;
-  border: 1px solid #ff715b;
-  color: white !important;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 20px;
-}
-
-.btn-secundario:hover {
-  background-color: rgba(255, 113, 91, 0.321);
-  text-decoration: none !important;
-}
-
-.img-rectangular {
-  width: 200px;
-  height: 200px;
 }
