@@ -1,7 +1,10 @@
 import { useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
+import { useRef, useEffect } from 'react'
+import { useFrame } from '@react-three/fiber';
 
-const EyeWithGlaucoma = (props) => {
+const EyeWithGlaucoma = ({rotate = true, ...props }) => {
+
+  const groupRef = useRef();
 
     const { nodes, materials } = useGLTF("/models-3d/eye-with-glaucoma.glb");
 
@@ -9,9 +12,15 @@ const EyeWithGlaucoma = (props) => {
      if (!nodes || !nodes.MeshIris || !nodes.MeshSclera) {
       return <p>Modelo no disponible o no cargado correctamente</p>;
       }
+
+      useFrame(() => {
+        if (rotate && groupRef.current) {
+          groupRef.current.rotation.y += 0.003; 
+        }
+      });
     
     return(
-      <group {...props} dispose={null}>
+      <group ref={ groupRef }{...props} dispose={null}>
       <group rotation={[-Math.PI, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh

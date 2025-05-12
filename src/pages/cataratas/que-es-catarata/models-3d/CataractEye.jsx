@@ -4,27 +4,28 @@ import { RigidBody } from '@react-three/rapier';
 import { useFrame } from '@react-three/fiber';
 
 export function CataractEye({ physics = true, rotate = true, ...props }) {
-  const { nodes, materials } = useGLTF('/models-3d/cataratas/que-es/cataract-eye.glb')
+  const { nodes, materials } = useGLTF('/models-3d/cataratas/cataract-eye.glb')
+
   console.log(nodes);
   console.log(materials);
-
+  
   const groupRef = useRef();
   const rigidBodyRef = useRef()
-
+  
   useFrame(() => {
     if (rotate && groupRef.current) {
       groupRef.current.rotation.y += 0.003; 
     }
   });
-
+    
   useEffect(() => {
     if (physics && rigidBodyRef.current) {
       rigidBodyRef.current.applyImpulse({ x: 0, y: 5, z: 0 }, true)
     }
   }, [physics])
 
+
   const content = (
-    
     <group ref={groupRef} {...props} dispose={null}>
       <mesh
         castShadow
@@ -130,4 +131,4 @@ export function CataractEye({ physics = true, rotate = true, ...props }) {
   }
 }
 
-useGLTF.preload('/models-3d/cataratas/que-es/cataract-eye.glb')
+useGLTF.preload('/models-3d/cataratas/cataract-eye.glb')

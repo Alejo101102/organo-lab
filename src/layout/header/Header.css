@@ -1,19 +1,34 @@
 header {
     background-color: #272343;
-    padding: 1rem;
+    padding: 1rem 0; /* Elimina padding horizontal y mantiene solo vertical */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    position: relative;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem; /* Añade padding horizontal */
+    position: relative; /* Para posicionamiento relativo */
 }
 
 .logo {
     width: 10%;
     height: auto;
+    margin-left: 3.5rem; /* Aumentado - mueve el logo más hacia la derecha */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 3.5rem; /* Aumentado - mueve los elementos de navegación más hacia la izquierda */
 }
 
 nav a {
@@ -26,8 +41,8 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-    text-underline-offset: 2.7px; /* Aumenta la separación del subrayado */
-    text-decoration-thickness: 2px; /* Hace el subrayado un poco más grueso */
+    text-underline-offset: 2.7px;
+    text-decoration-thickness: 2px;
 }
 
 .menu-item {
@@ -38,7 +53,7 @@ nav a:hover {
 .submenu {
     display: none;
     position: absolute;
-    top: 150%;  /* Separación más grande */
+    top: 150%;
     left: 0;
     background-color: white;
     border-radius: 8px;
@@ -60,7 +75,21 @@ nav a:hover {
     border-radius: 8px;
 }
 
-
 .menu-item:hover .submenu {
     display: block;
+}
+
+.login-link {
+    background-color: transparent;
+    border: 1px solid #ff715b;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    background-color: rgba(255, 113, 91, 0.321);
+    text-decoration: none !important;
 }

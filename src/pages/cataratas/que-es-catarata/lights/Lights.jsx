@@ -15,11 +15,11 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight intensity={3.5} />
+      <ambientLight intensity={2} />
       
       <directionalLight 
         position={[0, 5, 7]}
-        intensity={2.5}
+        intensity={5}
         castShadow={true}
         shadow-mapSize={[1024, 1024]}
       />
@@ -28,9 +28,9 @@ const Lights = () => {
         ref={spotLightRef}
         position={[0, 5, 9]}
         distance={25}
-        intensity={75}
+        intensity={100}
         angle={Math.PI / 3}
-        penumbra={0.3}
+        penumbra={0.5}
         castShadow={true}
         shadow-mapSize={[2048, 2048]}
         shadow-normalBias={0.05}
