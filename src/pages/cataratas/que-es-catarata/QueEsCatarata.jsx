@@ -9,12 +9,18 @@ import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
 import Staging from './staging/Staging';
 import Title from './texts/Title';
+import LightsSintomas from './lights/LightsSintomas';
+import { KeyboardControls } from '@react-three/drei';
 
 const QueEsCatarata = () => {
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const modelContainerRef = useRef(null);
+
+  const [showModal, setShowModal] = useState(false);
+
+
 
   // Función para manejar el movimiento del mouse
   const handleMouseMove = (event) => {
@@ -61,33 +67,49 @@ const QueEsCatarata = () => {
           )}
           
           <div className="catarata-que-es-modelo-3d" >
-            <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
-              <Lights />  
-              <Controls />
-              <group
-                onPointerOver={() => setShowTooltip(true)}
-                onPointerOut={() => setShowTooltip(false)}
-              >
-                <Physics>
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },     
+                { name: "down", keys: ["q", "PageDown"] } 
+              ]}
+            >
+              <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
+                <Lights />  
+                <Staging />
+                <Controls />
+                <Title title={"Catarata"} />
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <Physics>
 
-                  <RigidBody type="fixed" colliders="trimesh">
-                    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow={true}>
-                      <circleGeometry args={[12, 64]} />
-                      <meshStandardMaterial color="darkgray" />
-                    </mesh>
-                  </RigidBody>
+                    <RigidBody type="fixed" colliders="trimesh">
+                      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                        <circleGeometry args={[12, 64]} />
+                        <meshStandardMaterial color="darkgray" />
+                      </mesh>
+                    </RigidBody>
 
-                  <CataractEye scale={150} physics={false} position={[-0.7, 4.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
-                </Physics>
-              </group>
-            </Canvas>
+                    <CataractEye scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                  </Physics>
+                </group>
+              </Canvas>
+            </KeyboardControls>
           </div>
         </div>
 
       <div className="catarata-que-es-catarata-texto">
         <p>
           Una catarata es un área nublada en el cristalino, es decir, el "lente" de su ojo
-          (la parte clara de su ojo que ayuda a enfocar la luz). Las cataratas son muy comunes a medida que usted envejece. En efecto, más de la mitad de todos los estadounidenses de 80 años o más tiene cataratas o ha tenido cirugía para eliminarlas.
+          (la parte clara de su ojo, ubicada justo detrás del iris, que ayuda a enfocar la luz y proyectarla sobre la retina). 
+          Las cataratas son muy comunes a medida que usted envejece. 
+          En efecto, más de la mitad de todos los estadounidenses de 80 años o más tiene cataratas o ha tenido cirugía para 
+          eliminarlas.
         </p>
         <p>
           Al principio, es posible que usted no note que tiene una catarata. Pero con el paso del tiempo, las cataratas pueden hacer que su visión se haga borrosa, difusa, o menos colorida. Podría tener problemas para leer o realizar otras actividades cotidianas
@@ -119,28 +141,39 @@ const QueEsCatarata = () => {
           )}
           
           <div className="catarata-sintomas-modelo-3d" >
-            <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
-              <Lights />  
-              <Controls />
-              <Staging />
-              <Title title={"Interactúa con el modelo"} />
-              <group
-                onPointerOver={() => setShowTooltip(true)}
-                onPointerOut={() => setShowTooltip(false)}
-              >
-                <Physics>
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },     
+                { name: "down", keys: ["q", "PageDown"] }  
+              ]}
+            >
+              <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
+                <LightsSintomas />  
+                <Controls />
+                <Staging />
+                <Title title={"Comienzo de catarata"} />
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <Physics>
 
-                  <RigidBody type="fixed" colliders="trimesh">
-                    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
-                      <circleGeometry args={[12, 64]} />
-                      <meshStandardMaterial color="darkgray" shadowSide={2} />
-                    </mesh>
-                  </RigidBody>
+                    <RigidBody type="fixed" colliders="trimesh">
+                      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                        <circleGeometry args={[12, 64]} />
+                        <meshStandardMaterial color="darkgray" shadowSide={2} />
+                      </mesh>
+                    </RigidBody>
 
-                  <BeginCataractEye scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
-                </Physics>
-              </group>
-            </Canvas>
+                    <BeginCataractEye scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                  </Physics>
+                </group>
+              </Canvas>
+            </KeyboardControls>
           </div>
         </div>
 
@@ -148,7 +181,8 @@ const QueEsCatarata = () => {
 
         <div className="catarata-sintomas-texto">
           <p>
-            Usted podría no tener síntomas al principio, cuando las cataratas son leves. Pero a medida que las cataratas crecen, pueden causar cambios en su visión. Por ejemplo, usted podría notar que:
+            Usted podría no tener síntomas al principio, cuando las cataratas son leves. 
+            Pero a medida que las cataratas crecen, pueden causar cambios en su visión. Por ejemplo, usted podría notar que:
           </p>
           <ul>
             <li>Su visión está nublada o borrosa.</li>
@@ -201,6 +235,43 @@ const QueEsCatarata = () => {
           </div>
         </div>
     </div>
+
+    <div
+      className="burbuja-instrucciones"
+      onClick={() => setShowModal(true)}
+    >
+      <div className="tooltip-instrucciones">Instrucciones</div>
+      <img
+        src="/images/icons/bot.png"
+        alt="Instrucciones"
+        className="icono-instrucciones"
+      />
+    </div>
+
+      {showModal && (
+      <div className="modal-overlay" onClick={() => setShowModal(false)}>
+        <div className="modal-contenido" onClick={e => e.stopPropagation()}>
+          <h2>Instrucciones</h2>
+          <p>🖱️ Usa el mouse para mover el modelo 3D (arrastra de un lado al otro).</p>
+          <p>🔍 Acércate o aléjate con la rueda del mouse.</p>
+          <p>👈 Da clic al modelo para que comience rotar o se detenga.</p>
+          <p>⌨️ Para mover la cámara del modelo 3D pon el cursor sobre el modelo o en una esquina del recuadro 
+            (que te aparezca el texto "Mueve el modelo 3D" arriba del cursor)
+            y utiliza las siguientes teclas:
+            <ul>
+              <li>◉ W: Adelante</li>
+              <li>◉ S: Atrás</li>
+              <li>◉ A: Izquierda</li>
+              <li>◉ D: Derecha</li>
+              <li>◉ E: Arriba</li>
+              <li>◉ Q: Abajo</li>
+            </ul>
+          </p>
+          <button className="cerrar-modal" onClick={() => setShowModal(false)}>Cerrar</button>
+        </div>
+      </div>
+    )}
+
 
   </>
 
