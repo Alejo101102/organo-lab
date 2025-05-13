@@ -15,9 +15,8 @@ import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
-import ModeloGlaucoma3D from './pages/glaucoma/que-es-glaucoma/explorar-modelo/ModeloGlaucoma3D'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
-import SintomasGlaucoma from './pages/glaucoma/sintomas/SintomasGlaucoma'
+
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -36,8 +35,6 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="glaucoma" element={<Glaucoma />} > 
           <Route path="que-es" element={<QueEsGlaucoma />} />
-          <Route path="que-es/modelo-3d" element={<ModeloGlaucoma3D />} />
-          <Route path="sintomas" element={<SintomasGlaucoma />} />
         </Route>
 
         <Route path="conjuntivitis" element={<Conjuntivitis/>}>
