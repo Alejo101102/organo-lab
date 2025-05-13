@@ -1,110 +1,270 @@
-
-.que-es-container {
-    background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    color: white;
-    padding: 2rem;
-    min-height: 100vh;
+/* === CONTENEDORES PRINCIPALES === */
+.glaucoma-que-es-container,
+.sintomas-container {
+  background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
+  width: 100%;
+  margin: 0;
+  color: white;
+  padding: 2rem;
+  min-height: 100vh;
 }
 
-.titulo {
-    text-align: center;
-    font-size: 96px;
-    font-weight: 700; /* Bold */
-    font-family: 'Inter', sans-serif;
-    margin: 2rem 0;
-    color: #fff;
-    margin-bottom: 5rem; 
+/* === TÍTULOS === */
+.glaucoma-titulo {
+  text-align: center;
+  font-size: 96px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  margin: 50px 0 5rem;
 }
 
-
-.modelo-3d {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 20px;
-    overflow: hidden;
-  }  
-
-
-.img-cuadrada {
-    width: 180px;
-    height: 180px;
-    border-radius: 35px;
-    object-fit: cover;
+.tarjeta-titulo {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
 }
 
-.texto p,
-.descripcion {
-  font-family: 'Inter', sans-serif; /* Usa la fuente del segundo párrafo */
-  max-width: 800px;                  /* Aumenta el ancho de los párrafos */
-  margin: 0 auto 1em auto;           /* Centra los párrafos y agrega espacio inferior */
-  line-height: 1.6;                  /* Espaciado entre líneas cómodo */
-  font-size: 1.1rem;                 /* Tamaño de fuente uniforme */
-  text-align: justify;              /* Justifica el texto para uniformidad en los renglones */
-}
-  
-
-.texto {
-    max-width: 1000px;
-    margin: 2rem auto;
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
-    font-weight: 500;
-    margin-bottom: 5rem; 
-}
-
+/* === TEXTOS DESCRIPTIVOS === */
+.glaucoma-descripcion-que-es,
+.glaucoma-descripcion-sintomas,
 .texto p {
-    color: #fff;
+  font-family: 'Inter', sans-serif;
+  max-width: 800px;
+  margin: 0 auto 1em;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-align: justify;
+  color: #fff;
 }
 
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 5rem;
+/* === MODELOS 3D === */
+.glaucoma-modelo-3d-container {
+  width: 100%;
+  height: 800px;
+  margin: 0 auto;
 }
 
-.btn-rojo {
-    background-color: #FF715B;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px; /* tamaño de letra */
-    cursor: pointer;
+.glaucoma-modelo-3d {
+  width: 75% !important;
+  height: 40% !important;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.btn-azul {
-    background-color: #6C7ECB;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px; /* tamaño de letra */
-    cursor: pointer;
+/* === TOOLTIP === */
+.modelo-tooltip,
+.glaucoma-modelo-tooltip {
+  position: fixed;
+  background-color: #000000D9;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.1s ease;
+  opacity: 1;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  box-shadow: 0px 2px 4px #00000040;
 }
 
-.btn-rojo:hover {
-    background-color: #ff5b45; /* un rojo un poco más fuerte */
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+/* === TARJETAS DE SÍNTOMAS === */
+.tarjeta {
+  background-color: #ffffff10;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0099B8;
+  text-align: center;
+  color: white;
 }
 
-.btn-azul:hover {
-    background-color: #5a6abb; /* un azul más oscuro */
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+.modelo-tarjeta {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
-.modelo-3d-container {
-    width: 100%;
-    height: 800px;
-    margin: 0 auto;
-  }
+.tarjeta-descripcion {
+  font-size: 1rem;
+  opacity: 0.85;
+  color: white;
+}
+
+/* === MENSAJE DESTACADO === */
+.alerta {
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* === SECCIÓN PREVENCIÓN === */
+.glaucoma-prevencion-container {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.glaucoma-prevencion-titulo {
+  text-align: center;
+  font-size: 96px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: #0f0f3e;
+  margin: 50px 0 5rem;
+}
+
+/* === CARRUSEL === */
+.glaucoma-carrusel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+
+
+.glaucoma-tarjeta.central {
+  background: #0099B8;
+  transform: scale(1.05);
+}
+
+.glaucoma-icono {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.glaucoma-tarjeta-titulo {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === FLECHAS CARRUSEL === */
+.glaucoma-carrusel-btn {
+  background: red;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* === ALERTA === */
+.glaucoma-alerta {
+  color: red;
+  font-weight: bold;
+  border: 1px solid red;
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+/* === BARRAS === */
+.glaucoma-barras-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.glaucoma-barra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 80%;
+  max-width: 500px;
+}
+
+.glaucoma-barra-progreso {
+  flex: 1;
+  background: #eee;
+  border-radius: 20px;
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.glaucoma-barra-progreso .progreso {
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+}
+
+.glaucoma-barra-progreso span {
+  position: absolute;
+  right: 10px;
+  font-weight: bold;
+}
+
+.glaucoma-barra-icono {
+  width: 30px;
+  height: auto; /* o puedes usar height: 30px para hacerlo cuadrado */
+}
+
+.glaucoma-tarjeta-icono {
+  width: 100px;
+  height: 100px; /* o puedes usar height: 30px para hacerlo cuadrado */
+}
+
+.glaucoma-tarjeta-descripcion {
+  text-align: justify
   
+  
+}
+
+.glaucoma-carrusel {
+  overflow-y: hidden;
+}
+
+.modelo-snellen {
+  width: 100%;
+  height: 200px;
+}
+
+/* 1. Animación fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica la animación a cada tarjeta */
+.glaucoma-tarjeta {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0; /* Se mostrará al completar animación */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05); /* fondo translúcido opcional */
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 2. Efecto al pasar el cursor */
+.glaucoma-tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+
