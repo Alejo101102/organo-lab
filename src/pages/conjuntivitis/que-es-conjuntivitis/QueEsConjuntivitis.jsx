@@ -1,84 +1,103 @@
 import './QueEsConjuntivitis.css';
-import { Link, useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { Model } from '../ModelosConjuntivitis/QueEsConjuntivitisModel';
-import { useState, useRef } from 'react';
+import { ModeloQueEsConjuntivitis } from '../que-es-conjuntivitis/Modelos3DConjuntivitis/QueEsConjuntivitisModel';
 
-const QueEsConjuntivitis = () => {
+import { Link, useNavigate } from 'react-router';
+import { useRef, useState } from 'react';
+import Lights from './lights/LightsConjuntivitis';
+import Controls from './controls/ControlsConjuntivitis';
+import { Physics, RigidBody } from '@react-three/rapier';
+import Staging from './staging/StagingConjuntivitis';
+import Title from './texts/TitleConjuntivitis';
+import { KeyboardControls } from '@react-three/drei';
+
+const QueEsConjuntivitis = () =>  {
   const navigate = useNavigate();
-
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const modelContainerRef = useRef(null);
 
+  const [showModal, setShowModal] = useState(false);
+
+
+
+  // Función para manejar el movimiento del mouse
   const handleMouseMove = (event) => {
+    // Actualiza la posición del tooltip según la posición del mouse
     setTooltipPosition({
       x: event.clientX,
       y: event.clientY
     });
   };
 
-  const handleModelHover = () => {
-    setShowTooltip(true);
-  };
-
-  const handleModelLeave = () => {
-    setShowTooltip(false);
-  };
+    // Función para manejar el hover sobre el modelo 3D
+    const handleModelHover = () => {
+      setShowTooltip(true);
+    };
+  
+    // Función para manejar cuando el cursor sale del modelo 3D
+    const handleModelLeave = () => {
+      setShowTooltip(false);
+    };
 
   return (
-    <div className="que-es-container">
-      <h1 className="titulo">CONJUNTIVITIS</h1>
 
-      <div className="imagenes">
-        <img
-          src="/images/conjuntivitis/QueEsConjuntivitisAnatomia.jpg"
-          alt="Anatomía de Conjuntivitis"
-          className="img-cuadrada"
-        />
-
-        <div
-          className="modelo-3d-container"
+    <div className="conjuntivitis-que-es-container">
+      <h3 className="conjuntivitis-titulo">Conjuntivitis</h3>
+      
+        <div 
+          className="conjuntivitis-modelo-3d-container"
           ref={modelContainerRef}
           onMouseMove={handleMouseMove}
           onMouseEnter={handleModelHover}
           onMouseLeave={handleModelLeave}
         >
           {showTooltip && (
-            <div
-              className="modelo-tooltip"
-              style={{
-                left: tooltipPosition.x,
-                top: tooltipPosition.y - 30,
-                position: 'fixed'
-              }}
-            >
-              Ver modelo 3D
+            <div className="conjuntivitis-modelo-tooltip" style={{
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+              position: 'fixed'
+            }}>
+              Mueve el modelo 3D
             </div>
           )}
+          
+          <div className="conjuntivitis-que-es-modelo-3d" >
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },     
+                { name: "down", keys: ["q", "PageDown"] } 
+              ]}
+            >
+              <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
+                <Lights />  
+                <Staging />
+                <Controls />
+                <Title title={"Conjuntivitis"} />
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <Physics>
 
-          <div className="modelo-3d">
-            <Canvas style={{ width: '300px', height: '200px' }} camera={{ position: [0, 0, 0.3] }}>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[1, 2, 3]} intensity={1} />
-              <OrbitControls />
-              <Model
-                scale={4}
-                onClick={() => navigate('/conjuntivitis/que-es/modelo-3d')}
-                onPointerOver={() => setShowTooltip(true)}
-                onPointerOut={() => setShowTooltip(false)}
-              />
-            </Canvas>
+                    <RigidBody type="fixed" colliders="trimesh">
+                      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                        <circleGeometry args={[12, 64]} />
+                        <meshStandardMaterial color="#888888" />
+                      </mesh>
+                    </RigidBody>
+
+                    <ModeloQueEsConjuntivitis scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                  </Physics>
+                </group>
+              </Canvas>
+            </KeyboardControls>
           </div>
         </div>
-
-        <img
-          src="/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg"
-          alt="Conjuntivitis persona 1"
-          className="img-cuadrada"
-        />
-      </div>
 
       <div className="texto">
         <p>
@@ -89,22 +108,10 @@ const QueEsConjuntivitis = () => {
           Existen varios tipos de conjuntivitis, incluyendo la conjuntivitis viral, bacteriana y alérgica. Los síntomas comunes incluyen enrojecimiento, picazón, secreción y sensación arenosa en los ojos.
         </p>
       </div>
-
-      <div className="mensaje-informativo">
-        <p>Haz clic sobre el modelo 3D para verlo más de cerca en un entorno mejorado.</p>
-      </div>
-
-      <div className="botones">
-        <Link to="/conjuntivitis/sintomas">
-          <button className="btn-rojo">SÍNTOMAS</button>
-        </Link>
-
-        <Link to="/conjuntivitis/tratamientos">
-          <button className="btn-azul">TRATAMIENTOS</button>
-        </Link>
-      </div>
+    
     </div>
   );
 };
+
 
 export default QueEsConjuntivitis;
