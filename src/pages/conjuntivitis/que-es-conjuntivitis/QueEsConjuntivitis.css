@@ -40,6 +40,7 @@
 }
 
 .conjuntivitis-que-es-conjuntivitis-texto {
+    margin-top: 5rem;
     max-width: 1000px;
     margin: 2rem auto;
     text-align: justify;
@@ -63,6 +64,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-top: 5rem;
 }
 
 .conjuntivitis-que-es-modelo-3d {
@@ -232,6 +234,72 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+
+
+
+/*CSS de SINTOMAS*/
+
+.conjuntivitis-sintomas-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
+  padding: 4rem 2rem;
+}
+
+.conjuntivitis-sintomas-container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.sintomas {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Inter', sans-serif;
+  color: #1c1c1c;
+}
+
+.sintomas h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #0f0f3e; /* Azul oscuro del diseño */
+  text-align: center;
+  font-weight: 700;
+}
+
+.sintomas ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.sintomas li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1c1c1c;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.sintomas li::before {
+  content: '•';
+  color: #0f0f3e; /* Viñeta en azul oscuro */
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+}
+
+
+
+
+
+
 /* BURBUJA tipo chat */
 .tooltip-instrucciones {
   position: relative;
@@ -299,4 +367,7 @@
   cursor: pointer;
   display: block; /* necesario para que `margin: auto` funcione */
 }
+
+
+
 
