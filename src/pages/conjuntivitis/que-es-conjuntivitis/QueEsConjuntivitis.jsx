@@ -1,13 +1,15 @@
 import './QueEsConjuntivitis.css';
 import { Canvas } from '@react-three/fiber';
 import { ModeloQueEsConjuntivitis } from '../que-es-conjuntivitis/Modelos3DConjuntivitis/QueEsConjuntivitisModel';
-
+import { ModeloSintomasConjuntivitis} from '../que-es-conjuntivitis/Modelos3DConjuntivitis/SintomasConjuntivitisModel'
 import { Link, useNavigate } from 'react-router';
 import { useRef, useState } from 'react';
-import Lights from './lights/LightsConjuntivitis';
+import LightsQueEs from './lights/LightsConjuntivitisQueEs';
+import LightsSintomas from './lights/LightsConjuntivitisSintomas';
 import Controls from './controls/ControlsConjuntivitis';
 import { Physics, RigidBody } from '@react-three/rapier';
-import Staging from './staging/StagingConjuntivitis';
+import StagingQueEs from './staging/StagingConjuntivitisQueEs';
+import StagingSintomas from './staging/StagingConjuntivitisSintomas';
 import Title from './texts/TitleConjuntivitis';
 import { KeyboardControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -75,8 +77,8 @@ const QueEsConjuntivitis = () =>  {
                 ]}
               >
                 <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
-                  <Lights />  
-                  <Staging />
+                  <LightsQueEs />  
+                  <StagingQueEs />
                   <Controls />
                   <Title title={"Conjuntivitis"} />
                   <group
@@ -111,7 +113,7 @@ const QueEsConjuntivitis = () =>  {
           </p>
         </div>
       
-  {/*Apartir de esta seccion son los SINTOMAS*/}
+    {/*Apartir de esta seccion son los SINTOMAS*/}
 
         <div className="conjuntivitis-sintomas-wrapper">
           <div className="conjuntivitis-sintomas-container">
@@ -132,7 +134,56 @@ const QueEsConjuntivitis = () =>  {
                 <li>📉 Visión ligeramente borrosa por secreciones</li>
                 <li>⚡ Sensibilidad a la luz</li>
               </ul>
+
+           {/*Modelo 3d de los sintomas */}
+           
+            <div className="conjuntivitis-que-es-modelo-3d" >
+              <KeyboardControls
+                map={[
+                  { name: "forward", keys: ["w", "ArrowUp"] },
+                  { name: "backward", keys: ["s", "ArrowDown"] },
+                  { name: "left", keys: ["a", "ArrowLeft"] },
+                  { name: "right", keys: ["d", "ArrowRight"] },
+                  { name: "up", keys: ["e", "PageUp"] },     
+                  { name: "down", keys: ["q", "PageDown"] } 
+                ]}
+              >
+                <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
+                  <LightsSintomas />  
+                  <StagingSintomas />
+                  <Controls />
+                  <Title title={"Sintomas"} />
+                  <group
+                    onPointerOver={() => setShowTooltip(true)}
+                    onPointerOut={() => setShowTooltip(false)}
+                  >
+                    <Physics>
+
+                      <RigidBody type="fixed" colliders="trimesh">
+                        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                          <circleGeometry args={[12, 64]} />
+                          <meshStandardMaterial color="#888888" />
+                        </mesh>
+                      </RigidBody>
+
+                      <ModeloSintomasConjuntivitis scale={600} physics={false} position={[0, -2, 0]} castshadow={true} /> 
+                    </Physics>
+                  </group>
+                </Canvas>
+              </KeyboardControls>
+            </div>
+            <p></p>
+
             </motion.div>
+
+          
+
+
+
+
+
+
+            
           </div>
         </div>
 
