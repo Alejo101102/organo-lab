@@ -111,7 +111,9 @@
 }
 
 .conjuntivitis-sintomas-texto {
+    margin-top: 5rem;
     max-width: 1000px;
+    margin: 2rem auto;
     text-align: justify;
     font-family: 'Inter', sans-serif;
     font-size: auto;
@@ -254,6 +256,12 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   font-family: 'Inter', sans-serif;
   color: #1c1c1c;
+  margin: 4rem auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ⬅️ Centra horizontalmente todo */
+  text-align: center;
 }
 
 .sintomas h4 {

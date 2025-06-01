@@ -5,7 +5,6 @@ import { useFrame } from '@react-three/fiber';
 
 export function ModeloQueEsConjuntivitis({ physics = false, rotate = false, ...props }) {
   const { nodes, materials } = useGLTF('/models-3d/que_es_conjuntivitis.glb')
-  
   const groupRef = useRef();
   const rigidBodyRef = useRef();
 
