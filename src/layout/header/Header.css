@@ -18,9 +18,10 @@ nav {
 }
 
 .logo {
-    width: 10%;
+    width: 100%;
+    max-width: 120px;
     height: auto;
-    margin-left: 3.5rem; /* Aumentado - mueve el logo más hacia la derecha */
+    margin-left: 3.5rem;
 }
 
 .nav-links {
