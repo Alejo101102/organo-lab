@@ -93,7 +93,7 @@
 }
 
 .conjuntivitis-sintomas-container {
-    background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
+    
     width: 100vw;
     margin-top: -100px;
     color: white;
@@ -239,7 +239,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
+ 
   padding: 4rem 2rem;
 }
 
