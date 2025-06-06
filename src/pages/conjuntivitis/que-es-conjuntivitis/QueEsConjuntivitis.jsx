@@ -1,15 +1,21 @@
 import './QueEsConjuntivitis.css';
 import { Canvas } from '@react-three/fiber';
 import { ModeloQueEsConjuntivitis } from '../que-es-conjuntivitis/Modelos3DConjuntivitis/QueEsConjuntivitisModel';
-import { ModeloSintomasConjuntivitis} from '../que-es-conjuntivitis/Modelos3DConjuntivitis/SintomasConjuntivitisModel'
+import { ModeloSintomasConjuntivitis} from '../que-es-conjuntivitis/Modelos3DConjuntivitis/SintomasConjuntivitisModel';
+import { ModeloTratamientosConjuntivitis} from '../que-es-conjuntivitis/Modelos3DConjuntivitis/TratamientosConjuntivitisModel';
+
 import { Link, useNavigate } from 'react-router';
 import { useRef, useState } from 'react';
 import LightsQueEs from './lights/LightsConjuntivitisQueEs';
 import LightsSintomas from './lights/LightsConjuntivitisSintomas';
+import LightsTratamientos from './lights/LightsConjuntivitisTratamientos';
+
 import Controls from './controls/ControlsConjuntivitis';
 import { Physics, RigidBody } from '@react-three/rapier';
 import StagingQueEs from './staging/StagingConjuntivitisQueEs';
 import StagingSintomas from './staging/StagingConjuntivitisSintomas';
+import StagingTratamientos from './staging/StagingConjuntivitisTratamientos';
+
 import Title from './texts/TitleConjuntivitis';
 import { KeyboardControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -185,6 +191,7 @@ const QueEsConjuntivitis = () =>  {
 
 
             {/* Sección DE TRATAMIENTOS */}
+          
             <div className="conjuntivitis-tratamientos-wrapper">
               <div className="conjuntivitis-tratamientos-container">
                 <motion.div 
@@ -203,15 +210,43 @@ const QueEsConjuntivitis = () =>  {
                     <li>📆 Visita al oftalmólogo si los síntomas persisten más de 3 días</li>
                   </ul>
 
-                  
+                  {/* Modelo 3D opcional de tratamientos */}
+                  <div className="conjuntivitis-que-es-modelo-3d" >
+                    <KeyboardControls
+                      map={[
+                        { name: "forward", keys: ["w", "ArrowUp"] },
+                        { name: "backward", keys: ["s", "ArrowDown"] },
+                        { name: "left", keys: ["a", "ArrowLeft"] },
+                        { name: "right", keys: ["d", "ArrowRight"] },
+                        { name: "up", keys: ["e", "PageUp"] },
+                        { name: "down", keys: ["q", "PageDown"] }
+                      ]}
+                    >
+                      <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
+                        <LightsTratamientos />
+                        <StagingTratamientos />
+                        <Controls />
+                        <Title title={"Tratamientos"} />
+                        <group
+                          onPointerOver={() => setShowTooltip(true)}
+                          onPointerOut={() => setShowTooltip(false)}
+                        >
+                          <Physics>
+                            <RigidBody type="fixed" colliders="trimesh">
+                              <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                                <circleGeometry args={[12, 64]} />
+                                <meshStandardMaterial color="#888888" />
+                              </mesh>
+                            </RigidBody>
+                            <ModeloTratamientosConjuntivitis scale={600} physics={false} position={[0, -2, 0]} castshadow={true} />
+                          </Physics>
+                        </group>
+                      </Canvas>
+                    </KeyboardControls>
+                  </div>
                 </motion.div>
               </div>
             </div>
-
-
-
-
-
 
             
           </div>
