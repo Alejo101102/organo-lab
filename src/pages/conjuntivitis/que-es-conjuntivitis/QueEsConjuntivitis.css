@@ -301,6 +301,61 @@
 
 
 
+/* CSS DE TRATAMIENTOS */
+
+.tratamientos {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  margin: 4rem auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: none;
+}
+
+.tratamientos h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: white;
+  font-weight: 700;
+}
+
+.tratamientos ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.tratamientos li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.tratamientos li::before {
+  content: '•';
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+}
+
+
+
+
+
+
 
 /* BURBUJA tipo chat */
 .tooltip-instrucciones {
