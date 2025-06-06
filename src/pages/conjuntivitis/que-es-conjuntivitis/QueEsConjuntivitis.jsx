@@ -183,6 +183,36 @@ const QueEsConjuntivitis = () =>  {
 
 
 
+
+            {/* Sección DE TRATAMIENTOS */}
+            <div className="conjuntivitis-tratamientos-wrapper">
+              <div className="conjuntivitis-tratamientos-container">
+                <motion.div 
+                  className="tratamientos"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  viewport={{ once: true, amount: 0.4 }}
+                >
+                  <h4>Tratamientos para la Conjuntivitis</h4>
+                  <ul>
+                    <li>💧 Limpieza frecuente de los ojos con solución salina</li>
+                    <li>🧴 Uso de colirios antibióticos (si es bacteriana)</li>
+                    <li>🧼 Evitar tocarse los ojos con las manos sucias</li>
+                    <li>👓 Usar gafas oscuras para aliviar la sensibilidad a la luz</li>
+                    <li>📆 Visita al oftalmólogo si los síntomas persisten más de 3 días</li>
+                  </ul>
+
+                  
+                </motion.div>
+              </div>
+            </div>
+
+
+
+
+
+
             
           </div>
         </div>
