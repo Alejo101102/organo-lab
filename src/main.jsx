@@ -15,10 +15,11 @@ import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
-
+import ScrollToTop from './layout/scroollTop'; 
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+  <ScrollToTop/>
     <Layout>
       <Routes>
         <Route index path="/" element={<Home />} />  

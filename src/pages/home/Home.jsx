@@ -41,7 +41,7 @@ const Home = () => {
             <p>Descubre cómo afectan a tus ojos enfermedades como el agujero macular, las cataratas, la conjuntivitis y el glaucoma. 
               Aprende sobre sus síntomas, tratamientos efectivos y los cuidados esenciales para prevenirlas. 
               ¡Cuida tu vista y mantén tus ojos saludables con la información que necesitas!</p>
-            <p>Explora la sección de <strong>Enfermedades</strong> para aprender más sobre algunas condiciones que pueden afectar la salud visual.</p>
+            <p>Para conocer más sobre distintas condiciones que afectan la salud visual, dirígete a la sección <strong>Enfermedades</strong> en el menú superior y haz clic en la que te interese.</p>
           </div>
         )}
         

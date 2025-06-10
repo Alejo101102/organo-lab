@@ -128,7 +128,7 @@ const QueEsConjuntivitis = () =>  {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
             <div className="sintomas-texto">
               <h4>Síntomas de la Conjuntivitis</h4>
@@ -202,7 +202,7 @@ const QueEsConjuntivitis = () =>  {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
-                  viewport={{ once: true, amount: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
                 >
                 
                 {/* Modelo 3D opcional de tratamientos */}
