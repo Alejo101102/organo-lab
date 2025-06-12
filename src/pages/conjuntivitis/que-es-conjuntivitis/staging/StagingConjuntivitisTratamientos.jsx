@@ -5,7 +5,7 @@ const Staging = () => {
   return (
     <>
         <Environment 
-            files={['/staging/catarata/hdris/hospital.hdr']}
+            files={['/staging/catarata/hdris/hospital_room.hdr']}
             
             background
         />
