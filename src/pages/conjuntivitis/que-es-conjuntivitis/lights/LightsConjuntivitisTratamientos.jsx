@@ -20,7 +20,7 @@ const Lights = () => {
       <directionalLight 
         position={[0, 5, 7]}
         intensity={1.2} // ligeramente más intensa
-        color="#ffffff"
+        color="#00ff00"
         castShadow={true}
         shadow-mapSize-width={2048} // mejor resolución
         shadow-mapSize-height={2048}
@@ -36,7 +36,7 @@ const Lights = () => {
         ref={spotLightRef}
         position={[2, 6, 5]} // mueve un poco la posición
         distance={100}
-        color="#ffffff"
+        color="#00ff00"
         intensity={120} // aún más fuerte
         angle={Math.PI / 2} // más enfocado
         penumbra={0.6}
@@ -51,7 +51,7 @@ const Lights = () => {
       <pointLight 
         position={[5, 2, -5]} 
         intensity={1.3} 
-        color="#ffffff"
+        color="#00ff00"
         castShadow={false} 
       />
     </>
