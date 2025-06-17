@@ -17,6 +17,8 @@ import StagingSintomas from './staging/StagingConjuntivitisSintomas';
 import StagingTratamientos from './staging/StagingConjuntivitisTratamientos';
 
 import Title from './texts/TitleConjuntivitis';
+import Text2D from './texts/Text2D';
+import Text3D from './texts/Text3D';
 import { KeyboardControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 
@@ -86,6 +88,8 @@ const QueEsConjuntivitis = () =>  {
                   <LightsQueEs />  
                   <StagingQueEs />
                   <Controls />
+                  <Text3D text3d={"Que es?"}/>
+                  <Text2D text={"Conjuntivitis"}/>
                   <Title title={"Conjuntivitis"} />
                   <group
                     onPointerOver={() => setShowTooltip(true)}
@@ -119,7 +123,7 @@ const QueEsConjuntivitis = () =>  {
           </p>
         </div>
       
-    {/*Apartir de esta seccion son los SINTOMAS*/}
+        {/*Apartir de esta seccion son los SINTOMAS*/}
 
         <div className="conjuntivitis-sintomas-wrapper">
           <div className="conjuntivitis-sintomas-container">
@@ -255,7 +259,17 @@ const QueEsConjuntivitis = () =>  {
               </div>
             </div>
 
-            
+
+
+
+
+
+
+
+
+
+
+    </div>      
           
 
 
@@ -264,7 +278,53 @@ const QueEsConjuntivitis = () =>  {
 
 
 
+
+
+
+
+
+
+{/*Instrucciones */}
+
+<div
+      className="burbuja-instrucciones"
+      onClick={() => setShowModal(true)}
+    >
+      <div className="tooltip-instrucciones">Explora el modelo</div>
+      <img
+        src="/images/icons/bot.png"
+        alt="Instrucciones"
+        className="icono-instrucciones"
+      />
+    </div>
+
+      {showModal && (
+      <div className="modal-overlay" onClick={() => setShowModal(false)}>
+        <div className="modal-contenido" onClick={e => e.stopPropagation()}>
+          <h2>Instrucciones</h2>
+          <p>🖱️ Usa el mouse para mover el modelo 3D (arrastra de un lado al otro).</p>
+          <p>🔍 Acércate o aléjate con la rueda del mouse.</p>
+          <p>👈 Da clic al modelo para que comience rotar o se detenga.</p>
+          <p>⌨️ Para mover la cámara del modelo 3D pon el cursor sobre el modelo o en una esquina del recuadro 
+            (que te aparezca el texto "Mueve el modelo 3D" arriba del cursor)
+            y utiliza las siguientes teclas:
+            <ul>
+              <li>◉ W: Adelante</li>
+              <li>◉ S: Atrás</li>
+              <li>◉ A: Izquierda</li>
+              <li>◉ D: Derecha</li>
+              <li>◉ E: Arriba</li>
+              <li>◉ Q: Abajo</li>
+            </ul>
+          </p>
+          <button className="cerrar-modal" onClick={() => setShowModal(false)}>Cerrar</button>
+        </div>
       </div>
+    )}
+
+
+
+      
   </>
     
   );
