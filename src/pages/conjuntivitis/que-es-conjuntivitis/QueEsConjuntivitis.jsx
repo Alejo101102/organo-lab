@@ -19,6 +19,7 @@ import StagingTratamientos from './staging/StagingConjuntivitisTratamientos';
 import Title from './texts/TitleConjuntivitis';
 import Text2D from './texts/Text2D';
 import Text3D from './texts/Text3D';
+import BotonVideo from './texts/ButtonVideo';
 import { KeyboardControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 
@@ -90,7 +91,7 @@ const QueEsConjuntivitis = () =>  {
                   <Controls />
                   <Text3D text3d={"Que es?"}/>
                   <Text2D text={"Conjuntivitis"}/>
-                  <Title title={"Conjuntivitis"} />
+                  <BotonVideo/>
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}

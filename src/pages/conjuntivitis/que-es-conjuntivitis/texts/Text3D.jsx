@@ -12,8 +12,8 @@ const Text3d = ({ text3d }) => {
       font="/fonts/alice.json"
       bevelEnabled
       bevelSize={0.1}
-      bevelThinckness={0.1}
-      hight={0.01}
+      bevelThickness={0.1}
+      height={0.5}
       lineHeight={0.8}
       letterSpacing={0.01}
       size={5}
