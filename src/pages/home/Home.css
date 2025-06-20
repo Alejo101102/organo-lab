@@ -1,20 +1,25 @@
 .home-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  min-height: 100vh; /* Permite que crezca más si el contenido lo necesita */
-  width: 100%;
+  align-items: center;
+  height: 82.5vh; /* Ajustado para que no ocupe toda la pantalla */
+  width: 100vw;
   background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
-  padding: 4rem;
+  padding: 0 4rem;
   color: white;
-  transition: all 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
   font-size: 5rem;
   font-weight: bold;
   line-height: 0.9;
-  box-sizing: border-box;
+  margin: 60px 0 -3px 0;
 }
 
+
+
+
+.home-container.expanded {
+  height: 105vh;
+}
 
 .home-model-container {
   width: 50%;
@@ -36,8 +41,9 @@
   font-weight: bold;
   font-family: 'Inter', sans-serif;
   line-height: 0.9;
-  margin: 0 0 1.5rem 0;
-  color: white;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  color: white ;
 }
 
 
@@ -46,11 +52,8 @@
   font-family: 'Inter', sans-serif;
   letter-spacing: 1px;
   color: #f5f5f5;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
- 
-
-
 
 .home-text-container .home-descripcion {
   max-width: 500px;
@@ -59,28 +62,30 @@
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: white;
-  text-align: justify;
-  align-self: flex-start;
+  text-align: justify;          /* ← asegura alineación a la izquierda */
+  align-self: flex-start;     /* ← posiciona el texto al inicio del contenedor */
 }
 
 .home-descripcion {
   font-size: 1rem;
   opacity: 0.7;
-  color: #ffffff;
-  align-self: flex-start;
+  color: #FFFFFF;
+  align-self: flex-start; 
   text-align: justify;
   width: 100%;
-  margin-top: 24px;
+  margin-top: 24px; 
   margin-bottom: 1.5rem;
 }
 
 /* Estilos para la información adicional */
 .home-info-adicional {
+  
   background-color: rgba(15, 15, 62, 0.7);
   border-radius: 10px;
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: -1rem;
   max-width: 500px;
+  max-height: 300px;
   overflow-y: auto;
   border-left: 3px solid #ff715b;
   animation: fadeIn 0.5s ease-in-out;
@@ -129,39 +134,4 @@
 .home-btn:hover {
   background-color: rgba(255, 113, 91, 0.321);
   text-decoration: none !important;
-}
-
-
-
-
-
-
-
-
-
-/*Responsive*/
-
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column;
-    padding: 2rem 1rem;
-  }
-
-  .home-model-container, .home-text-container {
-    width: 100%;
-    height: auto;
-  }
-
-  .home-titulo {
-    font-size: 3rem;
-  }
-
-  .home-subtitulo {
-    font-size: 1rem;
-  }
-
-  .home-descripcion,
-  .home-info-adicional p {
-    font-size: 0.95rem;
-  }
 }
