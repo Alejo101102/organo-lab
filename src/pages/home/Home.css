@@ -14,9 +14,6 @@
   margin: 60px 0 -3px 0;
 }
 
-
-
-
 .home-container.expanded {
   height: 105vh;
 }
@@ -134,4 +131,87 @@
 .home-btn:hover {
   background-color: rgba(255, 113, 91, 0.321);
   text-decoration: none !important;
+}
+
+@media (max-width: 1200px) {
+  .home-container {
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .home-model-container {
+    height: 35vh;
+    max-width: 90%;
+  }
+
+  .home-text-container {
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    height: auto;
+  }
+
+  .home-botones {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-model-container {
+    height: 30vh;
+  }
+
+  .home-titulo {
+    font-size: 2rem;
+  }
+
+  .home-subtitulo,
+  .home-descripcion {
+    font-size: 0.95rem;
+  }
+
+  .home-btn {
+    width: 90%;
+    text-align: center;
+  }
+
+  .home-info-adicional {
+    font-size: 0.9rem;
+    max-height: 150px;
+  }
+}
+
+@media (max-height: 1080px) {
+  .home-container {
+    height: 85vh;
+    min-height: unset;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: -1rem;
+    margin-bottom: -4rem;
+  }
+
+  .home-model-container {
+    height: 55vh;
+    max-width: 50%;
+  }
+
+  .home-text-container {
+    padding: 1rem;
+    justify-content: center;
+  }
+
+  .home-titulo {
+    font-size: 4rem;
+  }
+
+  .home-descripcion {
+    font-size: 1.05rem;
+  }
+
+  .home-info-adicional {
+    max-height: 250px;
+  }
 }

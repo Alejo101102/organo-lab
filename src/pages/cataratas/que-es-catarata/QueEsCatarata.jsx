@@ -2,8 +2,7 @@ import './QueEsCatarata.css';
 import { Canvas } from '@react-three/fiber';
 import { CataractEye } from "./models-3d/CataractEye";
 import { BeginCataractEye } from "./models-3d/BeginCataractEye";
-import { Link, useNavigate } from 'react-router';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
@@ -12,13 +11,38 @@ import Title from './texts/Title';
 import LightsSintomas from './lights/LightsSintomas';
 import { KeyboardControls } from '@react-three/drei';
 
+const tarjetas = [
+  {
+    img: "/images/catarata/prevencion/alimentacion.png",
+    titulo: "Alimentación saludable",
+    texto: "Incluye muchas frutas, verduras, hojas verdes y granos enteros."
+  },
+  {
+    img: "/images/catarata/prevencion/gafas.png",
+    titulo: "Proteger sus ojos",
+    texto: "Use gafas de sol o sombrero con visera para evitar rayos UV."
+  },
+  {
+    img: "/images/catarata/prevencion/vision.png",
+    titulo: "Evitar lesiones",
+    texto: "Use protección ocular al realizar actividades de riesgo."
+  }
+];
+
 const QueEsCatarata = () => {
-  const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const modelContainerRef = useRef(null);
+  const [showModal, setShowModal] = useState(false); 
+  const [indiceActivo, setIndiceActivo] = useState(1); // empieza con "Proteger sus ojos"
 
-  const [showModal, setShowModal] = useState(false);
+  const siguiente = () => {
+    setIndiceActivo((prev) => (prev + 1) % tarjetas.length);
+  };
+
+  const anterior = () => {
+    setIndiceActivo((prev) => (prev - 1 + tarjetas.length) % tarjetas.length);
+  };
+
 
 
 
@@ -51,7 +75,6 @@ const QueEsCatarata = () => {
       
         <div 
           className="catarata-modelo-3d-container"
-          ref={modelContainerRef}
           onMouseMove={handleMouseMove}
           onMouseEnter={handleModelHover}
           onMouseLeave={handleModelLeave}
@@ -125,7 +148,6 @@ const QueEsCatarata = () => {
       <h2 className="catarata-sintomas-titulo">SÍNTOMAS</h2>
         <div 
           className="catarata-modelo-3d-container"
-          ref={modelContainerRef}
           onMouseMove={handleMouseMove}
           onMouseEnter={handleModelHover}
           onMouseLeave={handleModelLeave}
@@ -234,6 +256,103 @@ const QueEsCatarata = () => {
             <p className="catarata-tarjeta-sintomas-descripcion">Ver doble (este síntoma a veces desaparece a medida que la catarata crece).</p>
           </div>
         </div>
+    </div>
+
+    <div className='catarata-prevencion-container'>
+      <div className="catarata-prevencion-container">      
+        <h2 className="catarata-prevencion-titulo">PREVENCIÓN</h2>
+          <div 
+            className="catarata-modelo-3d-container"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleModelHover}
+            onMouseLeave={handleModelLeave}
+          >
+            {showTooltip && (
+              <div className="catarata-modelo-tooltip" style={{
+                left: tooltipPosition.x,
+                top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+                position: 'fixed'
+              }}>
+                Mueve el modelo 3D
+              </div>
+            )}
+            
+            <div className="catarata-prevencion-modelo-3d" >
+              <KeyboardControls
+                map={[
+                  { name: "forward", keys: ["w", "ArrowUp"] },
+                  { name: "backward", keys: ["s", "ArrowDown"] },
+                  { name: "left", keys: ["a", "ArrowLeft"] },
+                  { name: "right", keys: ["d", "ArrowRight"] },
+                  { name: "up", keys: ["e", "PageUp"] },     
+                  { name: "down", keys: ["q", "PageDown"] }  
+                ]}
+              >
+                <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
+                  <LightsSintomas />  
+                  <Controls />
+                  <Staging />
+                  <Title title={"Comienzo de catarata"} />
+                  <group
+                    onPointerOver={() => setShowTooltip(true)}
+                    onPointerOut={() => setShowTooltip(false)}
+                  >
+                    <Physics>
+
+                      <RigidBody type="fixed" colliders="trimesh">
+                        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                          <circleGeometry args={[12, 64]} />
+                          <meshStandardMaterial color="darkgray" shadowSide={2} />
+                        </mesh>
+                      </RigidBody>
+
+                      <BeginCataractEye scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                    </Physics>
+                  </group>
+                </Canvas>
+              </KeyboardControls>
+            </div>
+          </div>
+
+                    <div className="catarata-prevencion-carrusel-container">
+            <button className="prev-btn" onClick={anterior}>&#10094;</button>
+
+            <div className="carrusel-enfocado">
+              {tarjetas.map((tarjeta, i) => {
+                const izquierda = (indiceActivo - 1 + tarjetas.length) % tarjetas.length;
+                const derecha = (indiceActivo + 1) % tarjetas.length;
+
+                let clase = "catarata-tarjeta-prevencion";
+                if (i === indiceActivo) {
+                  clase = "catarata-tarjeta-prevencion enfocado";
+                } else if (i === izquierda || i === derecha) {
+                  clase = "catarata-tarjeta-prevencion lateral";
+                } else {
+                  clase = "catarata-tarjeta-prevencion";
+                  // Para tarjetas no visibles, aplicamos estilos de oculto
+                }
+
+                // Solo mostramos las 3 tarjetas: izquierda, centro, derecha
+                const esVisible = i === indiceActivo || i === izquierda || i === derecha;
+                
+                return esVisible ? (
+                  <div className={clase} key={i}>
+                    <img src={tarjeta.img} alt={tarjeta.titulo} />
+                    <h3>{tarjeta.titulo}</h3>
+                    <div className="separador"></div>
+                    <p>{tarjeta.texto}</p>
+                  </div>
+                ) : null;
+              })}
+            </div>
+
+            <button className="next-btn" onClick={siguiente}>&#10095;</button>
+          </div>
+
+
+       
+          
+      </div>
     </div>
 
     <div
