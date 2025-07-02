@@ -404,22 +404,11 @@
   margin-bottom: 1rem;
 }
 
-
-.glaucoma-tratamiento-video-wrapper {
+.glaucoma-tratamiento-modelo-3d {
   width: 100%;
-  border-radius: 1rem;
-  overflow: hidden;
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
+  height: 300px;
 }
 
-.glaucoma-tratamiento-video {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
 
 .glaucoma-tratamiento-titulo {
   text-align: center;

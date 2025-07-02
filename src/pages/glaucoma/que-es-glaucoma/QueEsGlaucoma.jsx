@@ -17,6 +17,10 @@ import { Text } from '@react-three/drei';
 import SnellenTable from '../models-3d/SnellenTable';
 import MattSmith from '../models-3d/matt-smith';
 import Title from './texts/Title';
+import TratamientoGlaucoma  from './videos/TratamientoGlaucoma';
+
+
+
 
 
 const QueEsGlaucoma = () => {
@@ -75,6 +79,7 @@ const QueEsGlaucoma = () => {
               <Canvas camera={{ position: [5, 0, 20],fov: 20}} shadows={true}>
                       <Lights /> 
                       <OrbitControls target={[0, 3, 1]} />
+
                       <Controls />
 
                       <Environment preset="sunset" background /> 
@@ -284,15 +289,14 @@ const QueEsGlaucoma = () => {
 <section className="glaucoma-tratamiento-container">
         <div className="glaucoma-tratamiento-box">
           {showVideo ? (
-            <div className="glaucoma-tratamiento-video-wrapper">
-              <video
-                className="glaucoma-tratamiento-video"
-                controls
-                autoPlay
-                src="/images/tratamiento-glaucoma.mp4" 
-              />
+            <div className="glaucoma-tratamiento-modelo-3d">
+              <Canvas camera={{ position: [0, 1.5, 5], fov: 40 }}>
+                <ambientLight intensity={1} />
+                <directionalLight position={[2, 2, 2]} intensity={1} />
+                <TratamientoGlaucoma />
+              </Canvas>
             </div>
-          ) : (
+            ) : (
             <>
               <h2 className="glaucoma-tratamiento-titulo">TRATAMIENTO</h2>
               <p className="glaucoma-tratamiento-descripcion">
@@ -304,6 +308,7 @@ const QueEsGlaucoma = () => {
               <button
                 className="glaucoma-tratamiento-boton"
                 onClick={() => setShowVideo(true)}
+                
               >
                 VÍDEO INFORMATIVO
               </button>

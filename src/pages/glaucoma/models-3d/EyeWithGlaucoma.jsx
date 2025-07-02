@@ -13,11 +13,7 @@ const EyeWithGlaucoma = ({rotate = true, ...props }) => {
       return <p>Modelo no disponible o no cargado correctamente</p>;
       }
 
-      useFrame(() => {
-        if (rotate && groupRef.current) {
-          groupRef.current.rotation.y += 0.003; 
-        }
-      });
+    
     
     return(
       <group ref={ groupRef }{...props} dispose={null}>
