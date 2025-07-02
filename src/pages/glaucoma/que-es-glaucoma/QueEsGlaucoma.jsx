@@ -1,7 +1,7 @@
 
 import './QueEsGlaucoma.css';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Text3D } from '@react-three/drei';
 import Footer from '../../../layout/footer/Footer';
 import EyeWithGlaucoma from '../models-3d/EyeWithGlaucoma';
 import { useNavigate } from 'react-router';
@@ -16,6 +16,7 @@ import { Environment, Stars, Sky } from '@react-three/drei';
 import { Text } from '@react-three/drei';
 import SnellenTable from '../models-3d/SnellenTable';
 import MattSmith from '../models-3d/matt-smith';
+import Title from './texts/Title';
 
 
 const QueEsGlaucoma = () => {
@@ -59,7 +60,7 @@ const QueEsGlaucoma = () => {
           >
             {showTooltip && (
               <div
-                className="glaucoma-modelo-tooltip-primero"
+                className="glaucoma-modelo-tooltip-que-es"
                 style={{
                   left: tooltipPosition.x,
                   top: tooltipPosition.y - 30,
@@ -70,7 +71,7 @@ const QueEsGlaucoma = () => {
               </div>
             )}
 
-            <div className="glaucoma-modelo-3d">
+            <div className="glaucoma-modelo-3d-que-es">
               <Canvas camera={{ position: [5, 0, 20],fov: 20}} shadows={true}>
                       <Lights /> 
                       <OrbitControls target={[0, 3, 1]} />
@@ -123,7 +124,7 @@ const QueEsGlaucoma = () => {
       {/* =============== SINTOMAS ================*/}
 
       <section className="glaucoma-sintomas-container">
-        <div className="glaucoma-alerta-titulo">¡ATENCIÓN!</div>
+        <div className="glaucoma-sintomas-alerta-titulo">¡ATENCIÓN!</div>
         <h1 className="glaucoma-sintomas-titulo">SÍNTOMAS</h1>
 
         <div className="glaucoma-sintomas-wrapper">
@@ -133,8 +134,8 @@ const QueEsGlaucoma = () => {
             personas no pueden darse cuenta al principio de que su visión está cambiando.
           </p>
 
-          <div className="glaucoma-tarjeta">
-            <div className="glaucoma-modelo-tarjeta">
+          <div className="glaucoma-sintomas-tarjeta">
+            <div className="glaucoma-sintomas-modelo-tarjeta">
               <Canvas camera={{ position: [1, 1.5, 4], fov: 50 }}>
                 <group
                   onPointerOver={() => setShowTooltip(true)}
@@ -185,20 +186,20 @@ const QueEsGlaucoma = () => {
 </h2>
 
 
-  <div className="glaucoma-carrusel">
+  <div className="glaucoma-prevencion-carrusel">
     <button className="glaucoma-carrusel-btn izquierda">‹</button>
 
-    <div className="glaucoma-tarjeta">
-      <img src="/images/glaucoma/examen1.png" alt="Ícono 1" className="glaucoma-tarjeta-icono" />
+    <div className="glaucoma-tarjeta-prevencion-carrusel">
+      <img src="/images/glaucoma/examen1.png" alt="Ícono 1" className="glaucoma-prevencion-tarjeta-icono" />
       <h3 className="glaucoma-tarjeta-prevencion-titulo">Examen ocular</h3>
       <p className="glaucoma-tarjeta-prevencion-descripcion">
         Si usted está en riesgo de glaucoma debe hacerse un examen oftalmológico antes de los 40 años.
       </p>
     </div>
 
-      <div className="glaucoma-tarjeta central">
-        <div className="glaucoma-modelo-snellen">
-        <Canvas camera={{ position: [1.5, 2, 5], fov: 30 }}>
+      <div className="glaucoma-tarjeta-prevencion-carrusel-central">
+        <div className="glaucoma-prevencion-modelo-snellen">
+        <Canvas camera={{ position: [-10, 8, 0], fov: 20 }}>
           <Lights />            
           <Controls />
           <Environment preset="sunset" background /> 
@@ -212,30 +213,40 @@ const QueEsGlaucoma = () => {
                 shadow-camera-near={1}
                 shadow-camera-far={10}
               />
-          <OrbitControls target={[0, 1, 0]} />
-          <SnellenTable position={[0, 0, 0]} scale={0.8} />
+              
+          <OrbitControls target={[0, 1.2, 0]} />
+          <SnellenTable position={[0, 0, 0]} rotation={[0, 0, Math.PI / 2]}   scale={0.8} />
 
           <Text
-          position={[0.01, 1, 0]}
-          fontSize={0.2}
-          color="lightgray"
-          anchorX="center"
-          anchorY="middle"
-          maxWidth={4}
+            
+            position={[1, 2, -1]}
+            fontSize={0.4}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+            maxWidth={4}
+            rotation={[0, -Math.PI / 2, 0]} 
           >
              Tabla Snelle
           </Text>
 
+          <Title
+           title={"✧"} 
+           position={[0, 0, 0]} // aún más arriba
+           fontSize={0.25}
+           />
+
         </Canvas>
+
         </div>
-        <h3 className="glaucoma-examen-ocular-titulo">Examen ocular</h3>
-        <p className="glaucoma-examen-ocular-descripcion">
+        <h3 className="glaucoma-prevencion-titulo-central">Examen ocular</h3>
+        <p className="glaucoma-prevencion-descripcion-central">
           Un examen ocular puede ayudar a detectar glaucoma de ángulo abierto oportunamente, cuando es más fácil de tratar. Ignorar la salud visual puede llevar a una disminución de la agudeza visual y un riesgo de enfermedades.
         </p>
     </div>
 
-    <div className="glaucoma-tarjeta">
-      <img src="/images/glaucoma/examen3.png" alt="Ícono 3" className="glaucoma-tarjeta-icono" />
+    <div className="glaucoma-tarjeta-prevencion-carrusel">
+      <img src="/images/glaucoma/examen3.png" alt="Ícono 3" className="glaucoma-prevencion-tarjeta-icono" />
       <h3 className="glaucoma-tarjeta-prevencion-titulo">Examen ocular</h3>
       <p className="glaucoma-tarjeta-prevencion-descripcion">
         Las personas deben hacerse un examen oftalmológico completo a los 40 años.
@@ -245,22 +256,22 @@ const QueEsGlaucoma = () => {
     <button className="glaucoma-carrusel-btn derecha">›</button>
   </div>
 
-  <p className="glaucoma-alerta">Esta enfermedad no puede prevenirse</p>
+  <p className="glaucoma-prevencion-alerta">Esta enfermedad no puede prevenirse</p>
 
-  <div className="glaucoma-barras-container">
-    <div className="glaucoma-barra">
-      <img src="/images/glaucoma/stat2.png" alt="icon" className="glaucoma-barra-icono" />
+  <div className="glaucoma-prevencion-barras-container">
+    <div className="glaucoma-prevencion-barra">
+      <img src="/images/glaucoma/stat2.png" alt="icon" className="glaucoma-prevencion-barra-icono" />
       <span>Personas con glaucoma</span>
-      <div className="glaucoma-barra-progreso">
+      <div className="glaucoma-prevencion-barra-progreso">
         <div className="progreso" style={{ width: '2%', background: '#FFB400' }}></div>
         <span>2%</span>
       </div>
     </div>
 
-    <div className="glaucoma-barra">
-      <img src="/images/glaucoma/stat2.png" alt="icon" className="glaucoma-barra-icono" />
+    <div className="glaucoma-prevencion-barra">
+      <img src="/images/glaucoma/stat2.png" alt="icon" className="glaucoma-prevencion-barra-icono" />
       <span>Personas con tratamiento</span>
-      <div className="glaucoma-barra-progreso">
+      <div className="glaucoma-prevencion-barra-progreso">
         <div className="progreso" style={{ width: '50%', background: '#199ED9' }}></div>
         <span>50%</span>
       </div>
@@ -273,9 +284,9 @@ const QueEsGlaucoma = () => {
 <section className="glaucoma-tratamiento-container">
         <div className="glaucoma-tratamiento-box">
           {showVideo ? (
-            <div className="glaucoma-video-wrapper">
+            <div className="glaucoma-tratamiento-video-wrapper">
               <video
-                className="glaucoma-video"
+                className="glaucoma-tratamiento-video"
                 controls
                 autoPlay
                 src="/images/tratamiento-glaucoma.mp4" 
@@ -316,7 +327,8 @@ const QueEsGlaucoma = () => {
                         />
             <OrbitControls target={[0, 1.1, 0]} enableZoom={true} />
             <MattSmith position={[0, 0, 0]} rotation={[0, Math.PI, 0]} scale={1.5} />
-          </Canvas>
+            <Title title={"✧"} />
+          </Canvas> 
         </div>
       </section>
 
