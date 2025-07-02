@@ -79,7 +79,6 @@ const QueEsGlaucoma = () => {
               <Canvas camera={{ position: [5, 0, 20],fov: 20}} shadows={true}>
                       <Lights /> 
                       <OrbitControls target={[0, 3, 1]} />
-
                       <Controls />
 
                       <Environment preset="sunset" background /> 
