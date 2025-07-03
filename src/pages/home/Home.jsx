@@ -38,10 +38,8 @@ const Home = () => {
         {showMoreInfo && (
           <div className="home-info-adicional">
             <h3>Información importante</h3>
-            <p>Descubre cómo afectan a tus ojos enfermedades como el agujero macular, las cataratas, la conjuntivitis y el glaucoma. 
-              Aprende sobre sus síntomas, tratamientos efectivos y los cuidados esenciales para prevenirlas. 
-              ¡Cuida tu vista y mantén tus ojos saludables con la información que necesitas!</p>
-            <p>Dirígete a la sección <strong>Enfermedades</strong> en el menú superior, para conocer más sobre distintas condiciones que afectan la salud visual. </p>
+            <p>Conoce cómo enfermedades como el agujero macular, cataratas, conjuntivitis y glaucoma afectan tu vista. Descubre sus síntomas, tratamientos y cómo prevenirlas.</p>
+            <p>Visita la sección <strong>Enfermedades</strong> en el menú superior, para más información. </p>
           </div>
         )}
         
