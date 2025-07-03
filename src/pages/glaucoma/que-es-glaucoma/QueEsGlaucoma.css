@@ -2,11 +2,9 @@
 
 .glaucoma-que-es-container {
   background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
-  width: 100%;
   margin: 0;
   color: white;
   padding: 4rem 2rem;
-  min-height: 100vh;
   align-items: center;
   text-align: center;
   
@@ -14,16 +12,12 @@
 
 .glaucoma-titulo {
   text-align: center;
-  font-size: 85px;
-  font-weight: 700;
   font-family: 'Inter', sans-serif;
   margin: 50px 0 2rem;
   color: #fff;
 }
 
 .glaucoma-modelo-3d-container {
-  width: 100%;
-  max-width: 1000px;
   margin: 0 auto;
   padding-bottom: 2rem;
   display: flex;
@@ -32,8 +26,6 @@
 }
 
 .glaucoma-modelo-3d-que-es {
-  width: 100%;
-  height: 280px; /* ⬅️ Ajusta altura moderada */
   border-radius: 40px;
   overflow: hidden;
 }
@@ -48,8 +40,6 @@
   z-index: 1000;
   transition: opacity 0.1s ease;
   opacity: 1;
-  font-size: 14px;
-  font-weight: 500;
   font-family: 'Inter', sans-serif;
   transform: translateX(-50%);
   white-space: nowrap;
@@ -58,19 +48,14 @@
 
 .glaucoma-descripcion-que-es {
   font-family: 'Inter', sans-serif;
-  max-width: 1300px;
   margin-bottom: 2rem;
   text-align: justify;
 
   line-height: 1.8;
   color: #fff;
-  font-size: 18px;       
-  font-weight: 300; 
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 /* === SECCIÓN SINTOMAS === */
 
@@ -96,29 +81,23 @@
 
 .glaucoma-sintomas-titulo{
   color:white;
-  font-size: 85px;
-  font-weight: 700;
   font-family: 'Inter', sans-serif;
   margin: 50px 0 2rem;
 }
 
 .glaucoma-descripcion-sintomas {
   font-family: 'Inter', sans-serif;
-  max-width: 1300px;
   margin-bottom: 2rem;
   text-align: justify;
 
   line-height: 1.8;
   color: #fff;
-  font-size: 18px;       
-  font-weight: 300; 
 }
 
 .glaucoma-sintomas-tarjeta {
   background-color: #ffffff10;
   border-radius: 20px;
   padding: 2rem;
-  max-width: 500px;
   margin: 2rem auto; /* ✅ auto en los lados la centra horizontalmente */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border: 2px solid #0099B8;
@@ -131,21 +110,17 @@
 }
 
 .glaucoma-sintomas-modelo-tarjeta {
-  width: 100%;
-  height: 250px;
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 1rem;
 }
 
 .glaucoma-tarjeta-sintomas-titulo {
-  font-size: 1.5rem;
   margin: 1rem 0 0.5rem;
   color: white;
 }
 
 .glaucoma-tarjeta-sintomas-descripcion {
-  font-size: 1rem;
   opacity: 0.85;
   color: white;
   text-align: center;
@@ -160,8 +135,6 @@
 
 .glaucoma-prevencion-titulo {
   text-align: center;
-  font-size: 85px;
-  font-weight: 700;
   font-family: 'Inter', sans-serif;
   margin: 50px 0 2rem;
   color: #0f0f3e;
@@ -169,7 +142,6 @@
 
 .glaucoma-prevencion-titulo-central {
   color: white;
-  font-size: 1.5rem;
   margin: 1rem 0 0.5rem;
 }
 
@@ -181,15 +153,12 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding: 1rem;
-  width: 100%; /* 🟢 Ocupa todo el ancho */
-  max-width: 1300px;
   margin: 0 auto 2rem; /* 🟢 Centra el carrusel horizontalmente */
   scroll-snap-type: x mandatory; /* 🔵 Si usas desplazamiento tipo carrusel */
 }
 
 
 .glaucoma-tarjeta-prevencion-carrusel {
-  max-width: 220px;
   background: #f9f9f9;
   border-radius: 15px;
   padding: 1rem;
@@ -207,7 +176,6 @@
 .glaucoma-tarjeta-prevencion-carrusel-central {
   background: #0099B8;
   color: white;
-  max-width: 280px;
   padding: 1.5rem;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -224,8 +192,6 @@
 
 
 .glaucoma-prevencion-tarjeta-icono {
-  width: 80px;
-  height: 80px;
   margin-bottom: 1rem;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
@@ -234,10 +200,7 @@
   background-color: #FF4D4D;
   color: white;
   border: none;
-  font-size: 1.5rem;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -257,8 +220,6 @@
   border: none;
   font-size: 1.5rem;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -273,7 +234,6 @@
 }
 
 .glaucoma-tarjeta-prevencion-titulo {
-  font-size: 1.5rem;
   margin: 1rem 0 0.5rem;
   color: #0f0f3e;
 }
@@ -284,8 +244,6 @@
 }
 
 .glaucoma-prevencion-descripcion-central {
-  font-size: 0.85rem;
-  line-height: 1.4;
   color: white;
   text-align: justify;
 }
@@ -312,13 +270,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: 80%;
-  max-width: 500px;
-}
-
-.glaucoma-prevencion-barra-icono {
-  width: 30px;
-  height: auto;
 }
 
 .glaucoma-prevencion-barra-progreso {
@@ -326,13 +277,11 @@
   background: #eee;
   border-radius: 20px;
   position: relative;
-  height: 20px;
   display: flex;
   align-items: center;
 }
 
 .glaucoma-prevencion-barra-progreso .progreso {
-  height: 100%;
   border-radius: 20px 0 0 20px;
 }
 
@@ -356,8 +305,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 60px;
-  width: 100%;
   background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
   z-index: 1;
 }
@@ -393,13 +340,11 @@
   background-color: white;
   padding: 2rem;
   border-radius: 1rem;
-  max-width: 800px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 .glaucoma-tratamiento-box p {
-  font-size: 1rem;
   color: #333;
   margin-bottom: 1rem;
 }
@@ -412,8 +357,6 @@
 
 .glaucoma-tratamiento-titulo {
   text-align: center;
-  font-size: 85px;
-  font-weight: 700;
   font-family: 'Inter', sans-serif;
   margin: 50px 0 2rem;
   color: #0f0f3e;
@@ -421,14 +364,11 @@
 
 .glaucoma-tratamiento-descripcion{
   font-family: 'Inter', sans-serif;
-  max-width: 1300px;
   margin-bottom: 2rem;
   text-align: center;
 
   line-height: 1.8;
-  color: #fff;
-  font-size: 18px;       
-  font-weight: 300; 
+  color: #fff; 
 }
 
 .glaucoma-tratamiento-boton {
@@ -510,4 +450,484 @@
   }
 }
 
-/* === RESPONSIVE DISEÑO MOVIL === */
+/* === RESPONSIVE === */
+
+@media (min-width: 845px) {
+
+  /* === SECCIÓN QUÉ ES === */
+.glaucoma-que-es-container {
+  width: 100%;
+  margin: 0;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.glaucoma-titulo {
+  font-size: 85px;
+  font-weight: 700;
+  margin: 50px 0 2rem;
+}
+
+.glaucoma-modelo-3d-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem; /* ⬅️ Agrega espacio debajo */
+}
+
+.glaucoma-modelo-3d-que-es {
+  width: 100%;
+  height: 280px; /* ⬅️ Ajusta altura moderada */
+  border-radius: 40px;
+}
+
+.glaucoma-modelo-tooltip-que-es {
+  padding: 5px 10px;
+  opacity: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.glaucoma-descripcion-que-es {
+  font-family: 'Inter', sans-serif;
+  max-width: 1300px;
+  margin-bottom: 2rem;
+  text-align: justify;
+
+  line-height: 1.8;
+  font-size: 18px;       
+  font-weight: 300; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === SECCIÓN SINTOMAS === */
+
+.glaucoma-sintomas-container {
+  padding: 2rem 2rem 4rem 2rem;
+}
+
+.glaucoma-sintomas-alerta-titulo {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.glaucoma-sintomas-titulo{
+  font-size: 85px;
+  font-weight: 700;
+}
+
+.glaucoma-descripcion-sintomas {
+  max-width: 1300px;
+
+  font-size: 18px;       
+  font-weight: 300; 
+}
+
+.glaucoma-sintomas-tarjeta {
+  padding: 2rem;
+  max-width: 500px;
+
+}
+
+.glaucoma-sintomas-modelo-tarjeta {
+  width: 100%;
+  height: 250px;
+
+}
+
+.glaucoma-tarjeta-sintomas-titulo {
+  font-size: 1.5rem;
+}
+
+.glaucoma-tarjeta-sintomas-descripcion {
+  font-size: 1rem;
+}
+
+/* === SECCIÓN PREVENCIÓN === */
+
+.glaucoma-prevencion-container{
+   margin-top: 5rem;
+}
+
+.glaucoma-prevencion-titulo {
+  font-size: 85px;
+  font-weight: 700;
+}
+
+.glaucoma-prevencion-titulo-central {
+  font-size: 1.5rem;
+}
+
+.glaucoma-prevencion-carrusel {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1300px;
+}
+
+
+.glaucoma-tarjeta-prevencion-carrusel {
+  max-width: 220px;
+  padding: 1rem;
+}
+
+.glaucoma-tarjeta-prevencion-carrusel-central {
+  max-width: 280px;
+  padding: 1.5rem;
+}
+
+.glaucoma-prevencion-tarjeta-icono {
+  width: 80px;
+  height: 80px;
+}
+
+.glaucoma-carrusel-btn.izquierda {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+}
+
+.glaucoma-carrusel-btn.derecha {
+  width: 50px;
+  height: 50px;
+}
+
+.glaucoma-tarjeta-prevencion-titulo {
+  font-size: 1.5rem;
+}
+
+.glaucoma-prevencion-modelo-snellen {
+  width: 100%;
+  height: 150px;
+}
+
+.glaucoma-prevencion-descripcion-central {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.glaucoma-prevencion-alerta {
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+}
+
+.glaucoma-prevencion-barra {
+  width: 80%;
+  max-width: 500px;
+}
+
+.glaucoma-prevencion-barra-icono {
+  width: 30px;
+  height: auto;
+}
+
+.glaucoma-prevencion-barra-progreso {
+  height: 20px;
+}
+
+.glaucoma-prevencion-barra-progreso .progreso {
+  height: 100%;
+}
+
+/* === SECCIÓN TRATAMIENTO === */
+
+.glaucoma-tratamiento-container::before {
+  height: 60px;
+  width: 100%;
+}
+
+.glaucoma-tratamiento-container {
+  padding: 7rem 1rem 9rem;
+}
+
+.glaucoma-tratamiento-box {
+  max-width: 800px;
+}
+
+.glaucoma-tratamiento-box p {
+  font-size: 1rem;
+}
+
+.glaucoma-tratamiento-modelo-3d {
+  width: 100%;
+  height: 300px;
+}
+
+.glaucoma-tratamiento-titulo {
+  font-size: 85px;
+  font-weight: 700;
+}
+
+.glaucoma-tratamiento-descripcion{
+  max-width: 1300px;
+  margin-bottom: 2rem;
+  font-size: 18px;       
+}
+
+.glaucoma-tratamiento-boton {
+  font-weight: bold;
+}
+
+/* === AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA === */
+
+.glaucoma-modelo-solo-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.glaucoma-modelo-solo {
+  width: 100%;
+  max-width: 1000px; /* lo agrandamos */
+  height: 600px;      /* lo hacemos más alto */
+}
+
+}
+
+@media (max-width: 844px) {
+  .glaucoma-prevencion-carrusel {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .glaucoma-tratamiento-box {
+    width: 90%;
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+
+  .glaucoma-tarjeta-prevencion-carrusel,
+  .glaucoma-tarjeta-prevencion-carrusel-central {
+    width: 90%;
+    max-width: 300px;
+    padding: 0.8rem;
+    font-size: 13px;
+  }
+
+  .glaucoma-prevencion-tarjeta-icono {
+    width: 40px;
+    height: 40px;
+  }
+
+  .glaucoma-tarjeta-prevencion-titulo {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .glaucoma-prevencion-descripcion-central {
+    font-size: 12.5px;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+    /* Texto de "¿Qué es el glaucoma?" */
+  .glaucoma-descripcion-que-es {
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  /* Texto de "Síntomas" */
+  .glaucoma-descripcion-sintomas {
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  /* Tarjeta de síntomas */
+  .glaucoma-sintomas-tarjeta {
+    width: 90%;
+    max-width: 320px;
+    margin: 1rem auto;
+    padding: 1.2rem;
+  }
+
+  .glaucoma-sintomas-modelo-tarjeta {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .glaucoma-tarjeta-sintomas-titulo {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .glaucoma-tarjeta-sintomas-descripcion {
+    font-size: 13px;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+
+  .glaucoma-titulo,
+  .glaucoma-sintomas-titulo,
+  .glaucoma-prevencion-titulo,
+  .glaucoma-tratamiento-titulo {
+    font-size: 26px;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .glaucoma-tratamiento-boton {
+    font-size: 14px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .glaucoma-tratamiento-box {
+    width: 90%;
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+
+  .glaucoma-tratamiento-descripcion {
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 1rem;
+    text-align: justify;
+  }
+
+  .glaucoma-prevencion-barra-icono {
+  width: 20px;
+  height: auto;
+  }
+
+  .glaucoma-carrusel-btn.izquierda {
+  font-size: 1.5rem;
+  width: 20px;
+  height: 20px;
+  }
+
+  .glaucoma-carrusel-btn.derecha {
+  font-size: 1.5rem;
+  width: 20px;
+  height: 20px;
+  }
+
+}
+
+@media (min-width: 1920px) {
+
+  /* SECCIÓN: ¿QUÉ ES? */
+  .glaucoma-que-es-container {
+    padding: 6rem 10rem;
+  }
+
+  .glaucoma-titulo {
+    font-size: 100px;
+  }
+
+  .glaucoma-descripcion-que-es {
+    max-width: 1600px;
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .glaucoma-modelo-3d-que-es {
+    height: 350px;
+  }
+
+  /* SECCIÓN: SÍNTOMAS */
+  .glaucoma-sintomas-titulo {
+    font-size: 100px;
+  }
+
+  .glaucoma-descripcion-sintomas {
+    max-width: 1600px;
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .glaucoma-sintomas-tarjeta {
+    max-width: 600px;
+    padding: 2.5rem;
+  }
+
+  .glaucoma-sintomas-modelo-tarjeta {
+    height: 300px;
+  }
+
+  .glaucoma-tarjeta-sintomas-titulo {
+    font-size: 1.8rem;
+  }
+
+  .glaucoma-tarjeta-sintomas-descripcion {
+    font-size: 1.1rem;
+  }
+
+  /* SECCIÓN: PREVENCIÓN */
+  .glaucoma-prevencion-titulo {
+    font-size: 100px;
+  }
+
+  .glaucoma-prevencion-carrusel {
+    max-width: 1600px;
+    gap: 2rem;
+  }
+
+  .glaucoma-tarjeta-prevencion-carrusel {
+    max-width: 280px;
+    padding: 1.5rem;
+  }
+
+  .glaucoma-tarjeta-prevencion-carrusel-central {
+    max-width: 320px;
+    padding: 2rem;
+  }
+
+  .glaucoma-prevencion-tarjeta-icono {
+    width: 100px;
+    height: 100px;
+  }
+
+  .glaucoma-prevencion-descripcion-central {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* SECCIÓN: TRATAMIENTO */
+  .glaucoma-tratamiento-container {
+    padding: 10rem 3rem;
+  }
+
+  .glaucoma-tratamiento-box {
+    max-width: 1000px;
+    padding: 3rem;
+  }
+
+  .glaucoma-tratamiento-descripcion {
+    font-size: 20px;
+    max-width: 1500px;
+  }
+
+  .glaucoma-tratamiento-modelo-3d {
+    height: 350px;
+  }
+
+  .glaucoma-tratamiento-titulo {
+    font-size: 100px;
+  }
+
+  .glaucoma-tratamiento-boton {
+    font-size: 18px;
+    padding: 1rem 2rem;
+  }
+
+  /* MODELO 3D SOLO */
+  .glaucoma-modelo-solo {
+    max-width: 1400px;
+    height: 800px;
+  }
+
+}
+
