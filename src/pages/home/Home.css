@@ -1,26 +1,20 @@
 .home-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  min-height: 100vh;
-  width: 100vw;
+  align-items: flex-start;
+  min-height: 100vh; /* Permite que crezca más si el contenido lo necesita */
+  width: 100%;
   background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
-  padding: 0 2rem 0 4rem;
+  padding: 4rem;
   color: white;
-  transition: height 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   font-size: 5rem;
   font-weight: bold;
   line-height: 0.9;
-  margin: 0;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.home-container.expanded {
-  height: auto;
-  min-height: 100vh;
-  overflow-y: auto;
-}
 
 .home-model-container {
   width: 50%;
@@ -42,18 +36,21 @@
   font-weight: bold;
   font-family: 'Inter', sans-serif;
   line-height: 0.9;
-  margin: 0;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem 0;
   color: white;
 }
+
 
 .home-subtitulo {
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
   letter-spacing: 1px;
   color: #f5f5f5;
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
 }
+ 
+
+
 
 .home-text-container .home-descripcion {
   max-width: 500px;
@@ -69,21 +66,21 @@
 .home-descripcion {
   font-size: 1rem;
   opacity: 0.7;
-  color: #FFFFFF;
+  color: #ffffff;
   align-self: flex-start;
   text-align: justify;
   width: 100%;
-  margin-top: 24px; 
+  margin-top: 24px;
   margin-bottom: 1.5rem;
 }
 
+/* Estilos para la información adicional */
 .home-info-adicional {
   background-color: rgba(15, 15, 62, 0.7);
   border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1rem;
   max-width: 500px;
-  max-height: 300px;
   overflow-y: auto;
   border-left: 3px solid #ff715b;
   animation: fadeIn 0.5s ease-in-out;
@@ -110,14 +107,14 @@
 }
 
 .home-botones {
-  margin-top: 2rem;
+  margin-top: 2rem; /* Valor positivo, ajustable */
   font-family: 'Inter', sans-serif;
   display: flex;
   gap: 0.8rem;
 }
 
 .home-btn {
-  margin-top: 0;
+  margin-top: 0; /* o 1rem si quieres espacio */
   padding: 0.8rem 1.5rem;
   background-color: transparent;
   border: 1px solid #ff715b;
@@ -128,550 +125,43 @@
   transition: all 0.3s ease;
 }
 
+
 .home-btn:hover {
   background-color: rgba(255, 113, 91, 0.321);
   text-decoration: none !important;
 }
 
-/* Tablets grandes */
-@media screen and (max-width: 1200px) {
-  .home-container {
-    padding: 0 1.5rem 0 3rem;
-  }
-  
-  .home-text-container {
-    padding-left: 1.5rem;
-  }
-  
-  .home-titulo {
-    font-size: 4.5rem;
-  }
-}
 
-/* Tablets medianas */
-@media screen and (max-width: 1024px) {
+
+
+
+
+
+
+
+/*Responsive*/
+
+@media (max-width: 768px) {
   .home-container {
-    padding: 0 1rem 0 2rem;
+    flex-direction: column;
+    padding: 2rem 1rem;
   }
-  
-  .home-text-container {
-    padding-left: 1rem;
+
+  .home-model-container, .home-text-container {
+    width: 100%;
+    height: auto;
   }
-  
+
   .home-titulo {
-    font-size: 4rem;
+    font-size: 3rem;
   }
-  
+
   .home-subtitulo {
-    font-size: 1.1rem;
-  }
-  
-  .home-text-container .home-descripcion {
     font-size: 1rem;
-    max-width: 450px;
-  }
-}
-
-/* Tablets pequeñas y pantallas intermedias */
-@media screen and (max-width: 900px) {
-  .home-container {
-    flex-direction: column;
-    height: auto;
-    min-height: 100vh;
-    padding: 2rem 1.5rem;
-    margin: 0;
-    gap: 2rem;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100vw;
-    overflow-y: auto;
-    box-sizing: border-box;
-  }
-
-  .home-container.expanded {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .home-model-container {
-    width: 100%;
-    height: 45vh;
-    max-height: 350px;
-    flex-shrink: 0;
-    order: 1;
-  }
-
-  .home-text-container {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 1rem;
-    order: 2;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .home-titulo {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .home-subtitulo {
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 0.5rem 0;
-    line-height: 1.5;
   }
 
   .home-descripcion,
-  .home-text-container .home-descripcion {
-    font-size: 1rem;
-    text-align: center;
-    margin: 1rem 0;
-    line-height: 1.6;
-    max-width: 100%;
-    align-self: center;
-    padding: 0 0.5rem;
-    word-wrap: break-word;
-  }
-
-  .home-info-adicional {
-    max-width: 100%;
-    max-height: 250px;
-    padding: 1.2rem;
+  .home-info-adicional p {
     font-size: 0.95rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-  }
-
-  .home-info-adicional h3 {
-    font-size: 1.2rem;
-  }
-
-  .home-info-adicional p {
-    font-size: 0.9rem;
-  }
-
-  .home-botones {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .home-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-
-/* Móviles */
-@media screen and (max-width: 768px) {
-  .home-container {
-    flex-direction: column;
-    height: auto;
-    min-height: 100vh;
-    padding: 1.5rem;
-    margin: 0;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100vw;
-    overflow-y: auto;
-    box-sizing: border-box;
-  }
-
-  .home-container.expanded {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .home-model-container {
-    width: 100%;
-    height: 40vh;
-    max-height: 300px;
-    order: 1;
-  }
-
-  .home-text-container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0;
-    order: 2;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .home-titulo {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .home-subtitulo {
-    font-size: 1rem;
-    text-align: center;
-    margin: 1rem 0;
-    line-height: 1.5;
-  }
-
-  .home-descripcion,
-  .home-text-container .home-descripcion {
-    font-size: 1rem;
-    text-align: center;
-    margin: 1rem 0;
-    line-height: 1.5;
-    align-self: center;
-    max-width: 100%;
-    padding: 0;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-
-  .home-info-adicional {
-    max-width: 100%;
-    max-height: 200px;
-    padding: 1.2rem;
-    font-size: 0.95rem;
-    text-align: center;
-    margin: 1rem 0;
-    word-wrap: break-word;
-  }
-
-  .home-info-adicional h3 {
-    font-size: 1.1rem;
-  }
-
-  .home-info-adicional p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .home-botones {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .home-btn {
-    padding: 0.7rem 1.3rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* Móviles pequeños */
-@media screen and (max-width: 480px) {
-  .home-container {
-    padding: 1rem;
-    gap: 1rem;
-    box-sizing: border-box;
-  }
-  
-  .home-model-container {
-    height: 35vh;
-    max-height: 250px;
-  }
-  
-  .home-titulo {
-    font-size: 2.2rem;
-    text-align: center;
-  }
-  
-  .home-subtitulo {
-    font-size: 0.9rem;
-    text-align: center;
-    margin: 0.5rem 0;
-    padding: 0 0.5rem;
-  }
-  
-  .home-text-container .home-descripcion {
-    font-size: 0.9rem;
-    text-align: center;
-    align-self: center;
-    margin: 0.8rem 0;
-    padding: 0;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  .home-info-adicional {
-    padding: 1rem;
-    font-size: 0.85rem;
-    max-height: 180px;
-    margin: 1rem 0;
-    word-wrap: break-word;
-  }
-  
-  .home-info-adicional h3 {
-    font-size: 1rem;
-  }
-  
-  .home-info-adicional p {
-    font-size: 0.8rem;
-  }
-  
-  .home-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Móviles muy pequeños */
-@media screen and (max-width: 360px) {
-  .home-container {
-    padding: 0.8rem;
-    box-sizing: border-box;
-  }
-  
-  .home-model-container {
-    height: 30vh;
-    max-height: 200px;
-  }
-  
-  .home-titulo {
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  .home-subtitulo {
-    font-size: 0.85rem;
-    text-align: center;
-    padding: 0 0.5rem;
-  }
-  
-  .home-text-container .home-descripcion {
-    font-size: 0.85rem;
-    text-align: center;
-    align-self: center;
-    padding: 0;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  .home-info-adicional {
-    padding: 0.8rem;
-    font-size: 0.8rem;
-    max-height: 160px;
-    word-wrap: break-word;
-  }
-  
-  .home-btn {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* Pantallas muy altas */
-@media (min-height: 1080px) and (min-width: 769px) {
-  .home-container {
-    height: 90vh;
-    padding-left: 6rem;
-    padding-right: 2rem;
-    gap: 4rem;
-  }
-
-  .home-model-container {
-    height: 70vh;
-    max-width: 55%;
-    margin-left: 2rem;
-  }
-
-  .home-text-container {
-    width: 45%;
-    padding: 1.5rem 2rem;
-    justify-content: center;
-    padding-left: 3rem;
-  }
-
-  .home-subtitulo {
-    font-size: 1.4rem;
-  }
-
-  .home-titulo {
-    font-size: 5rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .home-descripcion {
-    font-size: 1.35rem;
-    line-height: 1.8;
-    margin: 1.2rem 0;
-  }
-
-  .home-info-adicional {
-    font-size: 1.1rem;
-    max-height: 320px;
-    padding: 1.4rem;
-  }
-
-  .home-info-adicional h3 {
-    font-size: 1.5rem;
-  }
-
-  .home-botones {
-    margin-top: 2rem;
-  }
-
-  .home-btn {
-    font-size: 1.1rem;
-    padding: 1rem 1.6rem;
-  }
-}
-
-@media (max-height: 768px) {
-  .home-container {
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center; /* Centra verticalmente los contenedores */
-    justify-content: center; /* Centra horizontalmente los contenedores */
-    gap: 3rem; /* Espacio entre contenedores */
-    width: 100vw; /* Asegura que use todo el ancho */
-  }
-
-  .home-container.expanded {
-    height: 120vh; /* Aumentado significativamente para cuando se expande */
-  }
-
-  .home-model-container {
-    width: 45%;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .home-text-container {
-    width: 45%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Mantiene el texto alineado a la izquierda */
-    justify-content: center; /* Centra verticalmente el contenido */
-  }
-
-  .home-titulo {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .home-subtitulo {
-    font-size: 1rem;
-  }
-
-  .home-titulo {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .home-subtitulo {
-    font-size: 1rem;
-  }
-
-  .home-descripcion {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .home-text-container .home-descripcion {
-    font-size: 0.9rem;
-    margin: 1.5rem 0 1rem 0;
-  }
-
-  .home-info-adicional {
-    max-height: 220px;
-    padding: 1.2rem;
-  }
-
-  .home-info-adicional h3 {
-    font-size: 1.1rem;
-  }
-
-  .home-info-adicional p {
-    font-size: 0.85rem;
-  }
-
-  .home-botones {
-    margin-top: 2rem;
-  }
-
-  .home-btn {
-    padding: 0.6rem 1.1rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-height: 1080px) {
-  .home-container {
-    height: 90vh;
-    min-height: unset;
-    padding-top: 0;
-    padding-bottom: 1rem;
-    margin-top: 0;
-    margin-bottom: -3rem;
-
-    justify-content: flex-start;  /* Alinea contenido hacia la izquierda del flexbox */
-    padding-left: 6rem;           /* Desplaza todo a la derecha */
-    gap: 4rem;                    /* Aumenta espacio entre modelo y texto */
-  }
-
-  .home-model-container {
-    height: 70vh;
-    max-width: 55%;
-    margin-left: 2rem;
-  }
-
-  .home-text-container {
-    width: 45%;
-    padding: 1.5rem 2rem;
-    justify-content: center;
-  }
-
-  .home-subtitulo {
-    font-size: 1.4rem;
-  }
-
-  .home-titulo {
-    font-size: 5rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .home-descripcion {
-    font-size: 1.35rem;
-    line-height: 1.8;
-    margin: 1.2rem 0;
-  }
-
-  .home-info-adicional {
-    font-size: 1.1rem;
-    max-height: 320px;
-    padding: 1.4rem;
-  }
-
-  .home-info-adicional h3 {
-    font-size: 1.5rem;
-  }
-
-  .home-botones {
-    margin-top: 2rem;
-  }
-
-  .home-btn {
-    font-size: 1.1rem;
-    padding: 1rem 1.6rem;
   }
 }
