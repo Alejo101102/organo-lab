@@ -1,12 +1,12 @@
 import { Html } from '@react-three/drei'
 import "./TitleConjuntivits.css"
 
-const Title = ({ title }) => {
+const TitleConjuntivitis = ({ title }) => {
   return (
-    <Html center position={[15, 4, 0]} distanceFactor={50} wrapperClass='title' occlude>
+    <Html center position={[15, 4, 0]} distanceFactor={50} wrapperClass='titleConjuntivitis' occlude>
         <h1>{title}</h1>
     </Html>
   )
 }
 
-export default Title
+export default TitleConjuntivitis

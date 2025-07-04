@@ -1,10 +1,10 @@
-.titleConjuntivitis {
+.title {
   z-index: 1 !important; 
 }
 
 
-.titleConjuntivitis h1 {
-  font-size: 30px;
+.title h1 {
+  font-size: 10px;
   font-weight: 900;
   color: #ffffff;
   text-align: center;
@@ -12,11 +12,11 @@
 
   /* Efecto de relieve 3D con múltiples sombras */
     text-shadow:
-        1px 1px 0 #e04e2e,
-        2px 2px 0 #c44629,
-        3px 3px 1px #a53d23,
-        4px 4px 2px #84341d,
-        5px 5px 3px #662b18;
+        1px 1px 0 #f1c637,
+        2px 2px 0 #fd8f00,
+        3px 3px 1px #fffebb,
+        4px 4px 2px #f0b434,
+        5px 5px 3px #ff9100;
 
   /* Opcional para mejorar el contraste */
   letter-spacing: 2px;
