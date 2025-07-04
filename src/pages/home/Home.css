@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  min-height: 100vh; /* Permite que crezca más si el contenido lo necesita */
+  align-items: center; /* Cambiado de flex-start a center */
+  min-height: 100vh;
   width: 100%;
   background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
   padding: 4rem;
@@ -14,6 +14,7 @@
   line-height: 0.9;
   box-sizing: border-box;
 }
+
 
 
 .home-model-container {
@@ -28,8 +29,8 @@
   align-items: flex-start;
   justify-content: center;
   font-family: 'Inter', sans-serif;
-  height: 100%;
 }
+
 
 .home-titulo {
   font-size: 5rem;
