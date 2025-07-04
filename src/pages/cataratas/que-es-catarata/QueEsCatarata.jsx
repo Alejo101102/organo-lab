@@ -2,14 +2,16 @@ import './QueEsCatarata.css';
 import { Canvas } from '@react-three/fiber';
 import { CataractEye } from "./models-3d/CataractEye";
 import { BeginCataractEye } from "./models-3d/BeginCataractEye";
+import { PreventionEye } from "./models-3d/PreventionEye";
 import { useState } from 'react';
 import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
 import Staging from './staging/Staging';
-import Title from './texts/Title';
+import TitleCatarata from './texts/TitleCatarata';
 import LightsSintomas from './lights/LightsSintomas';
 import { KeyboardControls } from '@react-three/drei';
+import LightsPrevencion from './lights/LightsPrevencion';
 
 const tarjetas = [
   {
@@ -104,7 +106,7 @@ const QueEsCatarata = () => {
                 <Lights />  
                 <Staging />
                 <Controls />
-                <Title title={"Catarata"} />
+                <TitleCatarata title={"Catarata"} />
                 <group
                   onPointerOver={() => setShowTooltip(true)}
                   onPointerOut={() => setShowTooltip(false)}
@@ -114,7 +116,7 @@ const QueEsCatarata = () => {
                     <RigidBody type="fixed" colliders="trimesh">
                       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
                         <circleGeometry args={[12, 64]} />
-                        <meshStandardMaterial color="darkgray" />
+                        <meshStandardMaterial color="black" />
                       </mesh>
                     </RigidBody>
 
@@ -177,7 +179,7 @@ const QueEsCatarata = () => {
                 <LightsSintomas />  
                 <Controls />
                 <Staging />
-                <Title title={"Comienzo de catarata"} />
+                <TitleCatarata title={"Comienzo de catarata"} />
                 <group
                   onPointerOver={() => setShowTooltip(true)}
                   onPointerOut={() => setShowTooltip(false)}
@@ -187,7 +189,7 @@ const QueEsCatarata = () => {
                     <RigidBody type="fixed" colliders="trimesh">
                       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
                         <circleGeometry args={[12, 64]} />
-                        <meshStandardMaterial color="darkgray" shadowSide={2} />
+                        <meshStandardMaterial color="black" shadowSide={2} />
                       </mesh>
                     </RigidBody>
 
@@ -288,11 +290,11 @@ const QueEsCatarata = () => {
                   { name: "down", keys: ["q", "PageDown"] }  
                 ]}
               >
-                <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
-                  <LightsSintomas />  
+                <Canvas camera={{ position: [0, 5, 15]}} shadows={true} >
+                  <LightsPrevencion />  
                   <Controls />
                   <Staging />
-                  <Title title={"Comienzo de catarata"} />
+                  <TitleCatarata title={"Prevencion de catarata"} />
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}
@@ -302,11 +304,11 @@ const QueEsCatarata = () => {
                       <RigidBody type="fixed" colliders="trimesh">
                         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
                           <circleGeometry args={[12, 64]} />
-                          <meshStandardMaterial color="darkgray" shadowSide={2} />
+                          <meshStandardMaterial color="black" shadowSide={2} />
                         </mesh>
                       </RigidBody>
 
-                      <BeginCataractEye scale={150} physics={false} position={[-0.7, 2.5, 1]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                      <PreventionEye scale={50} physics={false} position={[-0.7, 3.5, 2]} castshadow={true} rotation={[0, -Math.PI / 2, 0]} /> {/*scale={7} position={[0, 1.2, 0]}*/}
                     </Physics>
                   </group>
                 </Canvas>
@@ -314,7 +316,7 @@ const QueEsCatarata = () => {
             </div>
           </div>
 
-                    <div className="catarata-prevencion-carrusel-container">
+          <div className="catarata-prevencion-carrusel-container">
             <button className="prev-btn" onClick={anterior}>&#10094;</button>
 
             <div className="carrusel-enfocado">
