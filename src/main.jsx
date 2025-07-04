@@ -9,17 +9,17 @@ import Cataratas from './pages/cataratas/Cataratas'
 import QueEsCatarata from './pages/cataratas/que-es-catarata/QueEsCatarata'
 import Conjuntivitis from './pages/conjuntivitis/Conjuntivitis'
 import QueEsConjuntivitis from './pages/conjuntivitis/que-es-conjuntivitis/QueEsConjuntivitis'
-import QueEsExplorarModelo from './pages/conjuntivitis/que-es-conjuntivitis/que-es-explorar-Modelo/QueEsExplorarModelo'
 import Glaucoma from './pages/glaucoma/Glaucoma'
 import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
-
+import ScrollToTop from './layout/scroollTop'; 
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+  <ScrollToTop/>
     <Layout>
       <Routes>
         <Route index path="/" element={<Home />} />  
@@ -39,7 +39,6 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="conjuntivitis" element={<Conjuntivitis/>}>
           <Route path="que-es" element={<QueEsConjuntivitis />} />
-          <Route path="que-es/modelo-3d" element={<QueEsExplorarModelo />} /> 
         </Route>
         
         <Route path="quiz" element={<Quiz />} /> 
