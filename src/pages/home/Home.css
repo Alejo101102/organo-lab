@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center; /* Cambiado de flex-start a center */
-  min-height: 100vh;
+  height: fit-content;
   width: 100%;
   background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
   padding: 4rem;
@@ -79,7 +79,7 @@
 .home-info-adicional {
   background-color: rgba(15, 15, 62, 0.7);
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   max-width: 500px;
   overflow-y: auto;
