@@ -1,19 +1,28 @@
 import { useGLTF } from "@react-three/drei";
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useFrame } from "@react-three/fiber";
 
-const Forest = ({rotate=true, ...props}) => {
+const Forest = ({rotate=false, ...props}) => {
     const {nodes, materials} = useGLTF('/models-3d/agujero-macular/forest.glb');
     const groupRef = useRef();
 
+    // Estado para controlar si el modelo está rotando
+    const [isRotating, setIsRotating] = useState(rotate);
+  
+    // Usar useFrame para aplicar la rotación en cada frame si isRotating es true
     useFrame(() => {
-      if (rotate && groupRef.current) {
-        groupRef.current.rotation.y += 0.01;
+      if (isRotating && groupRef.current) {
+        groupRef.current.rotation.y += 0.01; 
       }
     });
+  
+    // Función para manejar el clic y alternar la rotación
+    const handleClick = () => {
+      setIsRotating(!isRotating);
+    };
 
     return (
-    <group ref={groupRef} {...props} dispose={null}>
+    <group ref={groupRef} {...props} onClick={handleClick} dispose={null}>
       <mesh
         castShadow
         receiveShadow
