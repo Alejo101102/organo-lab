@@ -1,26 +1,40 @@
 import { useGLTF } from "@react-three/drei";
-import { useRef, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber';
+import { RigidBody } from '@react-three/rapier';
 
-const EyeWithGlaucoma = ({rotate = true, ...props }) => {
+
+
+export function EyeWithGlaucoma ({physics = true, rotate = false, ...props }) {
+  const { nodes, materials } = useGLTF("/models-3d/eye-with-glaucoma.glb");
 
   const groupRef = useRef();
+  const rigidBodyRef = useRef()
 
-    const { nodes, materials } = useGLTF("/models-3d/eye-with-glaucoma.glb");
-
-     // Verifica si los nodos existen antes de acceder a ellos
-     if (!nodes || !nodes.MeshIris || !nodes.MeshSclera) {
-      return <p>Modelo no disponible o no cargado correctamente</p>;
-      }
-
-      useFrame(() => {
-        if (rotate && groupRef.current) {
-          groupRef.current.rotation.y += 0.003; 
-        }
-      });
     
-    return(
-      <group ref={ groupRef }{...props} dispose={null}>
+    // Estado para controlar si el modelo está rotando
+    const [isRotating, setIsRotating] = useState(rotate);
+
+    // Usar useFrame para aplicar la rotación en cada frame si isRotating es true
+    useFrame(() => {
+        if (isRotating && groupRef.current) {
+        groupRef.current.rotation.z += 0.01; 
+        }
+    });
+    
+    // Función para manejar el clic y alternar la rotación
+    const handleClick = () => {
+        setIsRotating(!isRotating);
+    };
+
+    useEffect(() => {
+        if (physics && rigidBodyRef.current) {
+            rigidBodyRef.current.applyImpulse({ x: 0, y: 5, z: 0 }, true)
+        }
+    }, [physics])
+    
+    const content = (
+      <group ref={groupRef} {...props} onClick={handleClick} dispose={null}>
       <group rotation={[-Math.PI, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
@@ -62,9 +76,16 @@ const EyeWithGlaucoma = ({rotate = true, ...props }) => {
     </group>
     
     );
-    
-    
-};
-export default EyeWithGlaucoma;
 
-useGLTF.preload("models-3d/eye-with-glaucoma.glb");
+    if (physics) {
+        return (
+            <RigidBody ref={rigidBodyRef} colliders="trimesh" restitution={0.6} friction={0.4} {...props}>
+                {content}
+            </RigidBody>
+        )
+    } else {
+        return content;
+    }
+};
+
+useGLTF.preload("/models-3d/eye-with-glaucoma.glb");

@@ -3,7 +3,7 @@ import './QueEsGlaucoma.css';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text3D } from '@react-three/drei';
 import Footer from '../../../layout/footer/Footer';
-import EyeWithGlaucoma from '../models-3d/EyeWithGlaucoma';
+import { EyeWithGlaucoma } from '../models-3d/EyeWithGlaucoma';
 import { useNavigate } from 'react-router';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
@@ -18,7 +18,7 @@ import SnellenTable from '../models-3d/SnellenTable';
 import MattSmith from '../models-3d/matt-smith';
 import Title from './texts/Title';
 import TratamientoGlaucoma  from './videos/TratamientoGlaucoma';
-
+import { KeyboardControls } from '@react-three/drei';
 
 
 
@@ -78,6 +78,17 @@ const QueEsGlaucoma = () => {
             )}
 
             <div className="glaucoma-modelo-3d-que-es">
+              <KeyboardControls
+                            map={[
+                              { name: "forward", keys: ["w", "ArrowUp"] },
+                              { name: "backward", keys: ["s", "ArrowDown"] },
+                              { name: "left", keys: ["a", "ArrowLeft"] },
+                              { name: "right", keys: ["d", "ArrowRight"] },
+                              { name: "up", keys: ["e", "PageUp"] },     
+                              { name: "down", keys: ["q", "PageDown"] } 
+                            ]}
+                          >
+                          
               <Canvas camera={{ position: [5, 0, 20],fov: 20}} shadows={true}>
                       <Lights /> 
                       <OrbitControls target={[0, 3, 1]} />
@@ -109,10 +120,11 @@ const QueEsGlaucoma = () => {
                             </mesh>
                           </RigidBody>
               
-                          <EyeWithGlaucoma scale={0.01} physics={false} position={[-0.7, 3, 1]} rotation={[-Math.PI*90/180, Math.PI*20/180 , 0]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                          <EyeWithGlaucoma scale={0.01} physics={false} position={[-0.7, 3, 1]} rotation={[-Math.PI*90/180, Math.PI*30/180 , 0]} castshadow={true} /> {/*scale={7} position={[0, 1.2, 0]}*/}
                         </Physics>
                       </group>
                     </Canvas>
+                    </KeyboardControls>
             </div>
           </div>
         
@@ -141,8 +153,36 @@ const QueEsGlaucoma = () => {
           </p>
 
           <div className="glaucoma-sintomas-tarjeta">
+            <div 
+          className="catarata-modelo-3d-container"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleModelHover}
+          onMouseLeave={handleModelLeave}
+        >
+          {showTooltip && (
+            <div className="catarata-modelo-tooltip" style={{
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+              position: 'fixed'
+            }}>
+              Mueve el modelo 3D
+            </div>
+          )}
+
             <div className="glaucoma-sintomas-modelo-tarjeta">
+              <KeyboardControls
+                map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },     
+                { name: "down", keys: ["q", "PageDown"] }  
+                ]}
+              >
               <Canvas camera={{ position: [1, 1.5, 4], fov: 50 }}>
+                <Controls />
+                
                 <group
                   onPointerOver={() => setShowTooltip(true)}
                   onPointerOut={() => setShowTooltip(false)}
@@ -172,6 +212,8 @@ const QueEsGlaucoma = () => {
                   <PostProcessing />
                 </group>
               </Canvas>
+              </KeyboardControls>
+              </div>
             </div>
 
             <h2 className="glaucoma-tarjeta-sintomas-titulo">Visión de túnel</h2>
@@ -204,11 +246,42 @@ const QueEsGlaucoma = () => {
     </div>
 
       <div className="glaucoma-tarjeta-prevencion-carrusel-central">
+        <div 
+            className="catarata-modelo-3d-container"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleModelHover}
+            onMouseLeave={handleModelLeave}
+          >
+            {showTooltip && (
+              <div className="catarata-modelo-tooltip" style={{
+                left: tooltipPosition.x,
+                top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+                position: 'fixed'
+              }}>
+                Mueve el modelo 3D
+              </div>
+            )}
+            
         <div className="glaucoma-prevencion-modelo-snellen">
+          <KeyboardControls
+                          map={[
+                            { name: "forward", keys: ["w", "ArrowUp"] },
+                            { name: "backward", keys: ["s", "ArrowDown"] },
+                            { name: "left", keys: ["a", "ArrowLeft"] },
+                            { name: "right", keys: ["d", "ArrowRight"] },
+                            { name: "up", keys: ["e", "PageUp"] },     
+                            { name: "down", keys: ["q", "PageDown"] }  
+                          ]}
+                        >
+
         <Canvas camera={{ position: [-10, 8, 0], fov: 20 }}>
           <Lights />            
           <Controls />
-          <Environment preset="sunset" background /> 
+          <Environment preset="sunset" background />
+          <group
+                    onPointerOver={() => setShowTooltip(true)}
+                    onPointerOut={() => setShowTooltip(false)}
+                  >
           <ambientLight intensity={1} />
               <directionalLight
                 position={[2, 6.5, 1]}
@@ -242,7 +315,10 @@ const QueEsGlaucoma = () => {
            fontSize={0.25}
            />
 
+        </group>
         </Canvas>
+        </KeyboardControls>
+        </div>
 
         </div>
         <h3 className="glaucoma-prevencion-titulo-central">Examen ocular</h3>
