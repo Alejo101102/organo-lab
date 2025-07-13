@@ -19,7 +19,7 @@ const Lights = () => {
       
       <directionalLight 
         position={[0, 5, 7]}
-        intensity={5}
+        intensity={3.5}
         castShadow={true}
         shadow-mapSize={[1024, 1024]}
       />
@@ -28,7 +28,7 @@ const Lights = () => {
         ref={spotLightRef}
         position={[0, 5, 9]}
         distance={25}
-        intensity={100}
+        intensity={70}
         angle={Math.PI / 3}
         penumbra={0.5}
         castShadow={true}
@@ -40,7 +40,7 @@ const Lights = () => {
 
       <pointLight 
         position={[5, 2, -5]} 
-        intensity={25} 
+        intensity={17.5} 
         castShadow={false} 
       />
     </>
