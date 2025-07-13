@@ -260,103 +260,126 @@ const QueEsCatarata = () => {
         </div>
     </div>
 
+    <div className='catarata-separador-sintomas-prevencion'>
+
+    </div>
+    
+    {/* =============== PREVENCIÓN ================*/}
+
     <div className='catarata-prevencion-container'>
-      <div className="catarata-prevencion-container">      
-        <h2 className="catarata-prevencion-titulo">PREVENCIÓN</h2>
-          <div 
-            className="catarata-modelo-3d-container"
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleModelHover}
-            onMouseLeave={handleModelLeave}
-          >
-            {showTooltip && (
-              <div className="catarata-modelo-tooltip" style={{
-                left: tooltipPosition.x,
-                top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
-                position: 'fixed'
-              }}>
-                Mueve el modelo 3D
-              </div>
-            )}
-            
-            <div className="catarata-prevencion-modelo-3d" >
-              <KeyboardControls
-                map={[
-                  { name: "forward", keys: ["w", "ArrowUp"] },
-                  { name: "backward", keys: ["s", "ArrowDown"] },
-                  { name: "left", keys: ["a", "ArrowLeft"] },
-                  { name: "right", keys: ["d", "ArrowRight"] },
-                  { name: "up", keys: ["e", "PageUp"] },     
-                  { name: "down", keys: ["q", "PageDown"] }  
-                ]}
-              >
-                <Canvas camera={{ position: [0, 5, 15]}} shadows={true} >
-                  <LightsPrevencion />  
-                  <Controls />
-                  <Staging />
-                  <TitleCatarata title={"Prevencion de catarata"} />
-                  <group
-                    onPointerOver={() => setShowTooltip(true)}
-                    onPointerOut={() => setShowTooltip(false)}
-                  >
-                    <Physics>
+      <h2 className="catarata-prevencion-titulo">PREVENCIÓN</h2>
+        <div 
+          className="catarata-modelo-3d-container"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleModelHover}
+          onMouseLeave={handleModelLeave}
+        >
+          {showTooltip && (
+            <div className="catarata-modelo-tooltip" style={{
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+              position: 'fixed'
+            }}>
+              Mueve el modelo 3D
+            </div>
+          )}
+          
+          <div className="catarata-prevencion-modelo-3d" >
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },     
+                { name: "down", keys: ["q", "PageDown"] }  
+              ]}
+            >
+              <Canvas camera={{ position: [0, 5, 15]}} shadows={true} >
+                <LightsPrevencion />  
+                <Controls />
+                <Staging />
+                <TitleCatarata title={"Prevencion de catarata"} />
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <Physics>
 
-                      <RigidBody type="fixed" colliders="trimesh">
-                        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
-                          <circleGeometry args={[12, 64]} />
-                          <meshStandardMaterial color="black" shadowSide={2} />
-                        </mesh>
-                      </RigidBody>
+                    <RigidBody type="fixed" colliders="trimesh">
+                      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                        <circleGeometry args={[12, 64]} />
+                        <meshStandardMaterial color="black" shadowSide={2} />
+                      </mesh>
+                    </RigidBody>
 
-                      <PreventionEye scale={50} physics={false} position={[-0.7, 3.5, 2]} castshadow={true} rotation={[0, -Math.PI / 2, 0]} /> {/*scale={7} position={[0, 1.2, 0]}*/}
-                    </Physics>
-                  </group>
-                </Canvas>
-              </KeyboardControls>
+                    <PreventionEye scale={50} physics={false} position={[-0.7, 3.5, 2]} castshadow={true} rotation={[0, -Math.PI / 2, 0]} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                  </Physics>
+                </group>
+              </Canvas>
+            </KeyboardControls>
+          </div>
+        </div>
+
+        <div className="catarata-prevencion-carrusel-container">
+          <button className="prev-btn" onClick={anterior}>&#10094;</button>
+
+          <div className="carrusel-enfocado">
+            {tarjetas.map((tarjeta, i) => {
+              const izquierda = (indiceActivo - 1 + tarjetas.length) % tarjetas.length;
+              const derecha = (indiceActivo + 1) % tarjetas.length;
+
+              let clase = "catarata-tarjeta-prevencion";
+              if (i === indiceActivo) {
+                clase = "catarata-tarjeta-prevencion enfocado";
+              } else if (i === izquierda || i === derecha) {
+                clase = "catarata-tarjeta-prevencion lateral";
+              } else {
+                clase = "catarata-tarjeta-prevencion";
+                // Para tarjetas no visibles, aplicamos estilos de oculto
+              }
+
+              // Solo mostramos las 3 tarjetas: izquierda, centro, derecha
+              const esVisible = i === indiceActivo || i === izquierda || i === derecha;
+              
+              return esVisible ? (
+                <div className={clase} key={i}>
+                  <img src={tarjeta.img} alt={tarjeta.titulo} />
+                  <h3>{tarjeta.titulo}</h3>
+                  <div className="separador"></div>
+                  <p>{tarjeta.texto}</p>
+                </div>
+              ) : null;
+            })}
+          </div>
+
+          <button className="next-btn" onClick={siguiente}>&#10095;</button>
+        </div>
+
+        <p className="catarata-prevencion-alerta">Esta enfermedad no puede prevenirse</p>
+
+        <div className="catarata-prevencion-barras-container">
+          <div className="catarata-prevencion-barra">
+            <img src="/images/catarata/prevencion/medidor.png" alt="icon" className="catarata-prevencion-barra-icono" />
+            <span>Personas con catarata</span>
+            <div className="catarata-prevencion-barra-progreso">
+              <div className="catarata-progreso" style={{ width: '1.2%', background: '#FFB400' }}></div>
+              <span>1.2%</span>
             </div>
           </div>
 
-          <div className="catarata-prevencion-carrusel-container">
-            <button className="prev-btn" onClick={anterior}>&#10094;</button>
-
-            <div className="carrusel-enfocado">
-              {tarjetas.map((tarjeta, i) => {
-                const izquierda = (indiceActivo - 1 + tarjetas.length) % tarjetas.length;
-                const derecha = (indiceActivo + 1) % tarjetas.length;
-
-                let clase = "catarata-tarjeta-prevencion";
-                if (i === indiceActivo) {
-                  clase = "catarata-tarjeta-prevencion enfocado";
-                } else if (i === izquierda || i === derecha) {
-                  clase = "catarata-tarjeta-prevencion lateral";
-                } else {
-                  clase = "catarata-tarjeta-prevencion";
-                  // Para tarjetas no visibles, aplicamos estilos de oculto
-                }
-
-                // Solo mostramos las 3 tarjetas: izquierda, centro, derecha
-                const esVisible = i === indiceActivo || i === izquierda || i === derecha;
-                
-                return esVisible ? (
-                  <div className={clase} key={i}>
-                    <img src={tarjeta.img} alt={tarjeta.titulo} />
-                    <h3>{tarjeta.titulo}</h3>
-                    <div className="separador"></div>
-                    <p>{tarjeta.texto}</p>
-                  </div>
-                ) : null;
-              })}
+          <div className="catarata-prevencion-barra">
+            <img src="/images/catarata/prevencion/medidor.png" alt="icon" className="catarata-prevencion-barra-icono" />
+            <span>Personas con tratamiento</span>
+            <div className="catarata-prevencion-barra-progreso">
+              <div className="catarata-progreso" style={{ width: '35%', background: '#199ED9' }}></div>
+              <span>35%</span>
             </div>
-
-            <button className="next-btn" onClick={siguiente}>&#10095;</button>
           </div>
+        </div>
 
-
-       
           
       </div>
-    </div>
-
     <div
       className="burbuja-instrucciones"
       onClick={() => setShowModal(true)}
