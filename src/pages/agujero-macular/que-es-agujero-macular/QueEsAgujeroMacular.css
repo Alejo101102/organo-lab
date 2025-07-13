@@ -51,6 +51,7 @@
 
 .agumac-que-es-agumac-texto p {
     color: #fff;
+    font-size: 18px;
 }
 
 .agumac-modelo-3d-container {
@@ -90,10 +91,11 @@
     box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
 }
 
+/* === SECCIÓN SINTOMAS === */ 
+
 .agumac-sintomas-container {
     background: radial-gradient(circle at center, #0f0f3e, #0b0b2d);
     width: 100vw;
-    height: 150vh;
     margin-top: -200px;
     color: white;
     padding: 2rem;
@@ -111,6 +113,48 @@
     margin-bottom: 1rem;
 }
 
+
+.agumac-descripcion-sintomas {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2rem;
+  text-align: justify;
+
+  line-height: 1.8;
+  color: #fff;
+}
+
+.agumac-sintomas-tarjeta {
+  background-color: #ffffff10;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0099B8;
+  text-align: center;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /
+}
+
+.agumac-sintomas-modelo-tarjeta {
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.agumac-tarjeta-sintomas-titulo {
+  margin: 1rem 0 0.5rem;
+  color: white;
+}
+
+.agumac-tarjeta-sintomas-descripcion {
+  opacity: 0.85;
+  color: white;
+  text-align: center;
+}
+
 .agumac-sintomas-texto {
     max-width: 1000px;
     margin: 2rem auto;
@@ -118,90 +162,82 @@
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     line-height: 1.8;
-    margin-top: -100px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
 }
 
 .agumac-sintomas-texto p {
-    color: #fff;
+  color: #fff;
+  font-size: 18px;
 }
-
 
 .agumac-sintomas-texto ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el padding por defecto */
-    margin: 0 ; /* Centra la lista */
-    max-width: 800px; /* Limita el ancho máximo de la lista */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+  font-size: 18px;
+}
+.agumac-sintomas-texto ul li {
+  list-style-type: disc;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
 }
 
-.agumac-sintomas-texto ul li { 
-    list-style-type: disc; 
-    color: #fff; 
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
-}
-
-.agumac-sintomas-modelo-3d {
-    width: 800px; /* Asegúrate de que ocupe todo el ancho del contenedor */
-    height: 330px; /* Asegúrate de que ocupe toda la altura del contenedor */
-    border-radius: 35px;
-    overflow: hidden;
-    position: relative;
-    margin-top: -100px;
-}
-
+/* === TARJETAS === */ 
 .agumac-contenedor-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;
 }
 
 .agumac-tarjetas-sintomas {
-    background-color: #ffffff10;
-    border-radius: 20px;
-    padding: 1.5rem;
-    width: 250px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid #0099B8;
-    text-align: center;
-    color: white;
+  background-color: #ffffff10;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0099B8;
+  text-align: center;
+  color: white;
 }
 
 .agumac-imagen-tarjeta-sintomas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  margin-bottom: 1rem;
 }
 
 .agumac-imagen-con-borde {
-    background-color: #00000020;
-    padding: 8px;
-    border-radius: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #00000020;
+  padding: 8px;
+  border-radius: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .agumac-imagen-con-borde img {
-    width: 125px;
-    height: 125px;
-    border-radius: 35px;
-    object-fit: cover;
+  width: 125px;
+  height: 125px;
+  border-radius: 35px;
+  object-fit: cover;
 }
 
 .agumac-tarjeta-sintomas-titulo {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
 }
 
 .agumac-tarjeta-sintomas-descripcion {
-    font-size: 1rem;
-    opacity: 0.85;
-    color: white;
+  font-size: 1rem;
+  opacity: 0.85;
+  color: white;
 }
