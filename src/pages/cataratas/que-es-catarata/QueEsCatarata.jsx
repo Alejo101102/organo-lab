@@ -12,6 +12,8 @@ import TitleCatarata from './texts/TitleCatarata';
 import LightsSintomas from './lights/LightsSintomas';
 import { KeyboardControls } from '@react-three/drei';
 import LightsPrevencion from './lights/LightsPrevencion';
+import Text2DCatarata from './texts/Text2DCatarata';
+import Text3DCatarata from './texts/Text3DCatarata';
 
 const tarjetas = [
   {
@@ -102,11 +104,13 @@ const QueEsCatarata = () => {
                 { name: "down", keys: ["q", "PageDown"] } 
               ]}
             >
-              <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
+              <Canvas camera={{ position: [0, 2, 16]}} shadows={true} >
                 <Lights />  
                 <Staging />
                 <Controls />
                 <TitleCatarata title={"Catarata"} />
+                <Text2DCatarata title={"¿Qué es una catarata?"} />
+                <Text3DCatarata title={"¿Qué es?"} position={[-4.25, -1.6, 9.5]} />
                 <group
                   onPointerOver={() => setShowTooltip(true)}
                   onPointerOut={() => setShowTooltip(false)}
@@ -175,11 +179,13 @@ const QueEsCatarata = () => {
                 { name: "down", keys: ["q", "PageDown"] }  
               ]}
             >
-              <Canvas camera={{ position: [0, 2, 15]}} shadows={true} >
+              <Canvas camera={{ position: [0, 2, 16]}} shadows={true} >
                 <LightsSintomas />  
                 <Controls />
                 <Staging />
-                <TitleCatarata title={"Comienzo de catarata"} />
+                <TitleCatarata title={"Catarata"} />
+                <Text3DCatarata title={"Síntomas"} position={[-4.25, -1.6, 9.5]} />
+                <Text2DCatarata title={"¿Cuales son sus síntomas?"} />
                 <group
                   onPointerOver={() => setShowTooltip(true)}
                   onPointerOut={() => setShowTooltip(false)}
@@ -295,11 +301,13 @@ const QueEsCatarata = () => {
                 { name: "down", keys: ["q", "PageDown"] }  
               ]}
             >
-              <Canvas camera={{ position: [0, 5, 15]}} shadows={true} >
+              <Canvas camera={{ position: [0, 3.5, 18]}} shadows={true} >
                 <LightsPrevencion />  
                 <Controls />
                 <Staging />
-                <TitleCatarata title={"Prevencion de catarata"} />
+                <TitleCatarata title={"Catarata"} />
+                <Text3DCatarata title={"Prevención"} position={[-5, -1.6, 9]} />
+                <Text2DCatarata title={"¿Cómo se previene?"} />
                 <group
                   onPointerOver={() => setShowTooltip(true)}
                   onPointerOut={() => setShowTooltip(false)}
