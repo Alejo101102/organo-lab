@@ -20,9 +20,10 @@ const Text3DCatarata = ({ title, position }) => {
     >
       {title}
       <meshStandardMaterial
-        color="#B28F00"
-        roughness={0.3}
-        metalness={0.1}
+        color="#7d4fa3"
+        emissive="#000000"
+        roughness={10}
+        metalness={0.3}
         flatShading={true}
       />
 
