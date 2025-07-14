@@ -184,8 +184,17 @@
   text-align: center;
 }
 
+.glaucoma-separador-sintomas-prevencion {
+  width: 100%;
+  height: 5vh;
+  background: linear-gradient(to bottom, #1f2040, white);
+  margin: auto; /* Ajustado */
+}
+
 
 /* === SECCIÓN PREVENCIÓN === */
+
+
 
 .glaucoma-prevencion-container{
    margin-top: 5rem;

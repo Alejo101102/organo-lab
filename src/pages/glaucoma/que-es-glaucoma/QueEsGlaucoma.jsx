@@ -18,6 +18,7 @@ import { SnellenTable } from '../models-3d/SnellenTable';
 import { MattSmith } from '../models-3d/matt-smith';
 import TitleGlaucoma from './texts/TitleGlaucoma';
 import TitleGlaucomaModelo from './texts/TitleGlaucoma';
+import Text3DGlaucoma from './texts/Text3DGlaucoma';
 
 import TratamientoGlaucoma  from './videos/TratamientoGlaucoma';
 import { KeyboardControls } from '@react-three/drei';
@@ -112,6 +113,9 @@ const QueEsGlaucoma = () => {
                       <Lights /> 
                       <OrbitControls target={[0, 3, 1]} />
                       <Controls />
+                      <Text3DGlaucoma title={"=>"} position={[-5, 1.4, 1]} />
+                      <Text3DGlaucoma title={"<="} position={[5, 1.4, 0]} />
+                      
 
                       <Environment preset="sunset" background /> 
   
@@ -242,6 +246,13 @@ const QueEsGlaucoma = () => {
           </div>
         </div>
       </section>
+
+
+
+
+      <section className='glaucoma-separador-sintomas-prevencion'>
+    </section>
+
 
 
        {/* =============== PREVENCION ================*/}
@@ -445,7 +456,7 @@ const QueEsGlaucoma = () => {
             <Sparkles count={10} scale={5} size={1.5} speed={0.3} />
             <OrbitControls target={[0, 1.5, 0]} enableZoom={true} />
             <MattSmith physics={false} position={[0, 3.5, 0]} rotation={[0, Math.PI, 0]} scale={1.5} />
-            <TitleGlaucomaModelo title={"✧"}   />
+            
 
             <Html position={[-5, 1.5, 0]} center>
               <button
