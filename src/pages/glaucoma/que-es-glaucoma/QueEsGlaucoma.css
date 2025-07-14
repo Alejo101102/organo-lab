@@ -472,8 +472,24 @@
   height: 600px;      /* lo hacemos más alto */
   border-radius: 1rem;
   overflow: hidden;
-
 }
+
+.glaucoma-modelo-explicativo-boton-audio {
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  background-color: #199ED9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+.glaucoma-modelo-explicativo-boton-audio {
+  background-color: #1278a8;
+}
+
 
 /* === TOOLTIP === */
 
