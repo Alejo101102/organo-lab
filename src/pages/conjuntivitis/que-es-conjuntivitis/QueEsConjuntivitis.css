@@ -117,6 +117,18 @@
   left: 0;
 }
 
+.sintomas-texto {
+  max-width: 85%;
+  padding: 1rem;
+  margin: 2rem auto 5rem auto;
+}
+.sintomas-texto p {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
 
 /*###############################################################*/
 
