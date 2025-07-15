@@ -26,6 +26,8 @@ import BotonVideo from './texts/ButtonVideo';
 import { KeyboardControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import PrevencionCarrusel from './AuxiliaryFuntions/PrevencionCarrusel';
+import TarjetasSintomasConjuntivitis from './AuxiliaryFuntions/TarjetasSintomasConjuntivitis';
+
 
 const QueEsConjuntivitis = () =>  {
   const navigate = useNavigate();
@@ -140,20 +142,18 @@ const QueEsConjuntivitis = () =>  {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
             >
             <div className="sintomas-texto">
               <h4>Síntomas</h4>
-              <ul>
-                <li>👁️ Enrojecimiento de uno o ambos ojos</li>
-                <li>😣 Picazón o ardor ocular</li>
-                <li>🟡 Secreción espesa que puede formar costras, especialmente al despertar</li>
-                <li>💧 Lagrimeo excesivo</li>
-                <li>🪟 Sensación de tener arena en el ojo</li>
-                <li>📉 Visión ligeramente borrosa por secreciones</li>
-                <li>⚡ Sensibilidad a la luz</li>
-              </ul>
+              <p>
+                La conjuntivitis puede presentarse con una variedad de molestias oculares.
+                A continuación, se muestran los síntomas más comunes de forma visual para ayudarte a identificarlos fácilmente.
+              </p>
             </div>
+
+            
+
             
            {/*Modelo 3d de los sintomas */}
            
@@ -192,6 +192,10 @@ const QueEsConjuntivitis = () =>  {
                 </Canvas>
               </KeyboardControls>
             </div>
+            <p></p>
+
+            <TarjetasSintomasConjuntivitis />
+
             <p></p>
 
             </motion.div>
