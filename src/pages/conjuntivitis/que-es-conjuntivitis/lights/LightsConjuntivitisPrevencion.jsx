@@ -15,44 +15,47 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight intensity={0.5} />
-      
-      <directionalLight 
-        position={[0, 5, 7]}
-        intensity={1.2} // ligeramente más intensa
-        color="#6f00ff"
-        castShadow={true}
-        shadow-mapSize-width={2048} // mejor resolución
+      {/* Luz ambiental tenue para rellenar sombras */}
+      <ambientLight intensity={0.3} />
+
+      {/* Luz direccional blanca apuntando desde un costado */}
+      <directionalLight
+        position={[-10, -10, 10]} // lado derecho
+        intensity={2}
+        color="red"
+        castShadow
+        shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
         shadow-camera-near={1}
-        shadow-camera-far={20}
+        shadow-camera-far={30}
         shadow-camera-left={-10}
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
 
+      {/* SpotLight blanca intensa lateral izquierda apuntando al centro */}
       <spotLight
         ref={spotLightRef}
-        position={[2, 6, 5]} // mueve un poco la posición
-        distance={100}
-        color="#6f00ff"
-        intensity={120} // aún más fuerte
-        angle={Math.PI / 2} // más enfocado
-        penumbra={0.6}
-        castShadow={true}
+        position={[-10, -10, 10]} // desde el lado izquierdo
+        distance={30}
+        color="red"
+        intensity={150}
+        angle={Math.PI / 4}
+        penumbra={0.5}
+        castShadow
         shadow-mapSize={[2048, 2048]}
-        shadow-bias={-0.005} // elimina artefactos de sombra
+        shadow-bias={-0.003}
         shadow-normalBias={0.02}
       />
-      {/* Target hacia el centro de la escena */}
       <object3D ref={targetRef} position={[0, 0, 0]} />
 
-      <pointLight 
-        position={[5, 2, -5]} 
-        intensity={1.3} 
-        color="#6f00ff"
-        castShadow={false} 
+      {/* Luz puntual de refuerzo más tenue desde atrás */}
+      <pointLight
+        position={[-10, -10, 10]}
+        intensity={0.6}
+        color="red"
+        castShadow={false}
       />
     </>
   );
