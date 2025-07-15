@@ -10,27 +10,27 @@ import './PrevencionCarrusel.css';
 
 const tarjetas = [
   {
-    icono: '/public/images/conjuntivitis/Tarjeta1.png',
+    icono: '/public/images/conjuntivitis/Tarjeta1.svg',
     titulo: 'Lávate las manos',
     texto: 'Lávate las manos con agua y jabón frecuentemente, especialmente antes de tocarte los ojos o la cara. Es la medida más eficaz para evitar infecciones.',
   },
   {
-    icono: '/public/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg',
+    icono: '/public/images/conjuntivitis/Tarjeta2.svg',
     titulo: 'No compartas objetos',
     texto: 'Evita compartir toallas, almohadas, maquillaje, gafas o pañuelos. Estos objetos pueden acumular virus o bacterias que provocan conjuntivitis.',
   },
   {
-    icono: '/public/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg',
+    icono: '/public/images/conjuntivitis/Tarjeta3.svg',
     titulo: 'Limpieza de objetos',
     texto: 'Limpia con regularidad tus lentes, celulares, teclados y otros objetos que tocas a diario. Ayuda a reducir la exposición a posibles contaminantes.',
   },
   {
-    icono: '/public/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg',
+    icono: '/public/images/conjuntivitis/Tarjeta4.svg',
     titulo: 'Síntomas de resfriado',
     texto: 'Si tienes gripe o resfriado, evita frotarte los ojos y usa pañuelos desechables. Muchas infecciones respiratorias también pueden afectar los ojos.',
   },
   {
-    icono: '/public/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg',
+    icono: '/public/images/conjuntivitis/Tarjeta5.svg',
     titulo: 'Consulta médica',
     texto: 'Suspende el uso de lentes de contacto si tienes molestias. Consulta con un oftalmólogo si los síntomas persisten más de 3 días.',
   },
