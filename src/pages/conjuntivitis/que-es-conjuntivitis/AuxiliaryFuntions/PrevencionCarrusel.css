@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+.swiper-slide {
+  width: 300px !important; /* Igual al ancho de .tarjeta-prevencion */
+  display: flex;
+  justify-content: center;
+}
+
 .swiper-container {
   width: 100%;
   padding-top: 20px;
@@ -13,12 +19,14 @@
 }
 
 .tarjeta-prevencion {
-  background: #00bcd4;
+  background: white;
+  color: #444;
+  opacity: 0.6;
+  transition: all 0.3s ease;
   border-radius: 20px;
   padding: 2rem;
   width: 300px;
   height: auto;
-  color: white;
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -26,6 +34,7 @@
   justify-content: center;
   align-items: center;
 }
+
 
 .tarjeta-prevencion h5 {
   font-size: 20px;
@@ -44,6 +53,14 @@
   height: 60px;
   object-fit: contain;
   margin-bottom: 1rem;
+}
+
+.tarjeta-prevencion.activa {
+  background: #00bcd4;
+  color: white;
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 
