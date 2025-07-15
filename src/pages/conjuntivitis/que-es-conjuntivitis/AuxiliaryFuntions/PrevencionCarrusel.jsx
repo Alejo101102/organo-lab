@@ -10,7 +10,7 @@ import './PrevencionCarrusel.css';
 
 const tarjetas = [
   {
-    icono: '/public/images/conjuntivitis/QueEsConjuntivitisPersona.jpeg',
+    icono: '/public/images/conjuntivitis/Tarjeta1.png',
     titulo: 'Lávate las manos',
     texto: 'Lávate las manos con agua y jabón frecuentemente, especialmente antes de tocarte los ojos o la cara. Es la medida más eficaz para evitar infecciones.',
   },
