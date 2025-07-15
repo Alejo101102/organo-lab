@@ -10,12 +10,12 @@ import './PrevencionCarrusel.css';
 
 const tarjetas = [
   {
-    icono: '/public/images/conjuntivitis/Tarjeta1.svg',
+    icono: '/public/images/conjuntivitis/Tarjeta2.svg',
     titulo: 'Lávate las manos',
     texto: 'Lávate las manos con agua y jabón frecuentemente, especialmente antes de tocarte los ojos o la cara. Es la medida más eficaz para evitar infecciones.',
   },
   {
-    icono: '/public/images/conjuntivitis/Tarjeta2.svg',
+    icono: '/public/images/conjuntivitis/Tarjeta1.svg',
     titulo: 'No compartas objetos',
     texto: 'Evita compartir toallas, almohadas, maquillaje, gafas o pañuelos. Estos objetos pueden acumular virus o bacterias que provocan conjuntivitis.',
   },
