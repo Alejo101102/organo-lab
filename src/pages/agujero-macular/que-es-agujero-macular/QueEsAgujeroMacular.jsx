@@ -8,20 +8,54 @@ import Controls from '../../agujero-macular/que-es-agujero-macular/controls/Cont
 import { KeyboardControls } from '@react-three/drei';
 
 import TitleAgujeroMacular from './texts/TitleAgujeroMacular'
+import Text3DAgujeroMacular from './texts/Text3DAgujeroMacular'
+import Text2DAgujeroMacular from './texts/Text2DAgujeroMacular'
 import Lights from './lights/Lights';
 import LightsSintomas from './lights/LightsSintomas'
+import LightsPrevencion from './lights/LightsPrevencion'
 import Staging from './staging/Staging'
+import StagingPrevencion from './staging/StagingPrevencion'
 import PostProcessing from './PostProcessing'
 
 import InternEye from '../models-3d/InternEye'
 import Forest from '../models-3d/Forest'
+import SnellenTable from '../models-3d/SnellenTable'
 
+
+const tarjetas = [
+  {
+    img: "/images/agujero-macular/prevencion/foroptero.png",
+    titulo: "Examen ocular",
+    texto: "Personas con una graduación alta de miopía deben estar pendientes de revisiones oftalmológicas mínima una vez al año"
+  },
+  {
+    img: "/images/agujero-macular/prevencion/medico.png",
+    titulo: "Examen ocular",
+    texto: "Ignorar la salud visual puede llevar a una disminución progresiva de la agudeza visual y un mayor riesgo de enfermedades oculares."
+  },
+  {
+    img: "/images/agujero-macular/prevencion/medica.png",
+    titulo: "Examen ocular",
+    texto: "Las personas mayores de 60 años tienen que estar muy pendientes de las revisiones oftalmológicas periódicas mínimo una vez al año."
+  }
+];
 
 const QueEsAgujeroMacular = () => {
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [showModal, setShowModal] = useState(false); 
+  const [indiceActivo, setIndiceActivo] = useState(1); 
   const modelContainerRef = useRef(null);
+
+  //Manejar tarjetas de prevención
+  const siguiente = () => {
+    setIndiceActivo((prev) => (prev + 1) % tarjetas.length);
+  };
+
+  const anterior = () => {
+    setIndiceActivo((prev) => (prev - 1 + tarjetas.length) % tarjetas.length);
+  };
 
   //Función para manejar el movimiento del mouse
   const handleMouseMove = (event) => {
@@ -82,7 +116,7 @@ const QueEsAgujeroMacular = () => {
                 shadows={true}>
                 <Lights />
                 <Controls />
-                <TitleAgujeroMacular title={"¿Qué es?"} />
+                <TitleAgujeroMacular title={"¿Qué es?"} position={[12, 4, 10]}/>
                 <group
                   rotation={[0, Math.PI * 55 / 180, 0]}
                   position={[-0.15, 0, 0]}
@@ -150,6 +184,7 @@ const QueEsAgujeroMacular = () => {
               <Canvas camera={{ position: [0, 2, 15] }} shadows={true} >
                 <LightsSintomas />
                 <Controls />
+                <TitleAgujeroMacular title={"Cortina negra"} position={[17, 5, -10]} />
                 <Staging />
                 <group
                   onPointerOver={() => setShowTooltip(true)}
@@ -217,7 +252,7 @@ const QueEsAgujeroMacular = () => {
                   <img src="/images/agujero-macular/sintomas/mancha-negra.jpg" alt="Mancha negra" />
                 </div>
               </div>
-              <h4 className="agumac-tarjeta-sintomas-titulo">Cortina o Mancha negra</h4>
+              <h4 className="agumac-tarjeta-sintomas-titulo">Mancha negra</h4>
               <p className="agumac-tarjeta-sintomas-descripcion">Pequeños puntos, zona ciega en el centro de la visión o una cortina.</p>
             </div>
 
@@ -226,6 +261,155 @@ const QueEsAgujeroMacular = () => {
         </div>
       </div>
 
+      <div className='agumac-separador-sintomas-prevencion'> </div>
+          
+      {/* =============== PREVENCIÓN ================ */}
+      <div className='agumac-prevencion-container'>
+        <h2 className="agumac-prevencion-titulo">PREVENCIÓN</h2>
+        <div
+          className="agumac-modelo-3d-container"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseHover}
+          onMouseLeave={handleModelLeave}
+        >
+          {showTooltip && (
+            <div className="agumac-modelo-tooltip" style={{
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+              position: 'fixed'
+            }}>
+              Mueve el modelo 3D
+            </div>
+          )}
+
+          <div className="agumac-que-es-modelo-3d" >
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },
+                { name: "down", keys: ["q", "PageDown"] }
+              ]}
+            >
+              <Canvas camera={{ position: [0, 3.5, 18] }} shadows={true} >
+                <LightsPrevencion/>
+                <StagingPrevencion />
+                <Controls />
+                <Text3DAgujeroMacular title={"Tabla de Snellen"} position={[-6.5, -1.6, 7.5]} />
+                <Text2DAgujeroMacular title={`Un examen ocular completo\npuede ayudar a detectar la formación\nde un agujero macular,\ncuando es más fácil de tratar.`} 
+                  position={[20, 5, -2]}/>
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-1, -7, -7]} receiveShadow={true}>
+                    <circleGeometry args={[12, 64]} />
+                    <meshStandardMaterial color="gray" />
+                  </mesh>
+                  <SnellenTable scale={18} physics={false} position={[1, 6, -7]} castshadow={true} />
+                </group>
+              </Canvas>
+            </KeyboardControls>
+          </div>
+        </div>
+
+        <div className="agumac-prevencion-carrusel-container">
+          <button className="prev-btn" onClick={anterior}>&#10094;</button>
+
+          <div className="agumac-carrusel-enfocado">
+            {tarjetas.map((tarjeta, i) => {
+              const izquierda = (indiceActivo - 1 + tarjetas.length) % tarjetas.length;
+              const derecha = (indiceActivo + 1) % tarjetas.length;
+
+              let clase = "agumac-tarjeta-prevencion";
+              if (i === indiceActivo) {
+                clase = "agumac-tarjeta-prevencion enfocado";
+              } else if (i === izquierda || i === derecha) {
+                clase = "agumac-tarjeta-prevencion lateral";
+              } else {
+                clase = "agumac-tarjeta-prevencion";
+                // Para tarjetas no visibles, aplicamos estilos de oculto
+              }
+
+              // Solo mostramos las 3 tarjetas: izquierda, centro, derecha
+              const esVisible = i === indiceActivo || i === izquierda || i === derecha;
+
+              return esVisible ? (
+                <div className={clase} key={i}>
+                  <img src={tarjeta.img} alt={tarjeta.titulo} />
+                  <h3>{tarjeta.titulo}</h3>
+                  <div className="separador"></div>
+                  <p>{tarjeta.texto}</p>
+                </div>
+              ) : null;
+            })}
+          </div>
+
+          <button className="next-btn" onClick={siguiente}>&#10095;</button>
+        </div>
+
+        <p className="agumac-prevencion-alerta">Esta enfermedad no puede prevenirse</p>
+
+        <div className="agumac-prevencion-barras-container">
+          <div className="agumac-prevencion-barra">
+            <img src="/images/agujero-macular/prevencion/foroptero.png" alt="icon" className="agumac-prevencion-barra-icono" />
+            <span>Personas con catarata</span>
+            <div className="agumac-prevencion-barra-progreso">
+              <div className="agumac-progreso" style={{ width: '1.2%', background: '#FFB400' }}></div>
+              <span>1.2%</span>
+            </div>
+          </div>
+
+          <div className="agumac-prevencion-barra">
+            <img src="/images/agujero-macular/prevencion/foroptero.png" alt="icon" className="agumac-prevencion-barra-icono" />
+            <span>Personas con tratamiento</span>
+            <div className="agumac-prevencion-barra-progreso">
+              <div className="agumac-progreso" style={{ width: '35%', background: '#199ED9' }}></div>
+              <span>35%</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div
+        className="burbuja-instrucciones"
+        onClick={() => setShowModal(true)}
+      >
+        <div className="tooltip-instrucciones">Instrucciones</div>
+        <img
+          src="/images/icons/bot.png"
+          alt="Instrucciones"
+          className="icono-instrucciones"
+        />
+      </div>
+
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-contenido" onClick={e => e.stopPropagation()}>
+            <h2>Instrucciones</h2>
+            <p>🖱️ Usa el mouse para mover el modelo 3D (arrastra de un lado al otro).</p>
+            <p>🔍 Acércate o aléjate con la rueda del mouse.</p>
+            <p>👈 Da clic al modelo para que comience rotar o se detenga.</p>
+            <p>⌨️ Para mover la cámara del modelo 3D pon el cursor sobre el modelo o en una esquina del recuadro
+              (que te aparezca el texto "Mueve el modelo 3D" arriba del cursor)
+              y utiliza las siguientes teclas:
+              <ul>
+                <li>◉ W: Adelante</li>
+                <li>◉ S: Atrás</li>
+                <li>◉ A: Izquierda</li>
+                <li>◉ D: Derecha</li>
+                <li>◉ E: Arriba</li>
+                <li>◉ Q: Abajo</li>
+              </ul>
+            </p>
+            <button className="cerrar-modal" onClick={() => setShowModal(false)}>Cerrar</button>
+          </div>
+        </div>
+      )}
 
     </>
   );
