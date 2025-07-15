@@ -1,12 +1,15 @@
-import React from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCoverflow } from 'swiper/modules';
+import React, { useState } from 'react';
+
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
 import './PrevencionCarrusel.css';
+
 
 const tarjetas = [
   {
@@ -37,6 +40,7 @@ const tarjetas = [
 ];
 
 const PrevencionCarrusel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="prevencion-carrusel">
       <Swiper
@@ -53,15 +57,20 @@ const PrevencionCarrusel = () => {
           slideShadows: false,
         }}
         navigation
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // ← ESTA LÍNEA ES CLAVE
         className="swiper-container"
       >
+
         {tarjetas.map((tarjeta, index) => (
-          <SwiperSlide className="tarjeta-prevencion" key={index}>
-            <img src={tarjeta.icono} alt="ícono" className="icono-tarjeta" />
-            <h5>{tarjeta.titulo}</h5>
-            <p>{tarjeta.texto}</p>
+          <SwiperSlide key={index}>
+            <div className={`tarjeta-prevencion ${index === activeIndex ? 'activa' : ''}`}>
+              <img src={tarjeta.icono} alt="ícono" className="icono-tarjeta" />
+              <h5>{tarjeta.titulo}</h5>
+              <p>{tarjeta.texto}</p>
+            </div>
           </SwiperSlide>
         ))}
+
       </Swiper>
     </div>
   );
