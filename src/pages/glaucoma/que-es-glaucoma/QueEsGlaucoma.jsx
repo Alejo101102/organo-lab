@@ -1,24 +1,29 @@
 
 import './QueEsGlaucoma.css';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Text3D } from '@react-three/drei';
+import { Html, OrbitControls, Text3D } from '@react-three/drei';
 import Footer from '../../../layout/footer/Footer';
 import { EyeWithGlaucoma } from '../models-3d/EyeWithGlaucoma';
 import { useNavigate } from 'react-router';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
-import SightSymptomsGlaucoma from '../models-3d/SightSymptomsGlaucoma';
+import { SightSymptomsGlaucoma } from '../models-3d/SightSymptomsGlaucoma';
 import PostProcessing from './PostProcessing';
 import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
-import { Environment, Stars, Sky } from '@react-three/drei';
+import { Environment, Stars, Sky, Sparkles } from '@react-three/drei';
 import { Text } from '@react-three/drei';
-import SnellenTable from '../models-3d/SnellenTable';
-import MattSmith from '../models-3d/matt-smith';
-import Title from './texts/Title';
+import { SnellenTable } from '../models-3d/SnellenTable';
+import { MattSmith } from '../models-3d/matt-smith';
+import TitleGlaucoma from './texts/TitleGlaucoma';
+import TitleGlaucomaModelo from './texts/TitleGlaucoma';
+import Text3DGlaucoma from './texts/Text3DGlaucoma';
+
 import TratamientoGlaucoma  from './videos/TratamientoGlaucoma';
 import { KeyboardControls } from '@react-three/drei';
+
+
 
 
 
@@ -31,7 +36,22 @@ const QueEsGlaucoma = () => {
   const groupRef = useRef();
   const [showVideo, setShowVideo] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  // Función para reproducir audio
+  const playAudio = () => {
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play();
+    setIsPlaying(true);
+  } else {
+    audio.pause();
+    setIsPlaying(false);
+  }
+};
 
   // Función para manejar el movimiento del mouse
   const handleMouseMove = (event) => {
@@ -93,6 +113,9 @@ const QueEsGlaucoma = () => {
                       <Lights /> 
                       <OrbitControls target={[0, 3, 1]} />
                       <Controls />
+                      <Text3DGlaucoma title={"=>"} position={[-5, 1.4, 1]} />
+                      <Text3DGlaucoma title={"<="} position={[5, 1.4, 0]} />
+                      
 
                       <Environment preset="sunset" background /> 
   
@@ -198,7 +221,7 @@ const QueEsGlaucoma = () => {
                     shadow-camera-far={10}
                   />
                   <OrbitControls target={[0.5, 1, 0]} enableZoom={true} />
-                  <SightSymptomsGlaucoma />
+                  <SightSymptomsGlaucoma physics={false}/>
                   <Text
                     position={[2, 2.0, 0]}
                     fontSize={0.15}
@@ -223,6 +246,13 @@ const QueEsGlaucoma = () => {
           </div>
         </div>
       </section>
+
+
+
+
+      <section className='glaucoma-separador-sintomas-prevencion'>
+    </section>
+
 
 
        {/* =============== PREVENCION ================*/}
@@ -294,7 +324,7 @@ const QueEsGlaucoma = () => {
               />
               
           <OrbitControls target={[0, 1.2, 0]} />
-          <SnellenTable position={[0, 0, 0]} rotation={[0, 0, Math.PI / 2]}   scale={0.8} />
+          <SnellenTable physics={false} position={[0, 0, 0]} rotation={[0, 0, Math.PI / 2]}   scale={0.8} />
 
           <Text
             
@@ -309,9 +339,9 @@ const QueEsGlaucoma = () => {
              Tabla Snelle
           </Text>
 
-          <Title
+          <TitleGlaucoma
            title={"✧"} 
-           position={[0, 0, 0]} // aún más arriba
+           position={[5, 5, 5]} // aún más arriba
            fontSize={0.25}
            />
 
@@ -365,51 +395,99 @@ const QueEsGlaucoma = () => {
 
 <section className="glaucoma-tratamiento-container">
         <div className="glaucoma-tratamiento-box">
-          {showVideo ? (
-            <div className="glaucoma-tratamiento-modelo-3d">
-              <Canvas camera={{ position: [0, 1.5, 5], fov: 40 }}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[2, 2, 2]} intensity={1} />
-                <TratamientoGlaucoma />
-              </Canvas>
-            </div>
-            ) : (
-            <>
-              <h2 className="glaucoma-tratamiento-titulo">TRATAMIENTO</h2>
-              <p className="glaucoma-tratamiento-descripcion">
-                Si tiene glaucoma, es importante empezar el tratamiento de inmediato. Si bien el tratamiento no reparará el daño a su visión, puede evitar que empeore. 
-                Medicamentos: Las gotas de receta médica para los ojos son el tratamiento más común. Disminuyen la presión en el ojo y previenen daños en el nervio óptico.
-                Tratamiento láser: Para disminuir la presión en el ojo, los oculistas pueden usar un láser para ayudar a que el líquido del ojo pueda drenar. Es un procedimiento simple que se puede hacer en la consulta del médico.
-                Cirugía: Si los medicamentos y el tratamiento con láser no funcionan, su médico podría sugerirle una cirugía. Hay varios tipos diferentes de cirugía que pueden ayudar a drenar el líquido del ojo.
-              </p>
-              <button
-                className="glaucoma-tratamiento-boton"
-                onClick={() => setShowVideo(true)}
-                
-              >
-                VÍDEO INFORMATIVO
-              </button>
-            </>
-          )}
+<h2 className="glaucoma-tratamiento-titulo">TRATAMIENTO</h2>
+<p className="glaucoma-tratamiento-descripcion">
+  Si tiene glaucoma, es importante empezar el tratamiento de inmediato. Si bien el tratamiento no reparará el daño a su visión, puede evitar que empeore. 
+  Medicamentos: Las gotas de receta médica para los ojos son el tratamiento más común. Disminuyen la presión en el ojo y previenen daños en el nervio óptico.
+  Tratamiento láser: Para disminuir la presión en el ojo, los oculistas pueden usar un láser para ayudar a que el líquido del ojo pueda drenar. Es un procedimiento simple que se puede hacer en la consulta del médico.
+  Cirugía: Si los medicamentos y el tratamiento con láser no funcionan, su médico podría sugerirle una cirugía. Hay varios tipos diferentes de cirugía que pueden ayudar a drenar el líquido del ojo.
+</p>
+<button
+  className="glaucoma-tratamiento-boton"
+  onClick={playAudio}
+>
+  {isPlaying ? '⏸️ Pausar audio' : '🔊 Reproducir audio'}
+</button>
+
         </div>
       </section>
 
+       {/* =============== MODELO EXPLICATIVO ================*/}
+
       <section className="glaucoma-modelo-solo-container">
+
+        {/* Audio explicativo */}
+            <audio ref={audioRef} src="/sounds/glaucoma/tratamiento-glaucoma.mp3" preload="auto" />
+
         <div className="glaucoma-modelo-solo">
-          <Canvas camera={{ position: [0, -10, 10], fov: 45 }}>
-            <ambientLight intensity={1} />
+          <Canvas camera={{ position: [0, 2, 8], fov: 55 }}>
+
+            <ambientLight intensity={0.5} />
                         <directionalLight
-                          position={[2, 5, 2]}
-                          intensity={1}
-                          castShadow={true}
-                          shadow-mapSize-width={1024}
-                          shadow-mapSize-height={1024}
-                          shadow-camera-near={1}
-                          shadow-camera-far={10}
-                        />
-            <OrbitControls target={[0, 1.1, 0]} enableZoom={true} />
-            <MattSmith position={[0, 0, 0]} rotation={[0, Math.PI, 0]} scale={1.5} />
-            <Title title={"✧"} />
+                          position={[-1, -80, 2]}
+                          intensity={2}
+                          castShadow
+                          shadow-mapSize-width={2048}
+                          shadow-mapSize-height={2048}
+                          shadow-bias={-0.005}
+                          shadow-camera-near={0.1}
+                          shadow-camera-far={20}
+                          shadow-camera-left={-10}
+                          shadow-camera-right={10}
+                          shadow-camera-top={10}
+                          shadow-camera-bottom={-10}
+            />
+
+                            <directionalLight
+                          position={[-2, 0, 2]}
+                          intensity={0.5}
+                          castShadow
+                          shadow-mapSize-width={2048}
+                          shadow-mapSize-height={2048}
+                          shadow-bias={-0.005}
+                          shadow-camera-near={0.1}
+                          shadow-camera-far={20}
+                          shadow-camera-left={-10}
+                          shadow-camera-right={10}
+                          shadow-camera-top={10}
+                          shadow-camera-bottom={-10}
+            />
+
+            <Sparkles count={10} scale={5} size={1.5} speed={0.3} />
+            <OrbitControls target={[0, 1.5, 0]} enableZoom={true} />
+            <MattSmith physics={false} position={[0, 3.5, 0]} rotation={[0, Math.PI, 0]} scale={1.5} />
+            
+
+            <Html position={[-5, 1.5, 0]} center>
+              <button
+                className="glaucoma-modelo-explicativo-boton-audio"
+                onClick={playAudio}
+              >
+                {isPlaying ? '⏸️ Pausar audio' : '🔊 Reproducir audio'}
+              </button>
+            </Html>
+
+             {/* Html adicional: un span simple en otra posición */}
+            <Html position={[3, 3.3, 0]} transform occlude>
+              <div
+                style={{
+                  backgroundColor: 'white',
+                  padding: '2px 3px',
+                  borderRadius: '10px',
+                  fontSize: '0.5rem',
+                  fontWeight: '150',
+                  color: '#222',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)'
+                }}
+              >
+                Explora el rostro en 3D
+              </div>
+            </Html>
+
+
+
+            
+
           </Canvas> 
         </div>
       </section>

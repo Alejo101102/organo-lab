@@ -25,6 +25,9 @@ import Text3D from './texts/Text3D';
 import BotonVideo from './texts/ButtonVideo';
 import { KeyboardControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
+import PrevencionCarrusel from './AuxiliaryFuntions/PrevencionCarrusel';
+import TarjetasSintomasConjuntivitis from './AuxiliaryFuntions/TarjetasSintomasConjuntivitis';
+
 
 const QueEsConjuntivitis = () =>  {
   const navigate = useNavigate();
@@ -126,7 +129,10 @@ const QueEsConjuntivitis = () =>  {
             Existen varios tipos de conjuntivitis, incluyendo la conjuntivitis viral, bacteriana y alérgica. Los síntomas comunes incluyen enrojecimiento, picazón, secreción y sensación arenosa en los ojos.
           </p>
         </div>
-      
+      </div>
+
+
+
         {/*Apartir de esta seccion son los SINTOMAS*/}
 
         <div className="conjuntivitis-sintomas-wrapper">
@@ -136,24 +142,22 @@ const QueEsConjuntivitis = () =>  {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
             >
             <div className="sintomas-texto">
-              <h4>Síntomas de la Conjuntivitis</h4>
-              <ul>
-                <li>👁️ Enrojecimiento de uno o ambos ojos</li>
-                <li>😣 Picazón o ardor ocular</li>
-                <li>🟡 Secreción espesa que puede formar costras, especialmente al despertar</li>
-                <li>💧 Lagrimeo excesivo</li>
-                <li>🪟 Sensación de tener arena en el ojo</li>
-                <li>📉 Visión ligeramente borrosa por secreciones</li>
-                <li>⚡ Sensibilidad a la luz</li>
-              </ul>
+              <h4>Síntomas</h4>
+              <p>
+                La conjuntivitis puede presentarse con una variedad de molestias oculares.
+                A continuación, se muestran los síntomas más comunes de forma visual para ayudarte a identificarlos fácilmente.
+              </p>
             </div>
+
+            
+
             
            {/*Modelo 3d de los sintomas */}
            
-            <div className="conjuntivitis-que-es-modelo-3d" >
+            <div className="conjuntivitis-sintomas-modelo-3d" >
               <KeyboardControls
                 map={[
                   { name: "forward", keys: ["w", "ArrowUp"] },
@@ -190,12 +194,94 @@ const QueEsConjuntivitis = () =>  {
             </div>
             <p></p>
 
+            <TarjetasSintomasConjuntivitis />
+
+            <p></p>
+
             </motion.div>
+
+          <svg
+            className="curva-separadora"
+            viewBox="0 0 1440 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="#ffffff"
+              d="M0,100 C360,300 1080,-100 1440,100 L1440,200 L0,200 Z"
+            />
+          </svg>
 
           </div>
         </div>
 
 
+          
+
+
+
+
+
+
+
+
+            {/*Seccion de PREVENCION Y CUIDADOS */}
+
+            <div className="conjuntivitis-prevencion-wrapper">
+              <div className="conjuntivitis-prevencion-container">
+                <motion.div 
+                  className="prevencion"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  {/* ✅ Texto primero */}
+                  <div className="prevencion-texto">
+                    <h4>Prevención y Cuidados</h4>
+                    <p>
+                      Prevenir la conjuntivitis comienza con buenos hábitos de higiene y cuidados personales. A continuación, te presentamos algunas recomendaciones clave para reducir el riesgo de contagio o recaída.
+                    </p>
+                  </div>
+
+                  <PrevencionCarrusel />
+
+                  {/* ✅ Modelo 3D debajo */}
+                  <div className="conjuntivitis-prevencion-modelo-3d">
+                    <KeyboardControls
+                      map={[
+                        { name: "forward", keys: ["w", "ArrowUp"] },
+                        { name: "backward", keys: ["s", "ArrowDown"] },
+                        { name: "left", keys: ["a", "ArrowLeft"] },
+                        { name: "right", keys: ["d", "ArrowRight"] },
+                        { name: "up", keys: ["e", "PageUp"] },
+                        { name: "down", keys: ["q", "PageDown"] }
+                      ]}
+                    >
+                      <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
+                        <LightsPrevencion />
+                        <StagingPrevencion /> 
+                        <Controls />
+                        <TitleConjuntivitis title={"Prevención"} />
+                        <group
+                          onPointerOver={() => setShowTooltip(true)}
+                          onPointerOut={() => setShowTooltip(false)}
+                        >
+                          <Physics>
+                            <RigidBody type="fixed" colliders="trimesh">
+                            </RigidBody>
+                            <ModeloPrevencionConjuntivitis scale={600} physics={false} position={[0, -2, 0]} castshadow={true} />
+                          </Physics>
+                        </group>
+                      </Canvas>
+                    </KeyboardControls>
+                  </div>
+
+                </motion.div>
+              </div>
+            </div>
+
+
+          
 
 
 
@@ -205,6 +291,7 @@ const QueEsConjuntivitis = () =>  {
           
             <div className="conjuntivitis-tratamientos-wrapper">
               <div className="conjuntivitis-tratamientos-container">
+                
                 <motion.div 
                   className="tratamientos"
                   initial={{ opacity: 0, y: 30 }}
@@ -212,9 +299,19 @@ const QueEsConjuntivitis = () =>  {
                   transition={{ duration: 0.8, ease: 'easeOut' }}
                   viewport={{ once: false, amount: 0.3 }}
                 >
+                <div className="tratamientos-texto">
+                  <h4>Tratamientos para la Conjuntivitis</h4>
+                  <ul>
+                    <li>💧 Limpieza frecuente de los ojos con solución salina</li>
+                    <li>🧴 Uso de colirios antibióticos (si es bacteriana)</li>
+                    <li>🧼 Evitar tocarse los ojos con las manos sucias</li>
+                    <li>👓 Usar gafas oscuras para aliviar la sensibilidad a la luz</li>
+                    <li>📆 Visita al oftalmólogo si los síntomas persisten más de 3 días</li>
+                  </ul>
+                </div>
                 
                 {/* Modelo 3D opcional de tratamientos */}
-                  <div className="conjuntivitis-que-es-modelo-3d" >
+                  <div className="conjuntivitis-tratamientos-modelo-3d" >
                     <KeyboardControls
                       map={[
                         { name: "forward", keys: ["w", "ArrowUp"] },
@@ -248,102 +345,11 @@ const QueEsConjuntivitis = () =>  {
                     </KeyboardControls>
                   </div>
 
-                <div className="tratamientos-texto">
-                  <h4>Tratamientos para la Conjuntivitis</h4>
-                  <ul>
-                    <li>💧 Limpieza frecuente de los ojos con solución salina</li>
-                    <li>🧴 Uso de colirios antibióticos (si es bacteriana)</li>
-                    <li>🧼 Evitar tocarse los ojos con las manos sucias</li>
-                    <li>👓 Usar gafas oscuras para aliviar la sensibilidad a la luz</li>
-                    <li>📆 Visita al oftalmólogo si los síntomas persisten más de 3 días</li>
-                  </ul>
-                </div>
+                
                   
                 </motion.div>
               </div>
             </div>
-
-
-
-
-
-      {/*Seccion de PREVENCION Y CUIDADOS */}
-
-            <div className="conjuntivitis-prevencion-wrapper">
-              <div className="conjuntivitis-prevencion-container">
-                <motion.div 
-                  className="prevencion"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
-                  viewport={{ once: false, amount: 0.3 }}
-                >
-                  {/* ✅ Texto primero */}
-                  <div className="prevencion-texto">
-                    <h4>Prevención y Cuidados</h4>
-                    <p>
-                      Para prevenir la conjuntivitis es fundamental mantener una buena higiene personal. 
-                      Lávate las manos con frecuencia, sobre todo antes de tocarte los ojos, y evita compartir toallas, pañuelos, maquillaje o almohadas. 
-                      Limpia regularmente objetos de uso frecuente como gafas, celulares o teclados. 
-                      Si tienes síntomas de resfriado, evita frotarte los ojos y utiliza pañuelos desechables. 
-                      En caso de presentar molestias oculares, suspende el uso de lentes de contacto y consulta con un especialista si los síntomas persisten. 
-                      Estos cuidados sencillos pueden reducir significativamente el riesgo de contagio o recurrencia de esta afección.
-                    </p>
-                  </div>
-
-                  {/* ✅ Modelo 3D debajo */}
-                  <div className="conjuntivitis-que-es-modelo-3d">
-                    <KeyboardControls
-                      map={[
-                        { name: "forward", keys: ["w", "ArrowUp"] },
-                        { name: "backward", keys: ["s", "ArrowDown"] },
-                        { name: "left", keys: ["a", "ArrowLeft"] },
-                        { name: "right", keys: ["d", "ArrowRight"] },
-                        { name: "up", keys: ["e", "PageUp"] },
-                        { name: "down", keys: ["q", "PageDown"] }
-                      ]}
-                    >
-                      <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
-                        <LightsPrevencion />
-                        <StagingPrevencion /> 
-                        <Controls />
-                        <TitleConjuntivitis title={"Prevención"} />
-                        <group
-                          onPointerOver={() => setShowTooltip(true)}
-                          onPointerOut={() => setShowTooltip(false)}
-                        >
-                          <Physics>
-                            <RigidBody type="fixed" colliders="trimesh">
-                              <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
-                                <circleGeometry args={[12, 64]} />
-                                <meshStandardMaterial color="#888888" />
-                              </mesh>
-                            </RigidBody>
-                            <ModeloPrevencionConjuntivitis scale={600} physics={false} position={[0, -2, 0]} castshadow={true} />
-                          </Physics>
-                        </group>
-                      </Canvas>
-                    </KeyboardControls>
-                  </div>
-
-                </motion.div>
-              </div>
-            </div>
-
-
-
-
-
-
-
-
-
-    </div>      
-          
-
-
-
-
 
 
 

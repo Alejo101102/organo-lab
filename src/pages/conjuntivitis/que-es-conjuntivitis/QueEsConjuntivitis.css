@@ -1,10 +1,10 @@
 .conjuntivitis-container {
     background-color: #0f0f3e;
-    width: 100vw;
-    height: 10vh;
-    margin: 0;
+    width: 100%;
     color: white;
-    padding: 2rem;
+    padding: 1rem;
+    min-height: 100vh;
+    
 }
 
 .conjuntivitis-titulo {
@@ -12,41 +12,26 @@
     font-size: 96px;
     font-weight: 700; /* Bold */
     font-family: 'Inter', sans-serif;
-    margin: 2rem 0;
     color: #fff;
-    margin-top: 50px;
-    margin-bottom: 5rem;
 }
 
 .conjuntivitis-que-es-container {
     background-color: #0f0f3e;
-    width: 100vw;
-    margin: 0;
+    width: 100%;
     color: white;
-    padding: 2rem;
+    padding: 1%;
     min-height: 100vh;
+    
+    
 }
 
-.conjuntivitis-que-es-titulo {
-    text-align: center;
-    font-size: 50px;
-    font-weight: 700; /* Bold */
-    font-family: 'Inter', sans-serif;
-    margin: 2rem 0;
-    color: #fff;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
-}
 
 .conjuntivitis-que-es-conjuntivitis-texto {
-    margin-top: 5rem;
-    max-width: 1000px;
-    margin: 2rem auto;
-    text-align: justify;
-    font-family: 'Inter', sans-serif;
-    font-size: auto;
-    line-height: 1.8;
-    margin-bottom: 5rem;
+  max-width: 85%;
+  margin: 2rem auto 5rem auto;
+  text-align: justify;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
 }
 
 .conjuntivitis-que-es-conjuntivitis-texto p {
@@ -54,199 +39,20 @@
     font-size: 19px;
 }
 
-.conjuntivitis-modelo-3d-container {
-    position: relative;
-    width: 50%; /* O un valor fijo como 800px */
-    height: 40%; /* Ajusta según lo que necesites */
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-top: 5rem;
-}
 
-.conjuntivitis-que-es-modelo-3d {
-    width: 90vw;
-    max-width: 800px;
-    height: 50vw;
-    max-height: 350px;; /* Asegúrate de que ocupe toda la altura del contenedor */
-    border-radius: 35px;
-    overflow: hidden;
-    position: relative;
-    border: 4px solid #00ccff; /* Reborde cian */
-    box-shadow: 0 0 1px #00ccff99;
-    border-radius: 35px; /* AÑADIDO: Redondea el borde para que siga la forma */
-}
-
-.conjuntivitis-modelo-tooltip {
-    position: fixed; /* Muy importante: fija el tooltip a la ventana del navegador */
-    background-color: #000000D9;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    pointer-events: none; /* Importante para que el tooltip no interfiera con los eventos del mouse */
-    z-index: 1000;
-    transition: opacity 0.1s ease;
-    opacity: 1;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-    transform: translateX(-50%); /* Centra el tooltip horizontalmente en relación al cursor */
-    white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
-    box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
-}
-
-.conjuntivitis-sintomas-container {
-    
-    width: 100vw;
-    margin-top: -100px;
-    color: #1c2a6d;
-    padding: 2rem;
-    min-height: 100vh;
-}
-
-.conjuntivitis-sintomas-titulo {
-    text-align: center;
-    font-size: 50px;
-    font-weight: 700; /* Bold */
-    font-family: 'Inter', sans-serif;
-    color: #fff;
-    padding: 5rem;
-}
-
-.conjuntivitis-sintomas-texto {
-    margin-top: 5rem;
-    max-width: 1000px;
-    margin: 2rem auto;
-    text-align: justify;
-    font-family: 'Inter', sans-serif;
-    font-size: auto;
-    line-height: 1.8;
-    padding: 2rem;
-}
-
-.conjuntivitis-sintomas-texto p {
-    color: #e0e0e0;
-    font-size: 19px;
-}
-
-
-.conjuntivitis-sintomas-texto ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el padding por defecto */
-    margin: 0 ; /* Centra la lista */
-    max-width: 800px; /* Limita el ancho máximo de la lista */
-}
-
-.conjuntivitis-sintomas-texto ul li { 
-    list-style-type: disc; 
-    color: #e0e0e0; 
-    font-size: 19px;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
-}
-
-.conjuntivitis-sintomas-modelo-3d {
-    flex: 1;
-  display: flex;
-  justify-content: center;   /* Centra horizontalmente */
-  align-items: center;       /* Centra verticalmente */
-  height: 100%;              /* Asegura que ocupe todo el alto del contenedor padre */
-  max-width: 50%;
-}
-
-
-.conjuntivitis-sintomas-modelo-3d canvas {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 16px;
-}
+/*###############################################################*/
 
 
 
-.conjuntivitis-contenedor-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.conjuntivitis-tarjetas-sintomas {
-    background-color: #ffffff10;
-    border-radius: 20px;
-    padding: 1.5rem;
-    width: 250px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid #0099B8;
-    text-align: center;
-    color: white;
-}
-
-.conjuntivitis-imagen-tarjeta-sintomas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    margin-bottom: 1rem;
-}
-
-.conjuntivitis-imagen-con-borde {
-    background-color: #00000020;
-    padding: 8px;
-    border-radius: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.conjuntivitis-imagen-con-borde img {
-    width: 125px;
-    height: 125px;
-    border-radius: 35px;
-    object-fit: cover;
-}
-
-.conjuntivitis-tarjeta-sintomas-titulo {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    font-weight: bold;
-}
-
-.conjuntivitis-tarjeta-sintomas-descripcion {
-    font-size: 1rem;
-    opacity: 0.85;
-    color: white;
-}
-
-
-.burbuja-instrucciones {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1002;
-  cursor: pointer;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icono-instrucciones {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #00cc66;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
 
 
 
+
+
+
+
+
+/*###############################################################*/
 
 /*CSS de SINTOMAS*/
 
@@ -254,28 +60,28 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #152058;
-  padding: 0rem 1rem;
+
 }
 
 .conjuntivitis-sintomas-container {
-  max-width: 1100px;
-  width: 100%;
+  background-color: #0f0f3e;
+  width: 100%;  
+  color: white;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;  
   
 }
 
+
 .sintomas {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  margin: 4rem auto;
-  max-width: 1100px;
+  flex-direction: column; /* Cambiado para que sea vertical */
+  align-items: center;     /* Centra horizontalmente */
   width: 100%;
   font-family: 'Inter', sans-serif;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
 }
 
 .sintomas h4 {
@@ -311,9 +117,31 @@
   left: 0;
 }
 
+.sintomas-texto {
+  max-width: 85%;
+  padding: 1rem;
+  margin: 2rem auto 5rem auto;
+}
+.sintomas-texto p {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
+
+/*###############################################################*/
 
 
 
+
+
+
+
+
+
+
+/*###############################################################*/
 
 /* CSS DE TRATAMIENTOS */
 
@@ -321,36 +149,35 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0rem 1rem;
-  background-color: #0f0f3e;
+  background-color: white;
+  padding: 0;
+  
 }
 
 .conjuntivitis-tratamientos-container {
-  max-width: 1100px;
+  max-width: 85%;
   width: 100%;
   color: white;
+  
 }
 
 
 
 .tratamientos {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  margin: 4rem auto;
-  max-width: 1100px;
+  flex-direction: column; /* Cambiado para que sea vertical */
+  align-items: center;     /* Centra horizontalmente */
+  margin: 2rem auto;
   width: 100%;
   font-family: 'Inter', sans-serif;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
 }
 
 .tratamientos h4 {
   font-size: 50px;
   margin-bottom: 1.2rem;
-  color: #ffffff;
+  color: #0f0f3e;
   font-weight: 700;
 }
 
@@ -366,98 +193,132 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #e0e0e0;
+  color: #211f33;
   padding-left: 1rem;
   position: relative;
 }
 
 .tratamientos li::before {
   content: '•';
-  color: #e0e0e0;
+  color: #211f33;
   font-size: 19px;
   position: absolute;
   left: 0;
 }
 
 
+/*###############################################################*/
 
 
+
+
+
+/*###############################################################*/
 
 /* CSS DE PREVENCION */
-
 
 .conjuntivitis-prevencion-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 0rem 1rem;
-  background-color: #152058;
+  background-color: white;
 }
 
 .conjuntivitis-prevencion-container {
-  max-width: 1100px;
+  max-width: 85%;
   width: 100%;
   color: white;
+  
 }
 
 .prevencion {
   display: flex;
   flex-direction: column; /* Cambiado para que sea vertical */
   align-items: center;     /* Centra horizontalmente */
-  gap: 2rem;
-  margin: 2rem auto;
+  width: 100%;
   font-family: 'Inter', sans-serif;
   color: #ffffff;
-  
+  text-align: center;
 }
 
 .prevencion h4 {
   font-size: 50px;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  color: #0f0f3e;
   font-weight: 700;
 }
 
 .prevencion-texto p {
   font-size: 19px;
   line-height: 1.8;
-  color: #e0e0e0;
-  max-width: 800px;
+  color: #211f33;
+  max-width: 100%;
   text-align: justify;
 }
 
-/* Modelo 3D debajo del texto, centrado */
-.conjuntivitis-prevencion-modelo-3d {
-  width: 90vw;
-  max-width: 800px;
-  height: 50vw;
-  max-height: 350px;
-  border-radius: 35px;
-  overflow: hidden;
-  position: relative;
-  border: 4px solid #00ccff;
-  box-shadow: 0 0 1px #00ccff99;
+/*###############################################################*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*###############################################################*/
+
+/*CSS de MODELOS 3D*/
+
+.conjuntivitis-modelo-3d-container {
+    position: relative;
+    width: 50%; /* O un valor fijo como 800px */
+    height: 40%; /* Ajusta según lo que necesites */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 5rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .prevencion h4 {
-    font-size: 32px;
-  }
-
-  .prevencion-texto p {
-    font-size: 16px;
-    padding: 0 1rem;
-  }
-
-  .conjuntivitis-prevencion-modelo-3d {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-  }
+.conjuntivitis-que-es-modelo-3d,.conjuntivitis-sintomas-modelo-3d,.conjuntivitis-tratamientos-modelo-3d,.conjuntivitis-prevencion-modelo-3d
+ {
+    width: 90vw;
+    max-width: 800px;
+    height: 50vw;
+    max-height: 350px;; /* Asegúrate de que ocupe toda la altura del contenedor */
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #00ccff; /* Reborde cian */
+    box-shadow: 0 0 1px #00ccff99;
+    border-radius: 35px; /* AÑADIDO: Redondea el borde para que siga la forma */
 }
 
 
+.conjuntivitis-modelo-tooltip {
+    position: fixed; /* Muy importante: fija el tooltip a la ventana del navegador */
+    background-color: #000000D9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    pointer-events: none; /* Importante para que el tooltip no interfiera con los eventos del mouse */
+    z-index: 1000;
+    transition: opacity 0.1s ease;
+    opacity: 1;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transform: translateX(-50%); /* Centra el tooltip horizontalmente en relación al cursor */
+    white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+    box-shadow: 0px 2px 4px #00000040; /* Añade una sombra sutil */
+}
+
+/*###############################################################*/
 
 
 
@@ -465,8 +326,14 @@
 
 
 
+
+
+
+
+/*###############################################################*/
 
 /* BURBUJA tipo chat */
+
 .tooltip-instrucciones {
   position: relative;
   margin-bottom: 8px;
@@ -478,6 +345,29 @@
   font-size: 18px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+}
+
+.burbuja-instrucciones {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1002;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icono-instrucciones {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00cc66;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Triángulo abajo */
@@ -508,11 +398,11 @@
 }
 
 .modal-contenido {
-  background: #fff;
+  background: white;
   padding: 2rem;
   border-radius: 20px;
   text-align: justify;
-  max-width: 500px;
+  max-width: 100%;
   width: 90%;
   font-family: 'Inter', sans-serif;
   box-shadow: 0 0 30px rgba(255, 87, 51, 0.5);
@@ -536,96 +426,98 @@
 
 
 
+.curva-separadora {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
 
 
 
-/*Media Queries para que funcione de manera responsive*/
 
 
-@media (max-width: 768px) {
-  .conjuntivitis-titulo,
-  .conjuntivitis-que-es-titulo,
-  .conjuntivitis-sintomas-titulo,
-  .sintomas h4,
-  .tratamientos h4 {
-    font-size: 32px;
-    padding: 1rem;
-    margin: 2rem 0;
+
+/* =================== MEDIA QUERIES RESPONSIVE =================== */
+
+/* Teléfonos pequeños (pantallas < 576px) */
+@media screen and (max-width: 575px) {
+  .conjuntivitis-titulo {
+    font-size: 36px;
   }
 
-  .conjuntivitis-que-es-conjuntivitis-texto,
-  .conjuntivitis-sintomas-texto,
-  .tratamientos,
-  .sintomas {
-    padding: 1rem;
-    margin: 2rem 0;
-    flex-direction: column;
-    text-align: justify;
+  .sintomas h4,
+  .tratamientos h4,
+  .prevencion h4 {
+    font-size: 28px;
   }
 
   .conjuntivitis-que-es-conjuntivitis-texto p,
-  .conjuntivitis-sintomas-texto p,
-  .conjuntivitis-sintomas-texto ul li,
   .sintomas li,
-  .tratamientos li {
+  .tratamientos li,
+  .prevencion-texto p {
     font-size: 16px;
-    line-height: 1.6;
   }
 
-  .conjuntivitis-modelo-3d-container,
-  .conjuntivitis-sintomas-modelo-3d {
+  .conjuntivitis-modelo-3d-container {
     width: 100%;
-    max-width: none;
     height: auto;
-    flex: none;
     margin-top: 2rem;
   }
+}
 
-  .conjuntivitis-que-es-modelo-3d {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
+/* Tablets (576px - 991px) */
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .conjuntivitis-titulo {
+    font-size: 48px;
   }
 
-  .conjuntivitis-sintomas-wrapper,
-  .conjuntivitis-tratamientos-wrapper {
-    padding: 0 1rem;
+  .sintomas h4,
+  .tratamientos h4,
+  .prevencion h4 {
+    font-size: 32px;
   }
 
-  .conjuntivitis-contenedor-tarjetas {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem;
+  .conjuntivitis-que-es-conjuntivitis-texto p,
+  .sintomas li,
+  .tratamientos li,
+  .prevencion-texto p {
+    font-size: 17px;
   }
 
-  .conjuntivitis-tarjetas-sintomas {
+  .conjuntivitis-modelo-3d-container {
     width: 90%;
-    margin: 0 auto;
-  }
-
-  .conjuntivitis-imagen-con-borde img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .modal-contenido {
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .icono-instrucciones {
-    width: 60px;
-    height: 60px;
-  }
-
-  .tooltip-instrucciones {
-    font-size: 16px;
-    padding: 5px 10px;
-  }
-
-  .cerrar-modal {
-    padding: 8px 16px;
-    font-size: 14px;
+    height: auto;
   }
 }
+
+/* Pantallas grandes (992px en adelante) */
+@media screen and (min-width: 992px) {
+  .conjuntivitis-titulo {
+    font-size: 80px;
+  }
+
+  .sintomas h4,
+  .tratamientos h4,
+  .prevencion h4 {
+    font-size: 42px;
+  }
+
+  .conjuntivitis-que-es-conjuntivitis-texto p,
+  .sintomas li,
+  .tratamientos li,
+  .prevencion-texto p {
+    font-size: 19px;
+  }
+
+  .conjuntivitis-modelo-3d-container {
+    width: 50%;
+    height: auto;
+  }
+}
+
+
+
 
