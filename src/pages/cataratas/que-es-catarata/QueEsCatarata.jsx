@@ -264,12 +264,18 @@ const QueEsCatarata = () => {
             <p className="catarata-tarjeta-sintomas-descripcion">Ver doble (este síntoma a veces desaparece a medida que la catarata crece).</p>
           </div>
         </div>
+      <svg
+            className="catarata-curva-separadora"
+            viewBox="0 0 1440 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="#ffffff"
+              d="M0,100 C360,300 1080,-100 1440,100 L1440,200 L0,200 Z"
+            />
+          </svg>
     </div>
-
-    <div className='catarata-separador-sintomas-prevencion'>
-
-    </div>
-    
+      
     {/* =============== PREVENCIÓN ================*/}
 
     <div className='catarata-prevencion-container'>

@@ -118,7 +118,8 @@
 .catarata-sintomas-container {
   background: linear-gradient(to bottom, #131532, #1f2040);
   width: 100vw;
-  min-height: 120vh;
+  height: 150vh;
+  min-height: 80vh;
   color: white;
   padding: 2rem;
   padding-top: 1rem; /* Reducido */
@@ -219,13 +220,14 @@
 
 /* Separador entre seccion Sintomas prevencion */
 
-.catarata-separador-sintomas-prevencion {
+.catarata-curva-separadora {
+  display: block;
   width: 100%;
-  height: 5vh;
-  background: linear-gradient(to bottom, #1f2040, white);
-  margin: auto; /* Ajustado */
+  height: auto;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
 }
-
 
 
 /* Prevención */
