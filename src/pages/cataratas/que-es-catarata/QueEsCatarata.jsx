@@ -4,16 +4,19 @@ import { CataractEye } from "./models-3d/CataractEye";
 import { BeginCataractEye } from "./models-3d/BeginCataractEye";
 import { PreventionEye } from "./models-3d/PreventionEye";
 import { useState } from 'react';
-import Lights from './lights/Lights';
+import LightsCatarataQueEs from './lights/LightsCatarataQueEs';
 import Controls from './controls/Controls';
 import { Physics, RigidBody } from '@react-three/rapier';
 import Staging from './staging/Staging';
 import TitleCatarata from './texts/TitleCatarata';
-import LightsSintomas from './lights/LightsSintomas';
+import LightsCatarataSintomas from './lights/LightsCatarataSintomas';
 import { KeyboardControls } from '@react-three/drei';
-import LightsPrevencion from './lights/LightsPrevencion';
+import LightsCatarataPrevencion from './lights/LightsCatarataPrevencion';
 import Text2DCatarata from './texts/Text2DCatarata';
 import Text3DCatarata from './texts/Text3DCatarata';
+import { EyeTreatment } from './models-3d/EyeTreatment';
+import LightsCatarataTratamiento from './lights/LightsCatarataTratamiento';
+import AudioCatarata from './audio/AudioCatarata';
 
 const tarjetas = [
   {
@@ -105,7 +108,7 @@ const QueEsCatarata = () => {
               ]}
             >
               <Canvas camera={{ position: [0, 2, 16]}} shadows={true} >
-                <Lights />  
+                <LightsCatarataQueEs />  
                 <Staging />
                 <Controls />
                 <TitleCatarata title={"Catarata"} />
@@ -180,7 +183,7 @@ const QueEsCatarata = () => {
               ]}
             >
               <Canvas camera={{ position: [0, 2, 16]}} shadows={true} >
-                <LightsSintomas />  
+                <LightsCatarataSintomas />  
                 <Controls />
                 <Staging />
                 <TitleCatarata title={"Catarata"} />
@@ -264,12 +267,18 @@ const QueEsCatarata = () => {
             <p className="catarata-tarjeta-sintomas-descripcion">Ver doble (este síntoma a veces desaparece a medida que la catarata crece).</p>
           </div>
         </div>
+      <svg
+            className="catarata-curva-separadora"
+            viewBox="0 0 1440 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="#ffffff"
+              d="M0,100 C360,300 1080,-100 1440,100 L1440,200 L0,200 Z"
+            />
+          </svg>
     </div>
 
-    <div className='catarata-separador-sintomas-prevencion'>
-
-    </div>
-    
     {/* =============== PREVENCIÓN ================*/}
 
     <div className='catarata-prevencion-container'>
@@ -302,7 +311,7 @@ const QueEsCatarata = () => {
               ]}
             >
               <Canvas camera={{ position: [0, 3.5, 18]}} shadows={true} >
-                <LightsPrevencion />  
+                <LightsCatarataPrevencion />  
                 <Controls />
                 <Staging />
                 <TitleCatarata title={"Catarata"} />
@@ -330,7 +339,7 @@ const QueEsCatarata = () => {
         </div>
 
         <div className="catarata-prevencion-carrusel-container">
-          <button className="prev-btn" onClick={anterior}>&#10094;</button>
+          <button className="catarata-prev-btn" onClick={anterior}>&#10094;</button>
 
           <div className="carrusel-enfocado">
             {tarjetas.map((tarjeta, i) => {
@@ -361,7 +370,7 @@ const QueEsCatarata = () => {
             })}
           </div>
 
-          <button className="next-btn" onClick={siguiente}>&#10095;</button>
+          <button className="catarata-next-btn" onClick={siguiente}>&#10095;</button>
         </div>
 
         <p className="catarata-prevencion-alerta">Esta enfermedad no puede prevenirse</p>
@@ -385,9 +394,88 @@ const QueEsCatarata = () => {
             </div>
           </div>
         </div>
+    </div>
 
+
+    {/* =============== TRATAMIENTO ================*/}
+
+    <div className='catarata-tratamiento-container'>
+      <h2 className="catarata-tratamiento-titulo">TRATAMIENTO</h2>
+        <div 
+          className="catarata-modelo-3d-container"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleModelHover}
+          onMouseLeave={handleModelLeave}
+        >
+          {showTooltip && (
+            <div className="catarata-modelo-tooltip" style={{
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+              position: 'fixed'
+            }}>
+              Mueve el modelo 3D
+            </div>
+          )}
           
-      </div>
+          <div className="catarata-tratamiento-modelo-3d" >
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },     
+                { name: "down", keys: ["q", "PageDown"] }  
+              ]}
+            >
+              <Canvas camera={{ position: [0, 3.5, 18]}} shadows={true} >
+                <LightsCatarataTratamiento />  
+                <Controls />
+                <Staging />
+                <TitleCatarata title={"Catarata"} />
+                <Text3DCatarata title={"Tratatamiento"} position={[-5.7, -1.6, 9]} />
+                <Text2DCatarata title={"¿Cómo se trata?"} />
+                <AudioCatarata />
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <Physics>
+
+                    <RigidBody type="fixed" colliders="trimesh">
+                      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
+                        <circleGeometry args={[12, 64]} />
+                        <meshStandardMaterial color="black" shadowSide={2} />
+                      </mesh>
+                    </RigidBody>
+
+                    <EyeTreatment scale={50} physics={false} position={[0, 3.5, 2]} castshadow={true} rotation={[0, -Math.PI / 2, 0]} /> {/*scale={7} position={[0, 1.2, 0]}*/}
+                  </Physics>
+                </group>
+              </Canvas>
+            </KeyboardControls>
+          </div>
+        </div>
+
+        <div className="catarata-tratamiento-box">
+          <div className="catarata-tratamiento-texto">
+            <p>
+              El único tratamiento para una catarata es la cirugía para extirparla. Si una catarata no le está dificultando la visión, 
+              entonces no necesita cirugía. Las cataratas no dañan el ojo, de manera que puede someterse a la cirugía cuando usted y 
+              el oftalmólogo decidan que es apropiado. La cirugía por lo regular se recomienda cuando usted no puede desempeñar actividades 
+              normales como conducir, leer, mirar la computadora o pantallas de video, ni siquiera con el uso de anteojos. Dentro de las 
+              cirugías está: <br />
+              <br />
+              • Lentes intraoculares monofocales.(Corrigen la visión lejana, pero el paciente sigue precisando gafas para ver de cerca).<br />
+              • Lentes intraoculares multifocales (Permiten la visión a varias distancias: cerca, media y lejos, dependiendo de las necesidades de cada paciente. 
+                Pueden ser bifocales o trifocales)
+            </p>
+          </div>
+        </div>
+
+        
+    </div>    
+
     <div
       className="burbuja-instrucciones"
       onClick={() => setShowModal(true)}
