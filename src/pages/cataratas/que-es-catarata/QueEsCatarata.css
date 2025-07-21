@@ -87,7 +87,8 @@
 
 .catarata-que-es-modelo-3d,
 .catarata-sintomas-modelo-3d,
-.catarata-prevencion-modelo-3d {
+.catarata-prevencion-modelo-3d,
+.catarata-tratamiento-modelo-3d {
   width: 800px;
   height: 330px;
   border-radius: 35px;
@@ -330,8 +331,8 @@
   background-color: #ffffff10;
 }
 
-.prev-btn,
-.next-btn {
+.catarata-prev-btn,
+.catarata-next-btn {
   background-color: rgba(255, 113, 91, 0.321);
   border: none;
   border-radius: 50%;
@@ -343,8 +344,8 @@
   transition: background-color 0.3s ease;
 }
 
-.prev-btn:hover,
-.next-btn:hover {
+.catarata-prev-btn:hover,
+.catarata-next-btn:hover {
   background-color: #ff715b;
 }
 
@@ -407,6 +408,58 @@
   width: 30px;
   height: auto;
 }
+
+
+/*Tratamiento*/
+
+.catarata-tratamiento-container {
+  background:
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), /* capa blanca semitransparente */
+    linear-gradient(to bottom, white 0%, rgba(255,255,255,0) 150px), /* degradado arriba */
+    url('/images/catarata/tratamiento/catarata-fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  min-height: 120vh;
+  color: white;
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+.catarata-tratamiento-box {
+  max-width: 60vw;            /* ancho máximo */
+  margin: 2rem auto;           /* centra horizontalmente y añade espacio arriba/abajo */
+  background-color: white;     
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.catarata-tratamiento-titulo {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  margin: 2rem 0 1rem 0; /* Ajustado */
+  color: #0b0b2d;
+}
+
+.catarata-tratamiento-texto {
+  max-width: 1000px;
+  margin: 2rem auto 2rem auto;
+  text-align: justify;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
+}
+
+.catarata-tratamiento-texto p {
+  color: #0b0b2d;
+  font-size: 20px;
+}
+
 
 /* Instrucciones flotante */
 .burbuja-instrucciones {
