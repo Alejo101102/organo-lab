@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Podium } from './models-3d/Podium';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Text } from '@react-three/drei'
+import { Outlet } from 'react-router-dom';
 import './Quiz.css';
 
 /*
@@ -30,7 +31,7 @@ const Quiz = () => {
   const navigate = useNavigate();
 
   const handleStartQuiz = () => {
-    navigate('/quiz/preguntas'); // Ruta a la sección real del quiz
+    navigate('/quiz/cuestionario'); // Ruta a la sección real del quiz
   };
 
   // Ejemplo de datos
@@ -42,23 +43,23 @@ const Quiz = () => {
 
   return (
     <>
-    <div className="quiz-container">
-      <img className="quiz-imagen"
-        src="/images/glaucoma/fondo-quiz-completo.png"
-        alt="Ilustración"
-      />
+      <div className="quiz-container">
+        <img className="quiz-imagen"
+          src="/images/glaucoma/fondo-quiz-completo.png"
+          alt="Ilustración"
+        />
 
-      <div className="quiz-content">
-        <div className="quiz-texto">
-          <h1 className="quiz-texto-inicio">
-            No hay tiempo que perder,<br />pon a prueba tus<br />conocimientos 
+        <div className="quiz-content">
+          <div className="quiz-texto">
+            <h1 className="quiz-texto-inicio">
+              No hay tiempo que perder,<br />pon a prueba tus<br />conocimientos 
             </h1>
-          <button className="quiz-boton" onClick={handleStartQuiz}>
-            ¡Empecemos!
-          </button>
+            <button className="quiz-boton" onClick={handleStartQuiz}>
+              ¡Empecemos!
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
           {/* Nueva sección de pregunta */}
       <section className="quiz-section">
