@@ -16,7 +16,7 @@ import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
 import ScrollToTop from './layout/scroollTop'; 
-import Cuestionario from './pages/quiz/cuestionario'
+import Cuestionario from './pages/quiz/Cuestionario'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
