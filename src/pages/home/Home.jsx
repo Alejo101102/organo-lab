@@ -15,6 +15,7 @@ const Home = () => {
   };
   
   return (
+    <>
     <div className={`home-container ${showMoreInfo ? 'expanded' : ''}`}>
       <div className="home-model-container">
         <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
@@ -49,7 +50,50 @@ const Home = () => {
           </button>
         </div>
       </div>
-    </div>
+      </div>
+
+      <section className="enfermedades-section">
+        <h2 className="enfermedades-titulo">¡APRENDE SOBRE SUS ENFERMEDADES!</h2>
+        <div className="enfermedades-grid">
+          <div className="enfermedad-item">
+            <img src="/images/home/home-enfermedad-agujero-macular.png" alt="Agujero macular" />
+            <span className="enfermedad-label morado">AGUJERO MACULAR</span>
+            <p>Provoca una zona ciega o mancha en el centro de la visión.</p>
+          </div>
+          <div className="enfermedad-item">
+            <img src="/images/home/home-enfermedad-cataratas.png" alt="Cataratas" />
+            <span className="enfermedad-label morado">CATARATAS</span>
+            <p>Presencia de una pequeña apertura circular en la mácula.</p>
+          </div>
+          <div className="enfermedad-item">
+            <img src="/images/home/home-enfermedad-conjuntivitis.png" alt="Conjuntivitis" />
+            <span className="enfermedad-label morado">CONJUNTIVITIS</span>
+            <p>Pequeña apertura circular en la mácula.</p>
+          </div>
+          <div className="enfermedad-item">
+            <img src="/images/home/home-enfermedad-glaucoma.png"alt="Glaucoma" />
+            <span className="enfermedad-label morado">GLAUCOMA</span>
+            <p>Pérdida de visión y ceguera al dañar el nervio.</p>
+          </div>
+        </div>
+        <p 
+          className="enfermedades-footer">¡Tu vista importa! Aprende sobre las enfermedades oculares y cuídala!
+        </p>
+      </section>
+
+      <section className="quiz-section">
+        <h2 className="quiz-title">¿ESTÁS PREPARADO?</h2>
+        <img className="quiz-image" src="/images/home/home-quiz.png" alt="Quiz" />
+        <p className="quiz-description">
+          Es momento de poner a prueba tus conocimientos con un pequeño quiz ;)
+        </p>
+        <button className="quiz-button" onClick={() => navigate('/quiz')}>
+          INTENTAR
+        </button>
+      </section>
+
+       </>
+    
   );
 };
 

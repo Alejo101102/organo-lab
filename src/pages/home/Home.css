@@ -132,6 +132,107 @@
   text-decoration: none !important;
 }
 
+/*Sección enfermedades*/
+
+.enfermedades-section {
+  background: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.enfermedades-titulo {
+  font-size: 2rem;
+  color: #2e2b4f;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.enfermedades-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.enfermedad-item {
+  flex: 1 1 calc(25% - 1rem);
+  max-width: 200px;
+  text-align: center;
+}
+
+.enfermedad-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.enfermedad-label {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  background: #7d8cc4;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.enfermedades-footer {
+  margin-top: 2rem;
+  color: #2e2b4f;
+  font-weight: 500;
+}
+
+/*Sección Quiz*/
+.quiz-section {
+  width: 100vw;              /* Ocupa todo el ancho del viewport */
+  background-color: #211f4e; /* Fondo oscuro */
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  box-sizing: border-box;
+}
+
+.quiz-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-image {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.quiz-button {
+  background-color: #6772e5;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;  /* 🔥 Esto centra el botón */
+}
+
+.quiz-button:hover {
+  background-color: #5469d4;
+}
+
+
+
 
 
 
