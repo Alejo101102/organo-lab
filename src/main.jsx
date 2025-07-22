@@ -16,6 +16,7 @@ import InicioSesion from './pages/inicio-sesion/InicioSesion'
 import Layout from './layout/Layout'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
 import ScrollToTop from './layout/scroollTop'; 
+import Cuestionario from './pages/quiz/Cuestionario'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -41,7 +42,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="que-es" element={<QueEsConjuntivitis />} />
         </Route>
         
-        <Route path="quiz" element={<Quiz />} /> 
+        <Route path="quiz" element={<Quiz />} />
+        <Route path="quiz/cuestionario" element={<Cuestionario />} />
+        
         <Route path="inicio-sesion" element={<InicioSesion />} />
         <Route path="*" element={<NotFound />} />  
       </Routes>
