@@ -101,13 +101,13 @@ const Home = () => {
 
 
 
-      <section className="quiz-section">
-        <h2 className="quiz-title">¿ESTÁS PREPARADO?</h2>
-        <img className="quiz-image" src="/images/home/home-quiz.png" alt="Quiz" />
-        <p className="quiz-description">
+      <section className="home-quiz-section">
+        <h2 className="home-quiz-title">¿ESTÁS PREPARADO?</h2>
+        <img className="home-quiz-image" src="/images/home/home-quiz.png" alt="Quiz" />
+        <p className="home-quiz-description">
           Es momento de poner a prueba tus conocimientos con un pequeño quiz ;)
         </p>
-        <button className="quiz-button" onClick={() => navigate('/quiz')}>
+        <button className="home-quiz-button" onClick={() => navigate('/quiz')}>
           INTENTAR
         </button>
       </section>

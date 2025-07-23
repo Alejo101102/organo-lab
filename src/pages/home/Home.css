@@ -252,7 +252,7 @@
 
 
 /*Sección Quiz*/
-.quiz-section {
+.home-quiz-section {
   width: 100vw;              /* Ocupa todo el ancho del viewport */
   background-color: #211f4e; /* Fondo oscuro */
   color: white;
@@ -262,25 +262,25 @@
   font-family: 'Inter', sans-serif;
 }
 
-.quiz-title {
+.home-quiz-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.quiz-image {
+.home-quiz-image {
   width: 120px;
   height: auto;
   margin-bottom: 1.5rem;
 }
 
-.quiz-description {
+.home-quiz-description {
   font-size: 1rem;
   margin-bottom: 2rem;
   color: white;
 }
 
-.quiz-button {
-  background-color: #6772e5;
+.home-quiz-button {
+  background-color: #e6654f;
   color: white;
   border: none;
   padding: 0.8rem 2rem;
@@ -293,8 +293,8 @@
   margin: 0 auto;  /* 🔥 Esto centra el botón */
 }
 
-.quiz-button:hover {
-  background-color: #5469d4;
+.home-quiz-button:hover {
+  background-color: rgba(255, 113, 91, 0.321);
 }
 
 
