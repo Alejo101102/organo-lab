@@ -49,8 +49,6 @@
   color: #f5f5f5;
   margin-bottom: 1rem;
 }
- 
-
 
 
 .home-text-container .home-descripcion {
@@ -118,7 +116,7 @@
   margin-top: 0; /* o 1rem si quieres espacio */
   padding: 0.8rem 1.5rem;
   background-color: transparent;
-  border: 1px solid #ff715b;
+  border: 1px solid #e6654f;
   color: white !important;
   font-weight: bold;
   cursor: pointer;
@@ -134,92 +132,160 @@
 
 /*Sección enfermedades*/
 
-.enfermedades-section {
-  background: #fff;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.enfermedades-titulo {
+.home-enfermedades-titulo {
   font-size: 2rem;
-  color: #2e2b4f;
+  color: #0b0b2d;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
-.enfermedades-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+.home-enfermedades-tarjetas-titulo {
+  font-size: 1.5rem;
+  color: #0b0b2d;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative;
 }
 
-.enfermedad-item {
-  flex: 1 1 calc(25% - 1rem);
-  max-width: 200px;
+.home-enfermedades-tarjetas-container {
+  margin-top: 3rem;
+  width: 100%;
+  overflow-x: auto;           /* Para hacer scroll horizontal si no caben */
+}
+
+.home-enfermedades-tarjetas-grid {
+  display: flex;              /* Fila horizontal */
+  gap: 1.5rem;
+}
+
+.home-enfermedades-tarjeta {
+  flex: 0 0 auto;             /* Que no se estiren, tamaño fijo */
+  width: 200px;               /* Ajusta según tu diseño */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #0b0b2d;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-enfermedades-tarjeta:hover {
+  background-color: rgba(11, 11, 45, 0.1);
+  transform: translateY(-4px);
+}
+
+.home-enfermedades-tarjeta-img {
+  width: 60%;                 /* Imagen 40% más pequeña (60% del contenedor) */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-enfermedades-tarjeta h3 {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  color: #0b0b2d;
   text-align: center;
 }
 
-.enfermedad-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
+.home-enfermedades-tarjeta p {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  color: #0b0b2d;
+  opacity: 0.8;
+  text-align: center;
 }
 
-.enfermedad-label {
-  display: inline-block;
-  margin-top: 0.5rem;
+
+.home-enfermedades-tarjeta img,
+.home-enfermedades-tarjeta-img {
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
   margin-bottom: 0.5rem;
-  padding: 0.3rem 0.6rem;
-  background: #7d8cc4;
-  color: white;
-  font-size: 0.8rem;
-  border-radius: 10px;
-  font-weight: bold;
 }
 
-.enfermedades-footer {
-  margin-top: 2rem;
-  color: #2e2b4f;
-  font-weight: 500;
+.home-enfermedades-footer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #0b0b2d;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  background-color: rgba(11, 11, 45, 0.1);
+  border-radius: 25px;
+  border: 2px solid #0b0b2d;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
 }
+
+.home-enfermedades-footer::before {
+  content: '👁️';
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+.home-enfermedades-footer::after {
+  content: '👁️';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+
 
 /*Sección Quiz*/
-.quiz-section {
+.home-quiz-section {
   width: 100vw;              /* Ocupa todo el ancho del viewport */
   background-color: #211f4e; /* Fondo oscuro */
   color: white;
   text-align: center;
   padding: 4rem 1rem;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-.quiz-title {
+.home-quiz-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.quiz-image {
+.home-quiz-image {
   width: 120px;
   height: auto;
   margin-bottom: 1.5rem;
 }
 
-.quiz-description {
+.home-quiz-description {
   font-size: 1rem;
   margin-bottom: 2rem;
   color: white;
 }
 
-.quiz-button {
-  background-color: #6772e5;
+.home-quiz-button {
+  background-color: #e6654f;
   color: white;
   border: none;
   padding: 0.8rem 2rem;
   font-size: 1rem;
+  font-family: 'Inter', sans-serif;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -227,8 +293,8 @@
   margin: 0 auto;  /* 🔥 Esto centra el botón */
 }
 
-.quiz-button:hover {
-  background-color: #5469d4;
+.home-quiz-button:hover {
+  background-color: rgba(255, 113, 91, 0.321);
 }
 
 
