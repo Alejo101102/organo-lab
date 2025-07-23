@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import EyeBalanceScene from './EyeBalanceScene'
-import './eyequiz.css'
+import './EyeQuiz.css'
 
 const preguntas = [
   {
