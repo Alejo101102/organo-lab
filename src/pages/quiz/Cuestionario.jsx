@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import EyeQuiz from './EyeQuiz';
+import Instrucciones from './Instrucciones';
+import './Instrucciones.css';
 
 function Cuestionario({ errores }) {
+  const [mostrarInstrucciones, setMostrarInstrucciones] = useState(true);
+
   return (
     <>
-      <h2>Resultados</h2>
-
-
-      {/* 👁️ Solo dejamos EyeQuiz que ya incluye el modelo y las preguntas */}
+      {/* El juego siempre se muestra */}
       <EyeQuiz errores={errores} />
+
+      {/* Las instrucciones se muestran encima hasta que se cierren */}
+      {mostrarInstrucciones && (
+        <Instrucciones onClose={() => setMostrarInstrucciones(false)} />
+      )}
     </>
   );
 }
