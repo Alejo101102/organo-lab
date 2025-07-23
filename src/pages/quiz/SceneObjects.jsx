@@ -21,10 +21,26 @@ function SceneObjects({ errores = 0 }) {
     }
   }, [errores]);
 
-  function PesoExtra({ x }) {
+  function PesoExtra({ y }) {
+    const ref = useRef();
+
+    useEffect(() => {
+      if (ref.current) {
+        // aplicar un impulso hacia abajo (y negativo)
+        ref.current.applyImpulse({ x: 0, y: -10, z: 0 });
+      }
+    }, []);
+
     return (
-      <RigidBody type="dynamic" restitution={0.3} friction={0.5}>
-        <mesh position={[x, 4, 0]}>
+      <RigidBody
+        ref={ref}
+        type="dynamic"
+        restitution={0.3}
+        friction={0.5}
+        mass={900000000000000000}
+        gravityScale={2} // 🔥 Triplica la gravedad para este cuerpo
+      >
+        <mesh position={[2.8, y, 0]}>
           <boxGeometry args={[0.4, 0.4, 0.4]} />
           <meshStandardMaterial color="gray" />
         </mesh>
@@ -32,36 +48,42 @@ function SceneObjects({ errores = 0 }) {
     );
   }
 
+
   return (
     <>
-      {/* Suelo fijo */}
-      <RigidBody type="fixed" colliders="cuboid">
-        <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[6, 0.3, 1]} />
-          <meshStandardMaterial color="#a86b3f" />
-        </mesh>
-      </RigidBody>
-
+      <Physics>
       {/* Base circular roja */}
       <RigidBody type="fixed">
-        <mesh position={[0, -0.4, 0]}>
+        <mesh position={[0, -1.65, 0]}>
           <cylinderGeometry args={[0.5, 0.5, 0.3, 32]} />
           <meshStandardMaterial color="darkred" />
         </mesh>
       </RigidBody>
 
-      {/* Ojo principal */}
-      <RigidBody ref={eyeRef} restitution={0.6} friction={0.5}>
-        <mesh position={[0, 2, 0]}>
-          <sphereGeometry args={[0.5, 32, 32]} />
-          <meshStandardMaterial color="white" />
-        </mesh>
-      </RigidBody>
-
+      
+        {/* Suelo fijo (tabla marrón) */}
+        <RigidBody mass={-0.000000001} type="dynamic" colliders="cuboid">
+          <mesh position={[0, -1.5, 0]}>
+            <boxGeometry args={[6, 0.3, 1]} />
+            <meshStandardMaterial color="#a86b3f" />
+          </mesh>
+        </RigidBody>
+      
+        {/* Ojo principal */}
+        <RigidBody mass={-0.0000000000001} ref={eyeRef} restitution={0.8} friction={0.1}>
+          <mesh position={[0, 2, 0]}>
+            <sphereGeometry args={[0.5, 32, 32]} />
+            <meshStandardMaterial color="white" />
+          </mesh>
+        </RigidBody>
+      
       {/* Cubos extra de peso */}
       {[...Array(errores)].map((_, i) => (
-        <PesoExtra key={i} x={1 + i * 0.4} />
+        <PesoExtra key={i} y={5 + i * 0.6} /> // cada cubo más alto
       ))}
+
+
+      </Physics>
 
       {errores >= 3 && (
         <Html position={[0, 3, 0]}>
