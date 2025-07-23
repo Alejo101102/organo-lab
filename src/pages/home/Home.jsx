@@ -52,34 +52,54 @@ const Home = () => {
       </div>
       </div>
 
-      <section className="enfermedades-section">
-        <h2 className="enfermedades-titulo">¡APRENDE SOBRE SUS ENFERMEDADES!</h2>
-        <div className="enfermedades-grid">
-          <div className="enfermedad-item">
-            <img src="/images/home/home-enfermedad-agujero-macular.png" alt="Agujero macular" />
-            <span className="enfermedad-label morado">AGUJERO MACULAR</span>
-            <p>Provoca una zona ciega o mancha en el centro de la visión.</p>
-          </div>
-          <div className="enfermedad-item">
-            <img src="/images/home/home-enfermedad-cataratas.png" alt="Cataratas" />
-            <span className="enfermedad-label morado">CATARATAS</span>
-            <p>Presencia de una pequeña apertura circular en la mácula.</p>
-          </div>
-          <div className="enfermedad-item">
-            <img src="/images/home/home-enfermedad-conjuntivitis.png" alt="Conjuntivitis" />
-            <span className="enfermedad-label morado">CONJUNTIVITIS</span>
-            <p>Pequeña apertura circular en la mácula.</p>
-          </div>
-          <div className="enfermedad-item">
-            <img src="/images/home/home-enfermedad-glaucoma.png"alt="Glaucoma" />
-            <span className="enfermedad-label morado">GLAUCOMA</span>
-            <p>Pérdida de visión y ceguera al dañar el nervio.</p>
+      <section className="home-enfermedades-section">
+        <h2 className="home-enfermedades-titulo">¡APRENDE SOBRE SUS ENFERMEDADES!</h2>
+        <div className="home-enfermedades-tarjetas-container">
+          <h2 className="home-enfermedades-tarjetas-titulo">EXPLORA ENFERMEDADES OCULARES</h2>
+          <div className="home-enfermedades-tarjetas-grid">
+            {[
+              {
+                nombre: "Agujero macular",
+                ruta: "/agujero-macular/que-es",
+                img: "/images/home/home-enfermedad-agujero-macular.png",
+                descripcion: "Provoca una zona ciega o mancha en el centro de la visión."
+              },
+              {
+                nombre: "Cataratas",
+                ruta: "/cataratas/que-es",
+                img: "/images/home/home-enfermedad-cataratas.png",
+                descripcion: "Presencia de una pequeña apertura circular en la mácula."
+              },
+              {
+                nombre: "Conjuntivitis",
+                ruta: "/conjuntivitis/que-es",
+                img: "/images/home/home-enfermedad-conjuntivitis.png",
+                descripcion: "Pequeña apertura circular en la mácula."
+              },
+              {
+                nombre: "Glaucoma",
+                ruta: "/glaucoma/que-es",
+                img: "/images/home/home-enfermedad-glaucoma.png",
+                descripcion: "Pérdida de visión y ceguera al dañar el nervio."
+              }
+            ].map((enfermedad) => (
+              <div
+                key={enfermedad.nombre}
+                className="home-enfermedades-tarjeta"
+                onClick={() => navigate(enfermedad.ruta)}
+              >
+                <img src={enfermedad.img} alt={enfermedad.nombre} className="home-enfermedades-tarjeta-img" />
+                <h3>{enfermedad.nombre}</h3>
+                <p>{enfermedad.descripcion}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <p 
-          className="enfermedades-footer">¡Tu vista importa! Aprende sobre las enfermedades oculares y cuídala!
-        </p>
+        <p className="home-enfermedades-footer">¡Tu vista importa! Aprende sobre las enfermedades oculares y cuídala!</p>
       </section>
+
+
+
 
       <section className="quiz-section">
         <h2 className="quiz-title">¿ESTÁS PREPARADO?</h2>
