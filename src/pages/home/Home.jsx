@@ -98,9 +98,6 @@ const Home = () => {
         <p className="home-enfermedades-footer">¡Tu vista importa! Aprende sobre las enfermedades oculares y cuídala!</p>
       </section>
 
-
-
-
       <section className="home-quiz-section">
         <h2 className="home-quiz-title">¿ESTÁS PREPARADO?</h2>
         <img className="home-quiz-image" src="/images/home/home-quiz.png" alt="Quiz" />

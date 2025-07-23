@@ -298,15 +298,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 /*Responsive*/
 
 @media (max-width: 768px) {
@@ -331,5 +322,43 @@
   .home-descripcion,
   .home-info-adicional p {
     font-size: 0.95rem;
+  }
+
+  /* Ajustes específicos para la sección de enfermedades en móvil */
+  .home-enfermedades-titulo {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .home-enfermedades-tarjetas-titulo {
+    font-size: 1.2rem;
+  }
+
+  .home-enfermedades-tarjeta {
+    width: 160px; /* Tarjetas un poco más pequeñas en móvil */
+  }
+
+  .home-enfermedades-footer {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Ajustes para la sección quiz en móvil */
+  .home-quiz-title {
+    font-size: 1.5rem;
+  }
+
+  .home-quiz-image {
+    width: 100px;
+  }
+
+  .home-quiz-description {
+    font-size: 0.9rem;
+  }
+
+  .home-quiz-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
