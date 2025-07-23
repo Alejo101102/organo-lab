@@ -1,0 +1,154 @@
+.mapa-sitio {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem 0;
+}
+
+.mapa-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.mapa-sitio h1 {
+    text-align: center;
+    color: #272343;
+    font-size: 2.5rem;
+    margin-top: 4.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.mapa-descripcion {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mapa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.mapa-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapa-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.section-header h2 {
+    color: #272343;
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.section-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-links > li {
+    margin-bottom: 0.75rem;
+}
+
+.section-links > li:last-child {
+    margin-bottom: 0;
+}
+
+.mapa-link {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.mapa-link:hover {
+    color: #2980b9;
+}
+
+.mapa-link.active {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.mapa-link::before {
+    content: '→ ';
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mapa-link:hover::before {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mapa-sitio {
+        padding: 1rem 0;
+    }
+    
+    .mapa-container {
+        padding: 0 1rem;
+    }
+    
+    .mapa-sitio h1 {
+        font-size: 2rem;
+        margin-top: 2.8rem;
+    }
+    
+    .mapa-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .mapa-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mapa-sitio h1 {
+        font-size: 1.75rem;
+        margin-top: 2.1rem;
+    }
+    
+    .mapa-descripcion {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+}
