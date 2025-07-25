@@ -1,9 +1,12 @@
 import { Physics, RigidBody } from '@react-three/rapier';
 import { useRef, useEffect } from 'react';
 import { Html } from '@react-three/drei';
+import ResultadoJuego from './ResultadoJuego';
 
 
-function SceneObjects({ errores = 0 }) {
+
+function SceneObjects({ errores = 0, aciertos = 0 }) {
+
   const eyeRef = useRef();
 
   // Aplica torque al ojo si hay errores
@@ -82,26 +85,11 @@ function SceneObjects({ errores = 0 }) {
         <PesoExtra key={i} y={5 + i * 0.6} /> // cada cubo más alto
       ))}
 
-
       </Physics>
-
-      {errores >= 3 && (
-        <Html position={[0, 3, 0]}>
-            <div style={{
-            color: 'white',
-            backgroundColor: 'rgba(255, 0, 0, 0.8)',
-            padding: '20px',
-            borderRadius: '10px',
-            fontSize: '1.5rem',
-            fontWeight: 'bold'
-            }}>
-            ¡Has perdido!
-            </div>
-        </Html>
-        )}
 
     </>
   );
+
 }
 
 export default SceneObjects;

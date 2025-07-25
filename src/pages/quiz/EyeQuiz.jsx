@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import EyeBalanceScene from './EyeBalanceScene'
-import './EyeQuiz.css'
+import { useState } from 'react';
+import EyeBalanceScene from './EyeBalanceScene';
+import PreguntaCard from './PreguntaCard';
+import ResultadoJuego from './ResultadoJuego';
+import './EyeQuiz.css';
 
 const preguntas = [
   {
@@ -30,37 +32,53 @@ const preguntas = [
   },
 ];
 
-
 export default function EyeQuiz() {
-  const [preguntaActual, setPreguntaActual] = useState(0)
-  const [errores, setErrores] = useState(0)
-  const [completo, setCompleto] = useState(false)
+  const [preguntaActual, setPreguntaActual] = useState(0);
+  const [errores, setErrores] = useState(0);
+  const [completo, setCompleto] = useState(false);
+  const [resultadoFinal, setResultadoFinal] = useState(null); 
+  const [aciertos, setAciertos] = useState(0);
 
-  const responder = (indexSeleccionado) => {
-    const correcta = preguntas[preguntaActual].respuestaCorrecta
-    if (indexSeleccionado !== correcta) {
-      setErrores(e => e + 1)
-    }
 
-    if (preguntaActual + 1 < preguntas.length) {
-      setPreguntaActual(p => p + 1)
-    } else {
-      setCompleto(true)
-    }
+
+const responder = (indexSeleccionado) => {
+  const esCorrecto = indexSeleccionado === preguntas[preguntaActual].respuestaCorrecta;
+  
+  if (!esCorrecto) {
+    setErrores((e) => e + 1);
+  } else {
+    setAciertos((a) => a + 1);
   }
+
+  if (preguntaActual + 1 < preguntas.length) {
+    setPreguntaActual((p) => p + 1);
+  } else {
+    setCompleto(true);
+    const gano = errores < 3 && (aciertos + (esCorrecto ? 1 : 0)) >= 3;
+    setResultadoFinal(gano ? 'ganar' : 'perder');
+  }
+};
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
-      <EyeBalanceScene errores={errores} />
+      <EyeBalanceScene errores={errores} aciertos={aciertos} />
 
       {!completo && (
         <div className="pregunta-overlay">
-          <h3>{preguntas[preguntaActual].enunciado}</h3>
-          {preguntas[preguntaActual].opciones.map((op, i) => (
-            <button key={i} onClick={() => responder(i)}>{op}</button>
-          ))}
+          <PreguntaCard
+            pregunta={preguntas[preguntaActual].enunciado}
+            opciones={preguntas[preguntaActual].opciones}
+            onSeleccionar={responder}
+            indiceActual={preguntaActual}
+            total={preguntas.length}
+          />
         </div>
       )}
+
+      {completo && (
+        <ResultadoJuego resultado={resultadoFinal} onClickPodio={() => console.log('Ir al podio')} />
+      )}
+
     </div>
-  )
+  );
 }
