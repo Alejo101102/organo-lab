@@ -14,7 +14,8 @@ function Instrucciones({ onClose }) {
           <li>🔹 Los cubos caerán uno por uno en el borde derecho de la mesa. ¡Aprovecha su peso para desequilibrarla!</li>
           <li>🔹 Cuando la mesa se incline lo suficiente… ¡el ojo caerá!</li>
         </ul>
-        <button onClick={onClose}>¡Entendido!</button>
+        <button className="instrucciones-boton" onClick={onClose}>¡Entendido!</button>
+
       </div>
     </div>
   );
