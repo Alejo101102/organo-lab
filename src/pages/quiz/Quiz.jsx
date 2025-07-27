@@ -61,40 +61,7 @@ const Quiz = () => {
         </div>
       </div>
 
-          {/* Nueva sección de pregunta */}
-      <section className="quiz-section">
-
-        <div className="quiz-timer">
-          <span role="img" aria-label="clock">🕒</span> 01:35
-        </div>
-
-        <div className="quiz-body">
-          <img
-            src="/images/quiz/quiz-persona-pregunta.png"
-            alt="Pregunta ilustrada"
-            className="quiz-ilustracion"
-          />
-
-          <div className="progress-bar">
-            <div className="dot active"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-          </div>
-
-          <div className="quiz-pregunta">
-            <h2>¿Cuál de estos hábitos saludables son beneficiosos para la visión?</h2>
-
-            <div className="quiz-opciones">
-              <button className="opcion">A. Dormir 5 horas diarias</button>
-              <button className="opcion">B. Fumar</button>
-              <button className="opcion">C. Comer únicamente comida rápida</button>
-              <button className="opcion correcta">D. Usar gafas contra rayos UV</button>
-            </div>
-          </div>
-        </div>
-      </section>
+        
     </>
   );
 };
