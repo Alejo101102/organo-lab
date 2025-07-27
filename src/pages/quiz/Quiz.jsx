@@ -41,6 +41,10 @@ const Quiz = () => {
     { name: "Luisa", score: 85, position: [2.5, -1, 0], scale: 0.9 }  // 🥉 Tercer lugar (derecha, más bajo)
   ];
 
+    const irAMedallero = () => {
+    navigate('/quiz/cuestionario/medallero');
+  };
+
   return (
     <>
       <div className="quiz-container">
@@ -54,9 +58,14 @@ const Quiz = () => {
             <h1 className="quiz-texto-inicio">
               No hay tiempo que perder,<br />pon a prueba tus<br />conocimientos 
             </h1>
-            <button className="quiz-boton" onClick={handleStartQuiz}>
-              ¡Empecemos!
-            </button>
+              <div className="quiz-botones-container">
+                <button className="quiz-boton" onClick={handleStartQuiz}>
+                  ¡Empecemos!
+                </button>
+                <button className="quiz-boton-podio" onClick={irAMedallero}>
+                  Podio
+                </button>
+              </div>
           </div>
         </div>
       </div>
