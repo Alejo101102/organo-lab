@@ -9,6 +9,8 @@ import { Text3D } from '@react-three/drei';
 
 
 const Medallero = () => {
+
+  
   return (
     <div className="medallero-container">
       <Canvas camera={{ position: [-5, 2, 10], fov: 20 }}>
