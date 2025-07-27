@@ -22,6 +22,7 @@ import Text3DGlaucoma from './texts/Text3DGlaucoma';
 
 import TratamientoGlaucoma  from './videos/TratamientoGlaucoma';
 import { KeyboardControls } from '@react-three/drei';
+import AudioGlaucoma from '../audio/AudioGlaucoma';
 
 
 
@@ -456,16 +457,7 @@ const QueEsGlaucoma = () => {
             <Sparkles count={10} scale={5} size={1.5} speed={0.3} />
             <OrbitControls target={[0, 1.5, 0]} enableZoom={true} />
             <MattSmith physics={false} position={[0, 3.5, 0]} rotation={[0, Math.PI, 0]} scale={1.5} />
-            
-
-            <Html position={[-5, 1.5, 0]} center>
-              <button
-                className="glaucoma-modelo-explicativo-boton-audio"
-                onClick={playAudio}
-              >
-                {isPlaying ? '⏸️ Pausar audio' : '🔊 Reproducir audio'}
-              </button>
-            </Html>
+            <AudioGlaucoma />
 
              {/* Html adicional: un span simple en otra posición */}
             <Html position={[3, 3.3, 0]} transform occlude>
