@@ -43,18 +43,39 @@ export default function EyeQuiz() {
 
 const responder = (indexSeleccionado) => {
   const esCorrecto = indexSeleccionado === preguntas[preguntaActual].respuestaCorrecta;
-  
-  if (!esCorrecto) {
-    setErrores((e) => e + 1);
+
+  // Actualiza los contadores ANTES de evaluar si ganó o perdió
+  const nuevosAciertos = esCorrecto ? aciertos + 1 : aciertos;
+  const nuevosErrores = !esCorrecto ? errores + 1 : errores;
+
+  // Verifica condiciones de victoria o derrota
+  if (nuevosAciertos === 3) {
+    setAciertos(nuevosAciertos);
+    setCompleto(true);
+    setResultadoFinal('ganar');
+    return;
+  }
+
+  if (nuevosErrores === 3) {
+    setErrores(nuevosErrores);
+    setCompleto(true);
+    setResultadoFinal('perder');
+    return;
+  }
+
+    // Si aún no ha ganado ni perdido, continúa el juego
+  if (esCorrecto) {
+    setAciertos(nuevosAciertos);
   } else {
-    setAciertos((a) => a + 1);
+    setErrores(nuevosErrores);
   }
 
   if (preguntaActual + 1 < preguntas.length) {
     setPreguntaActual((p) => p + 1);
   } else {
+    // Si terminó las preguntas sin cumplir condiciones anteriores
     setCompleto(true);
-    const gano = errores < 3 && (aciertos + (esCorrecto ? 1 : 0)) >= 3;
+    const gano = nuevosAciertos >= 3;
     setResultadoFinal(gano ? 'ganar' : 'perder');
   }
 };
