@@ -17,6 +17,7 @@ import Layout from './layout/Layout'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
 import ScrollToTop from './layout/scroollTop'; 
 import Cuestionario from './pages/quiz/Cuestionario'
+import Medallero from './pages/quiz/Medallero'
 import MapaSitio from './pages/mapa-sitio/MapaSitio'
 
 createRoot(document.getElementById('root')).render(
@@ -45,6 +46,7 @@ createRoot(document.getElementById('root')).render(
         
         <Route path="quiz" element={<Quiz />} />
         <Route path="quiz/cuestionario" element={<Cuestionario />} />
+        <Route path="quiz/cuestionario/medallero" element={<Medallero />} />
 
         <Route path="mapa-sitio" element={<MapaSitio />} />
         

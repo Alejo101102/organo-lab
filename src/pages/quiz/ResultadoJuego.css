@@ -1,0 +1,41 @@
+/* ResultadoJuego.css */
+
+.overlay-resultado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-resultado {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.titulo-resultado {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.boton-resultado {
+  background-color: #ff4500;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}

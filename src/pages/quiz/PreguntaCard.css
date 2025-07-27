@@ -1,0 +1,58 @@
+.card-pregunta {
+  background-color: #e5e5e5;
+  padding: 1.5rem;
+  border-radius: 20px;
+  width: 320px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pregunta-titulo {
+  background-color: #ff726f;
+  padding: 0.8rem;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.boton-opcion {
+  background-color: #7a89d9;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-opcion:hover {
+  background-color: #5a6cb2;
+}
+
+.indicador {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 6px;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.punto.activo {
+  background-color: #333;
+}

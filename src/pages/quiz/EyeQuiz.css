@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.pregunta-overlay {
+  position: absolute;
+  top: 110px;
+  left: 15%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10;
+}
+
+.pregunta-overlay h3 {
+  background-color: crimson;
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.pregunta-overlay button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #3b4cd9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pregunta-overlay button:hover {
+  background-color: #2d3db6;
+}
+
+.floating-quiz {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  transform: translate(-50%, 0);
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  z-index: 10;
+}
+
