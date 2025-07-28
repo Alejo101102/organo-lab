@@ -96,6 +96,52 @@ nav a:hover {
     text-decoration: none !important;
 }
 
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid white;
+}
+.profile-pic:hover {
+    border-color: #ff715b;
+}
+
+.profile-submenu {
+    top: 100%;
+    right: 0;
+    left: auto;
+    min-width: 180px;
+}
+
+.user-name {
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #272343;
+    border-bottom: 1px solid #ddd;
+}
+
+.logout-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #272343;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+
 /* Media Queries para Responsive */
 
 /* Tablets - pantallas medianas */
@@ -118,6 +164,15 @@ nav a:hover {
     
     .login-link {
         padding: 0.4rem 0.8rem;
+    }
+
+    .profile-submenu {
+    min-width: 160px;
+    }
+
+    .profile-pic {
+        width: 36px;
+        height: 36px;
     }
 }
 
@@ -157,6 +212,23 @@ nav a:hover {
         right: 0;
         left: auto;
     }
+
+    .profile-submenu {
+    min-width: 140px;
+    }
+
+    .profile-pic {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logout-btn {
+        font-size: 0.95rem;
+    }
+
+    .user-name {
+        font-size: 0.95rem;
+    }
 }
 
 /* Móviles grandes */
@@ -180,6 +252,23 @@ nav a:hover {
     .login-link {
         padding: 0.25rem 0.5rem;
         font-size: 0.8rem;
+    }
+
+    .profile-submenu {
+        min-width: 130px;
+    }
+
+    .profile-pic {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logout-btn {
+        font-size: 0.9rem;
+    }
+
+    .user-name {
+        font-size: 0.9rem;
     }
 }
 
@@ -222,6 +311,25 @@ nav a:hover {
     .submenu a {
         padding: 8px;
     }
+
+    .profile-submenu {
+    min-width: 120px;
+    font-size: 0.8rem;
+    }
+
+    .profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logout-btn {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .user-name {
+        font-size: 0.85rem;
+    }
 }
 
 /* Móviles muy pequeños */
@@ -243,5 +351,22 @@ nav a:hover {
     .login-link {
         padding: 0.15rem 0.3rem;
         font-size: 0.7rem;
+    }
+
+    .profile-submenu {
+    min-width: 110px;
+    }
+
+    .profile-pic {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logout-btn {
+        font-size: 0.8rem;
+    }
+
+    .user-name {
+        font-size: 0.8rem;
     }
 }

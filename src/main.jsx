@@ -20,6 +20,7 @@ import ScrollToTop from './layout/scroollTop';
 import Cuestionario from './pages/quiz/Cuestionario'
 import Medallero from './pages/quiz/Medallero'
 import MapaSitio from './pages/mapa-sitio/MapaSitio'
+import Profile from './pages/profile/Profile'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -54,6 +55,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="quienes-somos" element={<QuienesSomos />} />
         
         <Route path="inicio-sesion" element={<InicioSesion />} />
+        <Route path='inicio-sesion/perfil' element={<Profile />} />
+
         <Route path="*" element={<NotFound />} />  
       </Routes>
     </Layout>
