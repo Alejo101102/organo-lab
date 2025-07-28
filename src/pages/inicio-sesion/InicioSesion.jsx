@@ -18,11 +18,28 @@ const InicioSesion = () => {
 
   return (
     <>
-      <h2>Continua con Google</h2>
-      <button type="button" title="Iniciar sesión con Google" onClick={handleLogin}
-      >
-        Iniciar sesión
-      </button>
+    <div className="login-container">
+          <img className="inicio-sesion-imagen"
+          src="/images/inicio-sesion/inicio-sesion.png"
+          alt="Ilustración"
+        />
+
+      <div className="login-box">
+        <h2 className="login-titulo">Login</h2>
+        <p className="login-subtitulo">
+          Oye, ingresa tus datos para iniciar sesión en tu cuenta
+        </p>
+
+        <button className="login-google-btn" onClick={handleLogin}>
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google"
+            className="login-google-icon"
+          />
+          Google
+        </button>
+      </div>
+    </div>
     </>
   );
 }
