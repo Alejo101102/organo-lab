@@ -903,7 +903,15 @@
 
   /* SECCIÓN: ¿QUÉ ES? */
   .glaucoma-que-es-container {
-    padding: 6rem 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* Centra el contenido verticalmente */
+    align-items: center;          /* Centra horizontalmente */
+    min-height: 100vh;            /* Ocupa toda la altura de la pantalla */
+    padding-left: 10rem;
+padding-right: 10rem;
+            /* Solo padding lateral */
+    box-sizing: border-box;
   }
 
   .glaucoma-titulo {
@@ -919,6 +927,14 @@
   .glaucoma-modelo-3d-que-es {
     height: 350px;
   }
+
+  .glaucoma-modelo-3d-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+
 
   /* SECCIÓN: SÍNTOMAS */
   .glaucoma-sintomas-titulo {
