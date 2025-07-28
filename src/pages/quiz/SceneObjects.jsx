@@ -9,6 +9,15 @@ function SceneObjects({ errores = 0, aciertos = 0 }) {
 
   const eyeRef = useRef();
 
+  // Debug: Log cuando el componente se monta/desmonta
+  useEffect(() => {
+    console.log('🎮 SceneObjects mounted/reset - Errores:', errores, 'Aciertos:', aciertos);
+    
+    return () => {
+      console.log('🎮 SceneObjects unmounting');
+    };
+  }, []);
+
   // Aplica torque al ojo si hay errores
   useEffect(() => {
     if (!eyeRef.current) return;
@@ -43,7 +52,7 @@ function SceneObjects({ errores = 0, aciertos = 0 }) {
         mass={900000000000000000}
         gravityScale={2} // 🔥 Triplica la gravedad para este cuerpo
       >
-        <mesh position={[2.8, y, 0]}>
+        <mesh position={[1.8, y, 0]}>
           <boxGeometry args={[0.4, 0.4, 0.4]} />
           <meshStandardMaterial color="gray" />
         </mesh>
