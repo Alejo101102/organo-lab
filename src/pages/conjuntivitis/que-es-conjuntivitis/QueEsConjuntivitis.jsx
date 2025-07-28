@@ -88,7 +88,6 @@ const QueEsConjuntivitis = () =>  {
                   <Controls />
                   <Text3D text3d={"Que es?"}/>
                   <Text2D text={"Conjuntivitis"}/>
-                  <BotonVideo/>
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}
@@ -154,7 +153,9 @@ const QueEsConjuntivitis = () =>  {
                   <LightsSintomas />  
                   <StagingSintomas />
                   <Controls />
-                  <TitleConjuntivitis title={"Sintomas"} />
+                  <Text3D text3d={"Sintomas"}/>
+                  <Text2D text={"Cuales son?"}/>
+                  <BotonVideo/>
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}
