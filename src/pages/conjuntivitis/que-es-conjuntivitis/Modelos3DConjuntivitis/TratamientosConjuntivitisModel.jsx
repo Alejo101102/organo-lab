@@ -29,7 +29,7 @@ export function ModeloTratamientosConjuntivitis({ physics = false, rotate = fals
   }, [physics])
 
   const content = (
-    <group ref={groupRef} {...props} onClick={handleClick} dispose={null} scale={[900, 900, 900]}>
+    <group ref={groupRef} {...props} onDoubleClick={handleClick} dispose={null} scale={[900, 900, 900]}>
       <mesh
         castShadow
         receiveShadow
