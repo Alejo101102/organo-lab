@@ -9,13 +9,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>¿QUIÉNES SOMOS?</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            Somos una empresa dedicada a la creación y 
+            producción de páginas interactivas que brindan información 
+            sobre el cuerpo humano, para suplir las necesidades 
+            conceptuales y técnicas de todo público.
           </p>
         </div>
 
