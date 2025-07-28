@@ -12,7 +12,7 @@ const InicioSesion = () => {
 
   const handleLogin = useCallback(()=>{
     loginWithPopup ()
-    .then(()=>navigate("perfil"))
+    .then(()=>navigate("/"))
     .catch(()=>navigate("/"));
   }, [loginWithPopup , navigate]);
 

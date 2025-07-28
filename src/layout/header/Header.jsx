@@ -2,8 +2,11 @@ import React from 'react';
 import './Header.css';
 import { NavLink } from 'react-router';
 import logo from '../../assets/logo-letra-blanca.png';
+import useAuthStore from '../../stores/use-auth.store';
 
 const Header = () => {
+  const { userLooged, logout } = useAuthStore();
+
   return (
     <header>
       <nav>
@@ -28,7 +31,23 @@ const Header = () => {
           
           <NavLink to="/quiz" end>Quiz</NavLink>
 
-          <NavLink to="/inicio-sesion" end className="login-link">Iniciar Sesión</NavLink>
+          {!userLooged ? (
+            <NavLink to="/inicio-sesion" end className="login-link">Iniciar Sesión</NavLink>
+          ) : (
+            <div className="menu-item">
+              <img
+                src={userLooged.photoURL || '/default-user.png'}
+                alt="Perfil"
+                className="profile-pic"
+                title={userLooged.displayName}
+              />
+              <div className="submenu profile-submenu">
+                <p className="user-name">{userLooged.displayName}</p>
+                <button onClick={logout} className="logout-btn">Cerrar sesión</button>
+              </div>
+            </div>
+          )}
+
         </div>
       </nav>
     </header>
