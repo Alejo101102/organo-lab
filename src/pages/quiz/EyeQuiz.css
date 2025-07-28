@@ -1,3 +1,4 @@
+/* Estilos existentes del archivo original */
 html, body {
   height: 100%;
   margin: 0;
@@ -10,7 +11,7 @@ html, body {
   left: 5%;
   width: 300px;
   height: 100%;
-  background: transparent; /* <- elimina fondo blanco */
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +19,6 @@ html, body {
   box-shadow: none;
   text-align: center;
 }
-
 
 .pregunta-overlay h3 {
   background-color: crimson;
@@ -58,3 +58,211 @@ html, body {
   z-index: 10;
 }
 
+/* NUEVOS ESTILOS PARA LAS TARJETAS */
+
+/* Tarjeta de botones de acción - Izquierda */
+.action-card {
+  position: absolute;
+  top: 120px; /* Más abajo que antes */
+  left: 20px;
+  background: #e53e3e;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 10;
+}
+
+.game-result-header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.result-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.result-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-stats span {
+  color: white;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.action-btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.restart-btn {
+  background-color: #3182ce;
+  color: white;
+}
+
+.restart-btn:hover {
+  background-color: #2c5aa0;
+  transform: translateY(-1px);
+}
+
+.podium-btn {
+  background-color: #d69e2e;
+  color: white;
+}
+
+.podium-btn:hover {
+  background-color: #b7791f;
+  transform: translateY(-1px);
+}
+
+.ranking-btn {
+  background-color: #38a169;
+  color: white;
+}
+
+.ranking-btn:hover {
+  background-color: #2f855a;
+  transform: translateY(-1px);
+}
+
+/* Tarjeta de información del jugador - Derecha */
+.player-card {
+  position: absolute;
+  top: 120px; /* Más abajo que antes */
+  right: 20px;
+  background: white; /* Cambio a blanco */
+  color: #333; /* Texto oscuro para contraste */
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  z-index: 10;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Borde oscuro para fondo blanco */
+}
+
+.player-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Borde oscuro para fondo blanco */
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333; /* Texto oscuro */
+}
+
+.player-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666; /* Color gris para el fondo blanco */
+}
+
+.stat-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: #ff6b35; /* Color naranja/rojo para destacar */
+}
+
+.game-progress {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borde oscuro para fondo blanco */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-item {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: #555; /* Color oscuro para el texto */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .action-card {
+    top: 100px; /* Ajuste para móviles */
+    left: 10px;
+    min-width: 160px;
+    padding: 12px;
+  }
+  
+  .player-card {
+    top: 100px; /* Ajuste para móviles */
+    right: 10px;
+    min-width: 240px;
+    padding: 15px;
+  }
+  
+  .action-btn {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .player-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .player-name {
+    font-size: 15px;
+  }
+}
+
+/* Animaciones suaves */
+.action-card, .player-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
