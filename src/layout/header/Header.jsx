@@ -36,10 +36,11 @@ const Header = () => {
           ) : (
             <div className="menu-item">
               <img
-                src={userLooged.photoURL || '/default-user.png'}
+                src={userLooged.photoURL ? `${userLooged.photoURL}?t=${Date.now()}` : '/images/icons/bot.png'}
                 alt="Perfil"
                 className="profile-pic"
                 title={userLooged.displayName}
+                referrerPolicy="no-referrer"
               />
               <div className="submenu profile-submenu">
                 <p className="user-name">{userLooged.displayName}</p>
