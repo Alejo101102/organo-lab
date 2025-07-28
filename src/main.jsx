@@ -13,6 +13,7 @@ import Glaucoma from './pages/glaucoma/Glaucoma'
 import QueEsGlaucoma from './pages/glaucoma/que-es-glaucoma/QueEsGlaucoma'
 import Quiz from './pages/quiz/Quiz'
 import InicioSesion from './pages/inicio-sesion/InicioSesion'
+import QuienesSomos from './pages/quienes-somos/QuienesSomos'
 import Layout from './layout/Layout'
 import QueEsAgujeroMacular from './pages/agujero-macular/que-es-agujero-macular/QueEsAgujeroMacular'
 import ScrollToTop from './layout/scroollTop'; 
@@ -50,6 +51,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="quiz/cuestionario/medallero" element={<Medallero />} />
 
         <Route path="mapa-sitio" element={<MapaSitio />} />
+
+        <Route path="quienes-somos" element={<QuienesSomos />} />
         
         <Route path="inicio-sesion" element={<InicioSesion />} />
         <Route path='inicio-sesion/perfil' element={<Profile />} />

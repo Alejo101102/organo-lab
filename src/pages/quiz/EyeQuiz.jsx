@@ -6,31 +6,37 @@ import './EyeQuiz.css';
 
 const preguntas = [
   {
-    enunciado: "¿Qué estructura se ve afectada por el glaucoma?",
-    opciones: ["Retina", "Nervio óptico", "Cristalino", "Párpado"],
+    enunciado: "¿Qué enfermedad ocular causa visión nublada y es común en adultos mayores?",
+    opciones: ["Glaucoma", "Cataratas", "Conjuntivitis", "Agujero macular"],
     respuestaCorrecta: 1,
   },
   {
-    enunciado: "¿Cuál es un síntoma común del glaucoma?",
-    opciones: ["Dolor de cabeza", "Pérdida de visión periférica", "Picazón", "Visión doble"],
-    respuestaCorrecta: 1,
+    enunciado: "¿Cuál de los siguientes síntomas es típico del agujero macular?",
+    opciones: ["Dolor de cabeza", "Visión doble", "Pérdida de visión central", "Ojos rojos"],
+    respuestaCorrecta: 2,
   },
   {
-    enunciado: "¿Qué examen detecta la presión ocular?",
-    opciones: ["Tonometría", "Angiografía", "Ecografía", "Topografía"],
-    respuestaCorrecta: 0,
+    enunciado: "¿Qué parte del ojo se inflama con mayor frecuencia en la conjuntivitis?",
+    opciones: ["Córnea", "Cristalino", "Conjuntiva", "Nervio óptico"],
+    respuestaCorrecta: 2,
   },
   {
-    enunciado: "¿El glaucoma es curable?",
-    opciones: ["Sí", "No", "Solo con cirugía", "Depende del paciente"],
-    respuestaCorrecta: 1,
+    enunciado: "¿Qué enfermedad ocular puede causar pérdida de visión periférica progresiva?",
+    opciones: ["Cataratas", "Agujero macular", "Glaucoma", "Miopía"],
+    respuestaCorrecta: 2,
   },
   {
-    enunciado: "¿Cuál es un tratamiento común para el glaucoma?",
-    opciones: ["Gotas oculares", "Lentes de contacto", "Vitaminas", "Cirugía plástica"],
-    respuestaCorrecta: 0,
+    enunciado: "¿Cuál de los siguientes es un buen hábito para cuidar la salud visual?",
+    opciones: [
+      "Evitar la luz natural",
+      "Dormir menos de 4 horas",
+      "Usar gafas de sol con filtro UV",
+      "Mirar pantallas sin parpadear"
+    ],
+    respuestaCorrecta: 2,
   },
 ];
+
 
 export default function EyeQuiz() {
   const [preguntaActual, setPreguntaActual] = useState(0);
@@ -43,18 +49,39 @@ export default function EyeQuiz() {
 
 const responder = (indexSeleccionado) => {
   const esCorrecto = indexSeleccionado === preguntas[preguntaActual].respuestaCorrecta;
-  
-  if (!esCorrecto) {
-    setErrores((e) => e + 1);
+
+  // Actualiza los contadores ANTES de evaluar si ganó o perdió
+  const nuevosAciertos = esCorrecto ? aciertos + 1 : aciertos;
+  const nuevosErrores = !esCorrecto ? errores + 1 : errores;
+
+  // Verifica condiciones de victoria o derrota
+  if (nuevosAciertos === 3) {
+    setAciertos(nuevosAciertos);
+    setCompleto(true);
+    setResultadoFinal('ganar');
+    return;
+  }
+
+  if (nuevosErrores === 3) {
+    setErrores(nuevosErrores);
+    setCompleto(true);
+    setResultadoFinal('perder');
+    return;
+  }
+
+    // Si aún no ha ganado ni perdido, continúa el juego
+  if (esCorrecto) {
+    setAciertos(nuevosAciertos);
   } else {
-    setAciertos((a) => a + 1);
+    setErrores(nuevosErrores);
   }
 
   if (preguntaActual + 1 < preguntas.length) {
     setPreguntaActual((p) => p + 1);
   } else {
+    // Si terminó las preguntas sin cumplir condiciones anteriores
     setCompleto(true);
-    const gano = errores < 3 && (aciertos + (esCorrecto ? 1 : 0)) >= 3;
+    const gano = nuevosAciertos >= 3;
     setResultadoFinal(gano ? 'ganar' : 'perder');
   }
 };

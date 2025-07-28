@@ -39,7 +39,7 @@ const Home = () => {
         {showMoreInfo && (
           <div className="home-info-adicional">
             <h3>Información importante</h3>
-            <p>Conoce cómo enfermedades como el agujero macular, cataratas, conjuntivitis y glaucoma afectan tu vista. Descubre sus síntomas, tratamientos y cómo prevenirlas.</p>
+            <p>Conoce cómo enfermedades como el agujero macular, cataratas, conjuntivitis y glaucoma afectan tu visión. Descubre sus síntomas, tratamientos y cómo prevenirlas.</p>
             <p>Visita la sección <strong>Enfermedades</strong> en el menú superior, para más información. </p>
           </div>
         )}
@@ -95,7 +95,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <p className="home-enfermedades-footer">¡Tu vista importa! Aprende sobre las enfermedades oculares y cuídala!</p>
+        <p className="home-enfermedades-footer">¡Tu visión importa! Aprende sobre las enfermedades oculares y sus cuidados!</p>
       </section>
 
       <section className="home-quiz-section">
