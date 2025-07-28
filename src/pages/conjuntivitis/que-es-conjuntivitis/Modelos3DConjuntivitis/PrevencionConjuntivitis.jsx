@@ -26,7 +26,7 @@ export function ModeloPrevencionConjuntivitis({ physics = false, rotate = false,
   }, [physics])
 
   const content = (
-    <group ref={groupRef} {...props} dispose={null} onClick={handleClick}>
+    <group ref={groupRef} {...props} dispose={null} onDoubleClick={handleClick}>
       <mesh
         castShadow
         receiveShadow

@@ -35,7 +35,7 @@ export function ModeloSintomasConjuntivitis({ physics = false, rotate = false, .
 
 
   const content = (
-    <group ref={groupRef} {...props} onClick={handleClick} dispose={null}>
+    <group ref={groupRef} {...props} onDoubleClick={handleClick} dispose={null}>
       <mesh
         castShadow
         receiveShadow

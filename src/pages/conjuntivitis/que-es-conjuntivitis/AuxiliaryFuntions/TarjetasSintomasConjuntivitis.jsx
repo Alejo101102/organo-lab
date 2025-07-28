@@ -1,3 +1,5 @@
+import './TarjetasSintomasConjuntivitis.css';
+
 const sintomasConjuntivitis = [
   {
     emoji: "👁️",
@@ -38,16 +40,16 @@ const sintomasConjuntivitis = [
 
 const TarjetasSintomasConjuntivitis = () => {
   return (
-    <div className="catarata-contenedor-tarjetas">
+    <div className="conjuntivitis-contenedor-tarjetas">
       {sintomasConjuntivitis.map((sintoma, i) => (
-        <div className="catarata-tarjetas-sintomas" key={i}>
-          <div className="catarata-imagen-tarjeta-sintomas">
-            <div className="catarata-imagen-con-borde">
-              <span style={{ fontSize: "4rem" }}>{sintoma.emoji}</span>
+        <div className="conjuntivitis-tarjetas-sintomas" key={i}>
+          <div className="conjuntivitis-imagen-tarjeta-sintomas">
+            <div className="conjuntivitis-imagen-con-borde">
+              <span style={{ fontSize: "2.5rem" }}>{sintoma.emoji}</span>
             </div>
           </div>
-          <h4 className="catarata-tarjeta-sintomas-titulo">{sintoma.titulo}</h4>
-          <p className="catarata-tarjeta-sintomas-descripcion">{sintoma.descripcion}</p>
+          <h2 className="conjuntivitis-tarjeta-sintomas-titulo">{sintoma.titulo}</h2>
+          <p className="conjuntivitis-tarjeta-sintomas-descripcion">{sintoma.descripcion}</p>
         </div>
       ))}
     </div>
