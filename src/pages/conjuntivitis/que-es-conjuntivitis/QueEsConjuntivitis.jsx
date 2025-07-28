@@ -22,11 +22,14 @@ import StagingPrevencion from './staging/StagingConjuntivitisPrevencion';
 import TitleConjuntivitis from './texts/TitleConjuntivitis';
 import Text2D from './texts/Text2D';
 import Text3D from './texts/Text3D';
+import TextoHTML from './texts/TextHTML';
 import BotonVideo from './texts/ButtonVideo';
 import KeyboardWrapper from './AuxiliaryFuntions/KeyboardWrapper';
 import { motion } from 'framer-motion';
 import PrevencionCarrusel from './AuxiliaryFuntions/PrevencionCarrusel';
 import TarjetasSintomasConjuntivitis from './AuxiliaryFuntions/TarjetasSintomasConjuntivitis';
+import TextHTML from './texts/TextHTML';
+import AudioConjuntivitis from './audio/AudioConjuntivitis';
 
 
 const QueEsConjuntivitis = () =>  {
@@ -83,11 +86,12 @@ const QueEsConjuntivitis = () =>  {
             <div className="conjuntivitis-que-es-modelo-3d" >
               <KeyboardWrapper>
                 <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
-                  <LightsQueEs />  
-                  <StagingQueEs />
-                  <Controls />
+                  <LightsQueEs/>  
+                  <StagingQueEs/>
+                  <Controls/>
                   <Text3D text3d={"Que es?"}/>
                   <Text2D text={"Conjuntivitis"}/>
+                  <TextHTML texthtml={"👋 Haz clic en explorar modelo para ver cómo usar el modelo"}/>
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}
@@ -291,6 +295,7 @@ const QueEsConjuntivitis = () =>  {
                         <LightsTratamientos />
                         <StagingTratamientos />
                         <Controls />
+                         <AudioConjuntivitis />
                         <TitleConjuntivitis title={"Tratamientos"} />
                         <group
                           onPointerOver={() => setShowTooltip(true)}
