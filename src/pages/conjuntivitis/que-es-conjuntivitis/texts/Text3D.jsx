@@ -5,7 +5,7 @@ const Text3d = ({ text3d }) => {
   return (
     <Text3D
       center
-      position={[0, 8, 0]}
+      position={[5.5, 8, 0]}
       distanceFactor={50}
       wrapperClass="text3d"
       occlude
