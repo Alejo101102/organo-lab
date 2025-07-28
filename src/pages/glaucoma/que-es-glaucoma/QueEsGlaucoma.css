@@ -106,14 +106,17 @@
 
 .glaucoma-descripcion-que-es {
   font-family: 'Inter', sans-serif;
-  margin-bottom: 2rem;
   text-align: justify;
-
   line-height: 1.8;
   color: #fff;
-  margin-left: auto;
-  margin-right: auto;
+
+  width: 100%;
+  max-width: 90vw;         /* ✅ Nuevo: límite de ancho */
+  padding: 0 1rem;         /* ✅ Nuevo: espacio a los lados */
+  margin: 0 auto 2rem;     /* ✅ Nuevo: centrado horizontal + espacio inferior */
+  box-sizing: border-box; /* ✅ Nuevo: asegura que el padding no sume al ancho total */
 }
+
 
 /* === SECCIÓN SINTOMAS === */
 
@@ -535,15 +538,23 @@
 
 /* === RESPONSIVE === */
 
+@media (max-width: 1400px) {
+  .glaucoma-que-es-container {
+    padding: 1.5rem 2rem;
+  }
+}
+
+
+
 @media (min-width: 845px) {
 
   /* === SECCIÓN QUÉ ES === */
 .glaucoma-que-es-container {
-  width: 100%;
-  margin: 0;
-  padding: 4rem 2rem;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ✅ CENTRA horizontalmente su contenido */
 }
+
 
 .glaucoma-titulo {
   font-size: 85px;
@@ -574,16 +585,19 @@
 
 .glaucoma-descripcion-que-es {
   font-family: 'Inter', sans-serif;
-  max-width: 1300px;
-  margin-bottom: 2rem;
   text-align: justify;
-
   line-height: 1.8;
-  font-size: 18px;       
-  font-weight: 300; 
+  color: #fff;
+
   margin-left: auto;
   margin-right: auto;
+
+  width: 100%;
+  max-width: 90vw;  /* ✅ ahora ocupa máximo el 90% del viewport */
+  padding: 0 1rem;   /* ✅ padding lateral para respiro */
+  box-sizing: border-box;
 }
+
 
 /* === SECCIÓN SINTOMAS === */
 
@@ -909,8 +923,8 @@
     align-items: center;          /* Centra horizontalmente */
     min-height: 100vh;            /* Ocupa toda la altura de la pantalla */
     padding-left: 10rem;
-padding-right: 10rem;
-            /* Solo padding lateral */
+    padding-right: 10rem;
+    /* Solo padding lateral */
     box-sizing: border-box;
   }
 
