@@ -1,0 +1,22 @@
+.texthtmlconjuntivits {
+  z-index: 1 !important; 
+}
+
+
+.texthtmlconjuntivits h1 {
+  font-size: 5px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+
+  /* Efecto de relieve 3D con múltiples sombras */
+    text-shadow:
+        1px 1px 0 #e04e2e,
+        1px 1px 0 #c44629,
+        1px 1px 0px #a53d23,
+        2px 2px 1px #84341d,
+        3px 3px 2px #662b18;
+  
+}
