@@ -14,7 +14,7 @@ const AudioCatarata = () => {
                 setIsPlaying(false);
             } else {
                 audioRef.current.play();
-                audioRef.current.setVolume(10);
+                audioRef.current.setVolume(1.0);
                 setIsPlaying(true);
             }
         }
@@ -33,7 +33,7 @@ const AudioCatarata = () => {
                     url="/sounds/catarata/catarata.mp3"
                     autoplay={false}
                     loop={true}
-                    distance={5}
+                    distance={7}
                 />
             </group>
         </>
