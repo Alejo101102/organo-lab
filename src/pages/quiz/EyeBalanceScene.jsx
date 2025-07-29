@@ -5,7 +5,7 @@ import SceneObjects from './SceneObjects';
 import { OrbitControls } from '@react-three/drei'
 import React from 'react'
 
-export default function EyeBalanceScene({ errores }) {
+export default function EyeBalanceScene({ errores, aciertos }) {
 
     
   return (
@@ -17,7 +17,7 @@ export default function EyeBalanceScene({ errores }) {
       <directionalLight position={[5, 10, 5]} intensity={1} />
       <OrbitControls />
       <Physics gravity={[0, -9.81, 0]}>
-        <SceneObjects errores={errores} />
+        <SceneObjects errores={errores} aciertos={aciertos} />
         
 
       </Physics>

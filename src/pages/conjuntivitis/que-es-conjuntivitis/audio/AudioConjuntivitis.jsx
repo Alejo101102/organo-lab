@@ -1,9 +1,9 @@
 import { Html, PositionalAudio } from '@react-three/drei';
 import React, { useCallback, useRef, useState } from 'react';
-import './AudioCatarata.css';
-import './AudioCatarata.css'; 
+import './AudioConjuntivitis.css';
+import './AudioConjuntivitis.css'; 
 
-const AudioCatarata = () => {
+const AudioConjuntivitis = () => {
     const audioRef = useRef();
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -23,21 +23,21 @@ const AudioCatarata = () => {
     return (
         <>
             <Html position={[7, 2, 0]} center>
-                <button className="catarata-audio-button" onClick={handleClick} >
+                <button className="conjuntivitis-audio-button" onClick={handleClick} >
                     {isPlaying ? "PAUSAR AUDIO" : "REPRODUCIR AUDIO"}
                 </button>
             </Html>
             <group>
                 <PositionalAudio 
                     ref={audioRef}
-                    url="/sounds/catarata/catarata.mp3"
+                    url="/sounds/conjuntivits/Tratamiento-conjuntivitis.mp3"
                     autoplay={false}
                     loop={true}
-                    distance={9}
+                    distance={7}
                 />
             </group>
         </>
     );
 };
 
-export default AudioCatarata;
+export default AudioConjuntivitis;
