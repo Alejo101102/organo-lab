@@ -2,7 +2,7 @@
 import { create } from "zustand";
 
 // AGREGAR ESTA LÍNEA AL INICIO DEL ARCHIVO
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
 
 // Configuración del quiz
 const TOTAL_QUESTIONS = 5; // Total de preguntas del quiz
