@@ -10,9 +10,13 @@ import { KeyboardControls } from '@react-three/drei';
 import TitleAgujeroMacular from './texts/TitleAgujeroMacular'
 import Text3DAgujeroMacular from './texts/Text3DAgujeroMacular'
 import Text2DAgujeroMacular from './texts/Text2DAgujeroMacular'
+import AudioAgujeroMacular from './audio/AudioAgujeroMacular'
+
 import Lights from './lights/Lights';
 import LightsSintomas from './lights/LightsSintomas'
 import LightsPrevencion from './lights/LightsPrevencion'
+import LightsTratamiento from './lights/LightsTratamiento'
+
 import Staging from './staging/Staging'
 import StagingPrevencion from './staging/StagingPrevencion'
 import PostProcessing from './PostProcessing'
@@ -20,6 +24,8 @@ import PostProcessing from './PostProcessing'
 import InternEye from '../models-3d/InternEye'
 import Forest from '../models-3d/Forest'
 import SnellenTable from '../models-3d/SnellenTable'
+import SlitLamp from '../models-3d/SlitLamp'
+
 
 
 const tarjetas = [
@@ -264,6 +270,7 @@ const QueEsAgujeroMacular = () => {
       <div className='agumac-separador-sintomas-prevencion'> </div>
           
       {/* =============== PREVENCIÓN ================ */}
+
       <div className='agumac-prevencion-container'>
         <h2 className="agumac-prevencion-titulo">PREVENCIÓN</h2>
         <div
@@ -375,6 +382,80 @@ const QueEsAgujeroMacular = () => {
 
       </div>
 
+    {/* =============== TRATAMIENTO ================*/}
+
+      <div className='agumac-tratamiento-container'>
+        <h2 className="agumac-tratamiento-titulo">TRATAMIENTO</h2>
+        <div
+          className="agumac-modelo-3d-container"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseHover}
+          onMouseLeave={handleModelLeave}
+        >
+          {showTooltip && (
+            <div className="agumac-modelo-tooltip" style={{
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 30, // Posicionado 40px arriba del cursor
+              position: 'fixed'
+            }}>
+              Mueve el modelo 3D
+            </div>
+          )}
+
+          <div className="agumac-que-es-modelo-3d" >
+            <KeyboardControls
+              map={[
+                { name: "forward", keys: ["w", "ArrowUp"] },
+                { name: "backward", keys: ["s", "ArrowDown"] },
+                { name: "left", keys: ["a", "ArrowLeft"] },
+                { name: "right", keys: ["d", "ArrowRight"] },
+                { name: "up", keys: ["e", "PageUp"] },
+                { name: "down", keys: ["q", "PageDown"] }
+              ]}
+            >
+              <Canvas camera={{ position: [0, 3.5, 18] }} shadows={true} >
+                <LightsTratamiento />
+                <Controls />
+                <StagingPrevencion />
+                <TitleAgujeroMacular title={"¿Cómo se trata?"} position={[-12, 6, 5]}/>
+                <Text3DAgujeroMacular title={"Lámpara de hendidura"} position={[-10, -1.6, 9]} />
+                <Text2DAgujeroMacular title={"Diagnosticar a tiempo las enfermedades es clave \n para poder tratarla precozmente y\n mejorar las posibilidades de recuperación visual "} 
+                  position={[16, 5.5, 0.5]}  />
+                <AudioAgujeroMacular />
+                <group
+                  onPointerOver={() => setShowTooltip(true)}
+                  onPointerOut={() => setShowTooltip(false)}
+                >
+                  <mesh rotation={[-Math.PI / 2, 0, 0]} position={[1, -8, -4]} receiveShadow={true}>
+                    <circleGeometry args={[12, 64]} />
+                    <meshStandardMaterial color="darkgray" />
+                  </mesh>
+                    
+               <SlitLamp scale={15} physics={false} position={[1, -7, 1]} castshadow={true} /> 
+                </group>
+              </Canvas>
+            </KeyboardControls>
+          </div>
+        </div>
+
+
+        <div className="catarata-tratamiento-box">
+          <div className="catarata-tratamiento-texto">
+            <p>
+              Se requiere la cirugía para tratar el agujero macular, más que todo para el manejo
+              de casos complejos (como, por ejemplo, en pacientes altos miopes). Además, aunque el 
+              tratamiento de esta patología es por lo general quirúrgico (normalmente, mediante
+              vitrectomía), también se apuesta por la innovación y la aplicación segura de nuevas
+              alternativas terapéuticas como la ocriplasmina. Este fármaco se inyecta en el ojo 
+              para tratar casos de tracción vitreomacular que podrían desembocar en un agujero, 
+              así como agujeros de pequeño tamaño.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    {/* =============== INSTRUCCIONES ================*/}
       <div
         className="burbuja-instrucciones"
         onClick={() => setShowModal(true)}
