@@ -34,7 +34,11 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'], // Para React/Vite
+  origin: [
+    'http://localhost:3000', 
+    'http://localhost:5173', 
+    'https://organo-lab.vercel.app'  
+  ],
   credentials: true
 }));
 
