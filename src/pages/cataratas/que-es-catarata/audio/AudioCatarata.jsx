@@ -33,7 +33,7 @@ const AudioCatarata = () => {
                     url="/sounds/catarata/catarata.mp3"
                     autoplay={false}
                     loop={true}
-                    distance={7}
+                    distance={9}
                 />
             </group>
         </>
