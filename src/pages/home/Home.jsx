@@ -53,6 +53,7 @@ const Home = () => {
       </div>
 
       <section className="home-enfermedades-section">
+        <div className="home-enfermedades-content">
         <h2 className="home-enfermedades-titulo">¡APRENDE SOBRE SUS ENFERMEDADES!</h2>
         <div className="home-enfermedades-tarjetas-container">
           <h2 className="home-enfermedades-tarjetas-titulo">EXPLORA ENFERMEDADES OCULARES</h2>
@@ -96,6 +97,7 @@ const Home = () => {
           </div>
         </div>
         <p className="home-enfermedades-footer">¡Tu visión importa! Aprende sobre las enfermedades oculares y sus cuidados!</p>
+      </div>
       </section>
 
       <section className="home-quiz-section">

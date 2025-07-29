@@ -132,6 +132,20 @@
 
 /*Sección enfermedades*/
 
+.home-enfermedades-section {
+  width: 100vw;            /* Ocupa todo el ancho de la ventana */
+  background-color: white; /* Color de fondo blanco */
+  padding: 2rem 1rem;      /* Espaciado interior */
+  box-sizing: border-box;  /* Asegura que el padding no desborde */
+}
+
+.home-enfermedades-content {
+  max-width: 1200px;      /* Ajusta al ancho que desees */
+  margin: 0 auto;         /* Centrado horizontal */
+  padding: 0 5rem;        /* Espacio a los lados */
+  box-sizing: border-box;
+}
+
 .home-enfermedades-titulo {
   font-size: 2rem;
   color: #0b0b2d;
@@ -154,7 +168,7 @@
 .home-enfermedades-tarjetas-container {
   margin-top: 3rem;
   width: 100%;
-  overflow-x: auto;           /* Para hacer scroll horizontal si no caben */
+  overflow-x: auto;          /* Para hacer scroll horizontal si no caben */
 }
 
 .home-enfermedades-tarjetas-grid {
@@ -165,7 +179,7 @@
 .home-enfermedades-tarjeta {
   flex: 0 0 auto;             /* Que no se estiren, tamaño fijo */
   width: 200px;               /* Ajusta según tu diseño */
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color:white;
   border-left: 4px solid #0b0b2d;
   border-radius: 10px;
   padding: 1rem;
@@ -174,7 +188,7 @@
 }
 
 .home-enfermedades-tarjeta:hover {
-  background-color: rgba(11, 11, 45, 0.1);
+  background-color: rgba(243, 241, 241, 0.89);
   transform: translateY(-4px);
 }
 
@@ -221,7 +235,7 @@
   font-weight: bold;
   margin-top: 3rem;
   padding: 1rem 2rem;
-  background-color: rgba(11, 11, 45, 0.1);
+  background-color: rgba(255, 255, 255, 0.801);
   border-radius: 25px;
   border: 2px solid #0b0b2d;
   max-width: 600px;
