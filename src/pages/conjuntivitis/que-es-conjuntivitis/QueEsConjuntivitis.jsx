@@ -22,11 +22,14 @@ import StagingPrevencion from './staging/StagingConjuntivitisPrevencion';
 import TitleConjuntivitis from './texts/TitleConjuntivitis';
 import Text2D from './texts/Text2D';
 import Text3D from './texts/Text3D';
+import TextoHTML from './texts/TextHTML';
 import BotonVideo from './texts/ButtonVideo';
-import { KeyboardControls } from '@react-three/drei';
+import KeyboardWrapper from './AuxiliaryFuntions/KeyboardWrapper';
 import { motion } from 'framer-motion';
 import PrevencionCarrusel from './AuxiliaryFuntions/PrevencionCarrusel';
 import TarjetasSintomasConjuntivitis from './AuxiliaryFuntions/TarjetasSintomasConjuntivitis';
+import TextHTML from './texts/TextHTML';
+import AudioConjuntivitis from './audio/AudioConjuntivitis';
 
 
 const QueEsConjuntivitis = () =>  {
@@ -81,23 +84,14 @@ const QueEsConjuntivitis = () =>  {
             )}
             
             <div className="conjuntivitis-que-es-modelo-3d" >
-              <KeyboardControls
-                map={[
-                  { name: "forward", keys: ["w", "ArrowUp"] },
-                  { name: "backward", keys: ["s", "ArrowDown"] },
-                  { name: "left", keys: ["a", "ArrowLeft"] },
-                  { name: "right", keys: ["d", "ArrowRight"] },
-                  { name: "up", keys: ["e", "PageUp"] },     
-                  { name: "down", keys: ["q", "PageDown"] } 
-                ]}
-              >
+              <KeyboardWrapper>
                 <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
-                  <LightsQueEs />  
-                  <StagingQueEs />
-                  <Controls />
+                  <LightsQueEs/>  
+                  <StagingQueEs/>
+                  <Controls/>
                   <Text3D text3d={"Que es?"}/>
                   <Text2D text={"Conjuntivitis"}/>
-                  <BotonVideo/>
+                  <TextHTML texthtml={"👋 Haz clic en explorar modelo para ver cómo usar el modelo"}/>
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}
@@ -115,7 +109,7 @@ const QueEsConjuntivitis = () =>  {
                     </Physics>
                   </group>
                 </Canvas>
-              </KeyboardControls>
+              </KeyboardWrapper>
             </div>
             <p></p>
           </div>
@@ -158,21 +152,14 @@ const QueEsConjuntivitis = () =>  {
            {/*Modelo 3d de los sintomas */}
            
             <div className="conjuntivitis-sintomas-modelo-3d" >
-              <KeyboardControls
-                map={[
-                  { name: "forward", keys: ["w", "ArrowUp"] },
-                  { name: "backward", keys: ["s", "ArrowDown"] },
-                  { name: "left", keys: ["a", "ArrowLeft"] },
-                  { name: "right", keys: ["d", "ArrowRight"] },
-                  { name: "up", keys: ["e", "PageUp"] },     
-                  { name: "down", keys: ["q", "PageDown"] } 
-                ]}
-              >
+              <KeyboardWrapper>
                 <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
                   <LightsSintomas />  
                   <StagingSintomas />
                   <Controls />
-                  <TitleConjuntivitis title={"Sintomas"} />
+                  <Text3D text3d={"Sintomas"}/>
+                  <Text2D text={"Cuales son?"}/>
+                  <BotonVideo/>
                   <group
                     onPointerOver={() => setShowTooltip(true)}
                     onPointerOut={() => setShowTooltip(false)}
@@ -190,7 +177,7 @@ const QueEsConjuntivitis = () =>  {
                     </Physics>
                   </group>
                 </Canvas>
-              </KeyboardControls>
+              </KeyboardWrapper>
             </div>
             <p></p>
 
@@ -247,16 +234,7 @@ const QueEsConjuntivitis = () =>  {
 
                   {/* ✅ Modelo 3D debajo */}
                   <div className="conjuntivitis-prevencion-modelo-3d">
-                    <KeyboardControls
-                      map={[
-                        { name: "forward", keys: ["w", "ArrowUp"] },
-                        { name: "backward", keys: ["s", "ArrowDown"] },
-                        { name: "left", keys: ["a", "ArrowLeft"] },
-                        { name: "right", keys: ["d", "ArrowRight"] },
-                        { name: "up", keys: ["e", "PageUp"] },
-                        { name: "down", keys: ["q", "PageDown"] }
-                      ]}
-                    >
+                    <KeyboardWrapper>
                       <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
                         <LightsPrevencion />
                         <StagingPrevencion /> 
@@ -273,7 +251,7 @@ const QueEsConjuntivitis = () =>  {
                           </Physics>
                         </group>
                       </Canvas>
-                    </KeyboardControls>
+                    </KeyboardWrapper>
                   </div>
 
                 </motion.div>
@@ -290,7 +268,7 @@ const QueEsConjuntivitis = () =>  {
             {/* Sección DE TRATAMIENTOS */}
           
             <div className="conjuntivitis-tratamientos-wrapper">
-              <div className="conjuntivitis-tratamientos-container">
+              <div className="conjuntivitis-tratamientos-box">
                 
                 <motion.div 
                   className="tratamientos"
@@ -312,20 +290,12 @@ const QueEsConjuntivitis = () =>  {
                 
                 {/* Modelo 3D opcional de tratamientos */}
                   <div className="conjuntivitis-tratamientos-modelo-3d" >
-                    <KeyboardControls
-                      map={[
-                        { name: "forward", keys: ["w", "ArrowUp"] },
-                        { name: "backward", keys: ["s", "ArrowDown"] },
-                        { name: "left", keys: ["a", "ArrowLeft"] },
-                        { name: "right", keys: ["d", "ArrowRight"] },
-                        { name: "up", keys: ["e", "PageUp"] },
-                        { name: "down", keys: ["q", "PageDown"] }
-                      ]}
-                    >
+                    <KeyboardWrapper>
                       <Canvas camera={{ position: [0, 4, 17]}} shadows={true} style={{ background: '#dcdcdc' }}>
                         <LightsTratamientos />
                         <StagingTratamientos />
                         <Controls />
+                         <AudioConjuntivitis />
                         <TitleConjuntivitis title={"Tratamientos"} />
                         <group
                           onPointerOver={() => setShowTooltip(true)}
@@ -342,7 +312,7 @@ const QueEsConjuntivitis = () =>  {
                           </Physics>
                         </group>
                       </Canvas>
-                    </KeyboardControls>
+                    </KeyboardWrapper>
                   </div>
 
                 
@@ -379,7 +349,7 @@ const QueEsConjuntivitis = () =>  {
           <h2>Instrucciones</h2>
           <p>🖱️ Usa el mouse para mover el modelo 3D (arrastra de un lado al otro).</p>
           <p>🔍 Acércate o aléjate con la rueda del mouse.</p>
-          <p>👈 Da clic al modelo para que comience rotar o se detenga.</p>
+          <p>👈 Da doble clic al modelo para que comience rotar o se detenga.</p>
           <p>⌨️ Para mover la cámara del modelo 3D pon el cursor sobre el modelo o en una esquina del recuadro 
             (que te aparezca el texto "Mueve el modelo 3D" arriba del cursor)
             y utiliza las siguientes teclas:
