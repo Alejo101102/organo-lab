@@ -93,8 +93,17 @@ const QueEsConjuntivitis = () =>  {
                   <Text2D text={"Conjuntivitis"}/>
                   <TextHTML texthtml={"👋 Haz clic en explorar modelo para ver cómo usar el modelo"}/>
                   <group
-                    onPointerOver={() => setShowTooltip(true)}
-                    onPointerOut={() => setShowTooltip(false)}
+                    onPointerOver={(e) => {
+                        e.stopPropagation();
+                        setShowTooltip(true);
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerMove={(e) => {
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerOut={() => {
+                        setShowTooltip(false);
+                      }}
                   >
                     <Physics>
 
@@ -161,8 +170,17 @@ const QueEsConjuntivitis = () =>  {
                   <Text2D text={"Cuales son?"}/>
                   <BotonVideo/>
                   <group
-                    onPointerOver={() => setShowTooltip(true)}
-                    onPointerOut={() => setShowTooltip(false)}
+                    onPointerOver={(e) => {
+                        e.stopPropagation();
+                        setShowTooltip(true);
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerMove={(e) => {
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerOut={() => {
+                        setShowTooltip(false);
+                      }}
                   >
                     <Physics>
 
@@ -241,9 +259,18 @@ const QueEsConjuntivitis = () =>  {
                         <Controls />
                         <TitleConjuntivitis title={"Prevención"} />
                         <group
-                          onPointerOver={() => setShowTooltip(true)}
-                          onPointerOut={() => setShowTooltip(false)}
-                        >
+                    onPointerOver={(e) => {
+                        e.stopPropagation();
+                        setShowTooltip(true);
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerMove={(e) => {
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerOut={() => {
+                        setShowTooltip(false);
+                      }}
+                  >
                           <Physics>
                             <RigidBody type="fixed" colliders="trimesh">
                             </RigidBody>
@@ -298,9 +325,18 @@ const QueEsConjuntivitis = () =>  {
                          <AudioConjuntivitis />
                         <TitleConjuntivitis title={"Tratamientos"} />
                         <group
-                          onPointerOver={() => setShowTooltip(true)}
-                          onPointerOut={() => setShowTooltip(false)}
-                        >
+                    onPointerOver={(e) => {
+                        e.stopPropagation();
+                        setShowTooltip(true);
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerMove={(e) => {
+                        setTooltipPosition({ x: e.clientX, y: e.clientY });
+                      }}
+                      onPointerOut={() => {
+                        setShowTooltip(false);
+                      }}
+                  >
                           <Physics>
                             <RigidBody type="fixed" colliders="trimesh">
                               <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow={true}>
