@@ -6,6 +6,8 @@ import './Medallero.css';
 import { Podiums } from './models-3d/Podiums';
 import useQuizStore from '../../stores/use-quiz-store';
 import useAuthStore from '../../stores/use-auth.store';
+import { Html } from '@react-three/drei'; 
+import PostProcessingQuiz from './PostProcessingQuiz';
 
 const Medallero = () => {
   const { podium, loadPodium, loading } = useQuizStore();
@@ -101,7 +103,8 @@ const Medallero = () => {
 
         {/* Textos de posiciones */}
         <Text3D
-          position={[-7.8, 0.1, -33.5]}
+          position={[-7.8, 2.3, -33.5]}
+          rotation={[0, -0.25, 0]}
           font="/fonts/roboto.json"
           size={0.8}
           height={0.2}
@@ -117,7 +120,8 @@ const Medallero = () => {
         </Text3D>
 
         <Text3D
-          position={[0.1, 0.1, -30.6]}
+          position={[0.1, 2.1, -30.6]}
+          rotation={[0, -0.25, 0]}
           font="/fonts/roboto.json"
           size={0.8}
           height={0.2}
@@ -128,7 +132,8 @@ const Medallero = () => {
         </Text3D>
 
         <Text3D
-          position={[8, 0.1, -33.5]}
+          position={[8, 2.3, -33.5]}
+          rotation={[0, -0.25, 0]}
           font="/fonts/roboto.json"
           size={0.8}
           height={0.2}
@@ -141,44 +146,73 @@ const Medallero = () => {
         {/* Nombres de los ganadores */}
         {podium.first && (
           <Text3D
-            position={[-1.5, 2, -30.6]}
+            position={[-0.3, 1.3, -30.6]}
+            rotation={[0, -0.15, 0]} 
             font="/fonts/roboto.json"
             size={0.4}
             height={0.1}
             bevelEnabled
           >
             {podium.first.displayName}
-            <meshStandardMaterial color="gold" />
+            <meshStandardMaterial color="black" />
           </Text3D>
         )}
 
+        <Html position={[2.5, -0.5, -30.6]} center>
+          <img 
+            src="/images/quiz/quizganador.png" 
+            alt="Personaje primero" 
+            style={{ width: '80px', height: 'auto' }} 
+          />
+        </Html>
+
+
         {podium.second && (
           <Text3D
-            position={[-9, 1.5, -33.5]}
+            position={[-7.5, 1.3, -33.5]}
+            
             font="/fonts/roboto.json"
             size={0.3}
             height={0.1}
             bevelEnabled
           >
             {podium.second.displayName}
-            <meshStandardMaterial color="silver" />
+            <meshStandardMaterial color="black" />
           </Text3D>
         )}
 
+        <Html position={[-5.3, -0.5, -30.6]} center>
+          <img 
+            src="/images/quiz/quiz-segundo-lugar.png" 
+            alt="Personaje segundo" 
+            style={{ width: '80px', height: 'auto' }} 
+          />
+        </Html>
+
         {podium.third && (
           <Text3D
-            position={[6.5, 1, -33.5]}
+            position={[10, 1.3, -33.5]}
+            rotation={[0, -0.35, 0]}
             font="/fonts/roboto.json"
             size={0.3}
             height={0.1}
             bevelEnabled
           >
             {podium.third.displayName}
-            <meshStandardMaterial color="#CD7F32" />
+            <meshStandardMaterial color="black" />
           </Text3D>
         )}
 
+        <Html position={[9.6, -0.5, -30.6]} center>
+          <img 
+            src="/images/quiz/quiz-tercer-lugar.png" 
+            alt="Personaje segundo" 
+            style={{ width: '80px', height: 'auto' }} 
+          />
+        </Html>
+
         <OrbitControls target={[0, 0, -30]} />
+        <PostProcessingQuiz />
       </Canvas>
 
       {/* Panel de información detallada */}

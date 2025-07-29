@@ -13,7 +13,7 @@ const AudioGlaucoma = () => {
                 setIsPlaying(false);
             } else {
                 audioRef.current.play();
-                audioRef.current.setVolume(10);
+                audioRef.current.setVolume(1);
                 setIsPlaying(true);
             }
         }
@@ -32,7 +32,7 @@ const AudioGlaucoma = () => {
                     url="/sounds/glaucoma/tratamiento-glaucoma.mp3"
                     autoplay={false}
                     loop={true}
-                    distance={5}
+                    distance={7}
                 />
             </group>
         </>
